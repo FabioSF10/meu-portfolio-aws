@@ -79,7 +79,7 @@
 
             try {
                 // IMPORTANTE: Aqui serve para você colar a URL que a AWS vai te dar
-                const urlDaSuaLambda = 'COLE_SUA_URL_DA_LAMBDA_AQUI';
+                const urlDaSuaLambda = 'https://l56buoq6dljc53d4orun63jq6q0xxelu.lambda-url.us-east-1.on.aws/';
                 
                 const resposta = await fetch(urlDaSuaLambda);
                 const dados = await resposta.json();
@@ -90,4 +90,5 @@
                 display.innerText = "Erro ao conectar";
                 console.error("Erro na chamada:", erro);
             } finally {
+
                 botao.disabled = false;
