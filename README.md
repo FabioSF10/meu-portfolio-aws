@@ -14,8 +14,8 @@ Abaixo estão os links para os estudos detalhados, organizados por tópicos:
 ### 2. Testando a Instancia
 * **[Pingando a Instancia](./02-teste-conectividade-icmp/README.md)** *Onde aprendi a configurar o protocolo correto para realizar o procedimento*
 
-### 3. Realizar mais testes com a Instancia (brincar com meus aprendizados rs)
-* **[Em breve] ** - Gestão de usuários e políticas de segurança ou algum outro tema.
+### 3. Aplicações Serverless (AWS Lambda)
+* **[Gerador de CPF - Full Stack Serverless](https://estudos-aws-dksd.vercel.app/)** - *Desenvolvimento de uma ferramenta utilizando Python em AWS Lambda, integrada via Function URL com Frontend hospedado na Vercel, aplicando conceitos de segurança e CORS.*
 
 ---
 
