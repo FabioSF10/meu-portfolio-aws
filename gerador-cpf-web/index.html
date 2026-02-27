@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de CPF - AWS Serverless</title>
+    <style>
+        /* Aqui serve para definir o visual da página (CSS) */
+        body {
+            background-color: #0d1117; /* Fundo escuro igual ao VS Code */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #161b22; /* Cor do card um pouco mais clara */
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 { color: #58a6ff; margin-bottom: 10px; }
+        p { color: #8b949e; margin-bottom: 30px; }
+
+        #cpf-display {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #3fb950; /* Verde estilo terminal/AWS */
+            margin-bottom: 30px;
+            min-height: 2.5rem;
+        }
+
+        button {
+            background-color: #238636;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover { background-color: #2ea043; }
+        
+        button:disabled { background-color: #21262d; color: #8b949e; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gerador de CPF</h1>
+        <p>Projeto AWS Lambda + Python</p>
+        
+        <div id="cpf-display">---.---.--- --</div>
+
+        <button onclick="chamarLambda()" id="btn-gerar">Gerar Novo CPF</button>
+    </div>
+
+    <script>
+        // Aqui serve para fazer a comunicação com a AWS (JavaScript)
+        async function chamarLambda() {
+            const display = document.getElementById('cpf-display');
+            const botao = document.getElementById('btn-gerar');
+
+            // Aqui serve para desabilitar o botão enquanto a AWS processa
+            botao.disabled = true;
+            display.innerText = "Gerando...";
+
+            try {
+                // IMPORTANTE: Aqui serve para você colar a URL que a AWS vai te dar
+                const urlDaSuaLambda = 'COLE_SUA_URL_DA_LAMBDA_AQUI';
+                
+                const resposta = await fetch(urlDaSuaLambda);
+                const dados = await resposta.json();
+
+                // Aqui serve para colocar o CPF recebido na tela
+                display.innerText = dados.cpf;
+            } catch (erro) {
+                display.innerText = "Erro ao conectar";
+                console.error("Erro na chamada:", erro);
+            } finally {
+                botao.disabled = false;
