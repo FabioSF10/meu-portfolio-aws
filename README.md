@@ -15,7 +15,7 @@ Abaixo estão os links para os estudos detalhados, organizados por tópicos:
 * **[Pingando a Instancia](./02-teste-conectividade-icmp/README.md)** *Onde aprendi a configurar o protocolo correto para realizar o procedimento*
 
 ### 3. Aplicações Serverless (AWS Lambda)
-* **[Gerador de CPF - Full Stack Serverless](https://estudos-aws-dksd.vercel.app/)** - *Desenvolvimento de uma ferramenta utilizando Python em AWS Lambda, integrada via Function URL com Frontend hospedado na Vercel, aplicando conceitos de segurança e CORS.*
+* **[Gerador de CPF - Full Stack Serverless](https://estudos-aws-dksd.vercel.app/)** - *Desenvolvimento de uma ferramenta utilizando Python em AWS Lambda, integrada via Function URL com Frontend hospedado na Vercel.
 
 ---
 
@@ -23,6 +23,7 @@ Abaixo estão os links para os estudos detalhados, organizados por tópicos:
 * **AWS Console** (Gestão de Recursos)
 * **CMD/Terminal** (Acesso Remoto e comandos `icacls`)
 * **Photopea** (Edição de evidências e segurança de dados)
+* * **Versel** (FrontEnd)
 
 ---
 > *"A nuvem parece complexa até você entender que ela é feita de pequenos blocos de lógica e segurança."*
