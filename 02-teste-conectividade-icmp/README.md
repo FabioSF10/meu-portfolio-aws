@@ -35,9 +35,11 @@ Após salvar a regra, o terminal começou a responder instantaneamente. Ver os p
 ---
 
 ### 📬 Contato
-**Fabio Stefano**
-Linkedin: https://www.linkedin.com/in/fabio-figueiredo-5601041b2
-Email:Fabio.sf10@hotmail.com
-*Analista de Suporte T.I. | Focado em AWS Cloud & AWS Certified Cloud Practitioner Path*
+
+Sinta-se à vontade para se conectar comigo para trocarmos experiências sobre AWS e tecnologia!
+
+* **LinkedIn:** [linkedin.com/in/fabio-figueiredo-5601041b2](https://www.linkedin.com/in/fabio-figueiredo-5601041b2)
+* **E-mail:** [Fabio.sf10@hotmail.com](mailto:Fabio.sf10@hotmail.com)
+* **Cargo:** *Analista de Suporte T.I. | Focado em AWS Cloud & AWS Certified Cloud Practitioner Path*
 
 ---
