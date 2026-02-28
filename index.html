@@ -162,31 +162,53 @@
         <p>Este projeto demonstra a integração completa de uma aplicação: o que você escreve aqui atravessa a nuvem e é gravado permanentemente em um banco de dados <strong>NoSQL</strong>.</p>
         
         <ul style="list-style: none; padding: 0;">
-            <li><strong>🗄️ Database:</strong> Uso do <strong>Amazon DynamoDB</strong> para armazenamento de alto desempenho.</li>
-            <li><strong>🤝 Conexão:</strong> Um espaço para mensagens autênticas, unindo tecnologia e propósito.</li>
-            <li><strong>🕒 Histórico:</strong> O mural exibe abaixo as <strong>últimas 5 mensagens</strong> registradas e suas respectivas datas.</li>
+            <li style="margin-bottom: 15px;">
+                <strong>🗄️ Database:</strong> Uso do <strong>Amazon DynamoDB</strong> para armazenamento de alto desempenho e baixa latência.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>🤝 Compaixão e Liberdade:</strong> Um espaço aberto para conexões autênticas, onde a tecnologia serve ao propósito humano.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>🛠️ Serverless Flow:</strong> Frontend -> API Gateway -> Lambda -> DynamoDB.
+            </li>
         </ul>
-
-        <div id="lista-mensagens" style="margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
-            <h4 style="color: var(--primary); font-size: 0.9em; text-transform: uppercase;">Últimas 5 Postagens:</h4>
-            <div id="mensagens-container">
-                <p style="color: #666; font-size: 0.8em;">Carregando mensagens recentes...</p>
-            </div>
-        </div>
+        
+        <br>
+        <p style="font-size: 0.85em; color: var(--primary);">* Em desenvolvimento: Em breve listagem de mensagens em tempo real.</p>
     </div>
 
-    <div class="media">
-        <div class="widget" style="background: #1a1a1a; padding: 30px; border-radius: 12px; border: 1px solid #333; text-align: left;">
-            <h3 style="color: var(--primary); text-align: center;">Inserir Recado</h3>
-            
-            <label style="font-size: 0.8em; color: #888;">Seu Nome ou Nick:</label>
-            <input type="text" id="nick" placeholder="Ex: Fabio Stefano" style="width: 100%; padding: 10px; margin: 5px 0 15px 0; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px;">
-            
-            <label style="font-size: 0.8em; color: #888;">Sua Frase:</label>
-            <textarea id="frase" placeholder="Deixe sua mensagem..." style="width: 100%; padding: 10px; height: 80px; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px; resize: none;"></textarea>
+    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+        
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="color: var(--primary); font-size: 0.9em; text-transform: uppercase;">Últimas 5 Postagens:</h4>
+            <div id="mensagens-container" style="font-size: 0.85em;">
+                <div style="background: #222; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                    <strong style="color: #fff;">Maria Silva:</strong>
+                    <p style="color: #ccc; margin: 5px 0;">Adorei a jornada Serverless! Parabéns pelo projeto.</p>
+                    <small style="color: #888;">27/02/2026 - us-east-1</small>
+                </div>
+                
+                <div style="background: #222; padding: 10px; border-radius: 5px;">
+                    <strong style="color: #fff;">João Souza:</strong>
+                    <p style="color: #ccc; margin: 5px 0;">Estudo muito bom, tirou minhas dúvidas sobre DynamoDB.</p>
+                    <small style="color: #888;">26/02/2026 - sa-east-1</small>
+                </div>
+            </div>
+        </div>
 
-            <button onclick="enviarFrase()" id="btn-mural">Enviar para o DynamoDB</button>
-            <p id="status-mural" style="margin-top: 10px; font-size: 0.8em; text-align: center;"></p>
+        <div style="flex: 1; min-width: 250px;">
+            <div class="widget" style="background: #1a1a1a; padding: 30px; border-radius: 12px; border: 1px solid #333; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <h3 style="color: var(--primary); margin-top: 0; text-align: center;">Deixe sua mensagem</h3>
+                
+                <label style="font-size: 0.8em; color: #888;">Seu Nome ou Nick:</label>
+                <input type="text" id="nick" placeholder="Ex: Fabio Stefano" style="width: 100%; padding: 10px; margin: 5px 0 15px 0; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px;">
+                
+                <label style="font-size: 0.8em; color: #888;">Sua Frase:</label>
+                <textarea id="frase" placeholder="O que você está achando da jornada?" style="width: 100%; padding: 10px; height: 80px; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px; resize: none;"></textarea>
+
+                <button onclick="enviarFrase()" id="btn-mural" style="margin-top: 15px; background-color: var(--primary); color: #000; font-weight: bold;">Enviar para o DynamoDB</button>
+                <p id="status-mural" style="margin-top: 10px; font-size: 0.8em; text-align: center;"></p>
+            </div>
         </div>
     </div>
 </section>
