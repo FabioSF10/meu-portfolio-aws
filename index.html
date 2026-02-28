@@ -251,7 +251,62 @@
             botao.disabled = false;
         }
     }
+
+
+// --- FUNÇÃO DO MURAL (SEÇÃO 04 - DYNAMODB) ---
+    async function enviarFrase() {
+        const nickInput = document.getElementById('nick');
+        const fraseInput = document.getElementById('frase');
+        const status = document.getElementById('status-mural');
+        const btn = document.getElementById('btn-mural');
+
+        if (!nickInput.value || !fraseInput.value) {
+            status.innerText = "⚠️ Preencha os dois campos!";
+            status.style.color = "yellow";
+            return;
+        }
+
+        btn.disabled = true;
+        status.innerText = "Enviando para o DynamoDB...";
+        status.style.color = "white";
+
+        try {
+            // O LINK AWS ESTA AQUI
+            const urlMural = 'https://inz3drxxdn7eswrsl55c4hmj2u0egmgd.lambda-url.us-east-1.on.aws/'; 
+            
+            const resposta = await fetch(urlMural, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    nick: nickInput.value, 
+                    frase: fraseInput.value 
+                })
+            });
+
+            if (resposta.ok) {
+                status.innerText = "✅ Mensagem gravada no DynamoDB!";
+                status.style.color = "#3fb950";
+                nickInput.value = ""; // Limpa o campo nome
+                fraseInput.value = ""; // Limpa o campo frase
+            } else {
+                throw new Error();
+            }
+        } catch (e) {
+            status.innerText = "❌ Erro ao conectar com a AWS.";
+            status.style.color = "#ff4a4a";
+        } finally {
+            btn.disabled = false;
+        }
+    }
 </script>
+    
+</script>
+
+
+
+    
+
+    
 
 </body>
 </html>
