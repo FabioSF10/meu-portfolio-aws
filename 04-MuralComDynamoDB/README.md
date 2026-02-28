@@ -1,53 +1,54 @@
-# 🚀 AWS Portfolio: Serverless & Cloud Infrastructure
+# 🚀 AWS Serverless Portfolio: Mural & Cloud Infrastructure
 
-Bem-vindo ao meu projeto de integração **Full Stack Serverless**. Aqui, demonstro como unir uma interface moderna com o poder da nuvem AWS para criar soluções escaláveis e de baixo custo.
+Este projeto demonstra a construção de uma infraestrutura de nuvem moderna e escalável, utilizando o modelo **Serverless** da AWS. Integrei um frontend interativo com serviços de backend para criar uma experiência Full Stack real.
 
 ---
 
 ## 📝 01. Mural de Feedbacks (DynamoDB + NoSQL)
-Este é o coração do projeto. O que você escreve no site atravessa a nuvem e é gravado permanentemente.
+O diferencial deste portfólio é um mural interativo onde as mensagens são processadas e gravadas permanentemente na nuvem.
 
-* **🗄️ Database:** Utilização do **Amazon DynamoDB** para armazenamento NoSQL de alta performance.
-* **⚙️ Backend:** AWS Lambda (Python 3.12) processando requisições em tempo real.
-* **🔗 Integração:** Frontend (Vercel) ➡️ Function URL (CORS) ➡️ Lambda ➡️ DynamoDB.
+### 🛠️ Backend & Persistência
+O backend foi construído com **Python 3.12** rodando em **AWS Lambda**, integrado ao **Amazon DynamoDB** para persistência NoSQL.
 
+> **Configuração Técnica:**
+> * **Banco de Dados:** Amazon DynamoDB (Tabela: `MuralDeFrases`)
+> * **Partition Key:** `id` (Tipo: String)
+> * **Lógica:** AWS Lambda com gatilho via Function URL.
 
+<img width="955" height="501" alt="image" src="https://github.com/user-attachments/assets/934a3f98-1921-4b1a-8cd8-9105f8c95b5b" />
 
----
-
-## 🔢 02. Gerador de CPF (Event Driven)
-Uma ferramenta utilitária que demonstra o uso de computação sob demanda.
-* **Lógica:** Função Lambda isolada que gera dados válidos para testes.
-* **Performance:** Resposta em milissegundos com custo zero de servidor parado.
 
 ---
 
-## 🛠️ Arquitetura Técnica
+## 🏗️ Desafios Técnicos e Soluções (Troubleshooting)
 
-| Serviço | Função |
-| :--- | :--- |
-| **AWS Lambda** | Processamento de lógica (Python) |
-| **Amazon DynamoDB** | Banco de Dados NoSQL |
-| **AWS IAM** | Gestão de permissões e segurança |
-| **Vercel** | Hospedagem do Frontend |
-| **GitHub** | CI/CD e versionamento |
+Desenvolver em nuvem exige resolver gargalos reais de integração. Abaixo, destaco os principais desafios superados:
 
----
+### 1. Gestão de CORS (Cross-Origin Resource Sharing)
+Ajuste fino nos cabeçalhos de resposta e permissões de métodos (`GET`, `POST`, `OPTIONS`) na Function URL para permitir a comunicação segura entre o domínio do Frontend (Vercel) e o backend (AWS).
 
-## 💡 Aprendizados e Desafios
-Durante o desenvolvimento, superei desafios reais de arquitetura de nuvem:
-* **CORS Management:** Configuração de headers (`Content-Type`, `Origin`) para comunicação segura entre domínios.
-* **Data Typing:** Ajuste de conflitos de tipos entre o JSON do Frontend e a Partition Key do DynamoDB.
-* **Permissions:** Implementação do princípio de privilégio mínimo no IAM.
+<img width="1318" height="517" alt="image" src="https://github.com/user-attachments/assets/76daa68b-6133-4130-af9b-ec89de6349d6" />
 
----
 
-## 🤝 Mentalidade do Projeto
-Operando sob a filosofia de **Compaixão e Liberdade**, este projeto não é apenas código; é um espaço para conexões autênticas, onde a tecnologia serve ao propósito humano e à transparência.
+### 2. Segurança e Permissões (IAM)
+Implementação de políticas de acesso granular (Princípio do Privilégio Mínimo) para que a Lambda tivesse permissão de leitura e escrita no DynamoDB.
+
+<img width="1314" height="423" alt="image" src="https://github.com/user-attachments/assets/b7a45bd6-47c0-405a-af73-7c030ab0049d" />
+
+
+### 3. Ajuste de Tipagem NoSQL
+Resolução de erros de comunicação (Status 500) causados por divergência entre o formato da Partition Key e o dado enviado pelo Frontend.
+
+<img width="743" height="376" alt="image" src="https://github.com/user-attachments/assets/d114e165-f76b-4923-bdfb-a4acde73d81a" />
+
+
+## 🤝 Filosofia: Compaixão e Liberdade
+Este projeto reflete minha mentalidade técnica e pessoal: unir a precisão da engenharia de nuvem com a transparência das conexões humanas. Um espaço onde a tecnologia serve para simplificar e conectar.
 
 ---
 
 ### 📬 Contato
-**Fabio Stefano** *Especialista em Suporte T.I. & Aspirante a Cloud Engineer (AWS)*
+**Fabio Stefano**
+*Analista de Suporte T.I. | Focado em AWS Cloud & AWS Certified Cloud Practitioner Path*
 
-> "A simplicidade é o último grau da sofisticação."
+---
