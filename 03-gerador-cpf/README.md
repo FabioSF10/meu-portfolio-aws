@@ -24,3 +24,13 @@ Durante o desenvolvimento, foram aplicados conceitos de:
 
 ---
 Mantenha a mentalidade de aprendizado constante! 🚀
+
+---
+
+### 📬 Contato
+**Fabio Stefano**
+Linkedin: https://www.linkedin.com/in/fabio-figueiredo-5601041b2
+Email:Fabio.sf10@hotmail.com
+*Analista de Suporte T.I. | Focado em AWS Cloud & AWS Certified Cloud Practitioner Path*
+
+---
