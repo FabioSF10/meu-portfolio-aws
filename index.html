@@ -117,17 +117,37 @@
 
 <section>
     <div class="content">
-        <h2>03. Gerador de CPF (Serverless)</h2>
-        <p>Microserviço desenvolvido em Python e hospedado em AWS Lambda. Demonstra o uso de arquitetura sem servidor para ferramentas de teste.</p>
-        <div class="widget">
-            <button onclick="/* Sua lógica de gerar CPF aqui */">Gerar CPF Válido</button>
-            <p id="resultado-cpf" style="margin-top:10px; font-weight:bold;"></p>
+        <h2>⚡ 03. Gerador de CPF - Full Stack Serverless</h2>
+        <p>Desenvolvimento de uma ferramenta funcional utilizando <strong>Python</strong> em <strong>AWS Lambda</strong>, integrada via <em>Function URL</em> com este Frontend.</p>
+        
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 15px;">
+                <strong>🐍 Python Backend:</strong> Algoritmo para cálculo de dígitos verificadores seguindo as normas da Receita Federal.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>☁️ Infraestrutura:</strong> Uso de arquitetura <em>Serverless</em>, eliminando a necessidade de gerenciar sistemas operacionais ou servidores 24/7.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>🛠️ Toolstack:</strong> Desenvolvimento no VS Code, gestão via Console AWS e deploy contínuo via Vercel.
+            </li>
+        </ul>
+
+        <div class="widget" style="background: #161b22; padding: 25px; border-radius: 12px; border: 1px solid #30363d; text-align: center; margin-top: 20px; box-shadow: inset 0 0 10px rgba(0,255,0,0.1);">
+            <div id="cpf-display" style="font-size: 1.8rem; font-weight: bold; color: #3fb950; margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px;">---.---.--- --</div>
+            <button onclick="chamarLambda()" id="btn-gerar" style="width: auto; padding: 12px 30px; background-color: #238636; border-radius: 6px;">Gerar Novo CPF</button>
         </div>
+        
+        <br>
+        <a href="https://github.com/FabioSF10/meu-portfolio-aws" target="_blank" style="color: var(--primary); text-decoration: underline; font-size: 0.9em;">
+            Ver repositório principal no GitHub →
+        </a>
     </div>
     <div class="media">
-        <img src="print-lambda.png" alt="AWS Lambda Console">
+        <img src="03-gerador-cpf/print-lambda.png" alt="AWS Lambda Python Code" style="width: 100%; max-width: 600px;">
     </div>
 </section>
+
+    
 
 <section class="dark-bg">
     <div class="content">
