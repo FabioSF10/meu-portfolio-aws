@@ -15,16 +15,19 @@
         
         section { display: flex; align-items: center; padding: 60px 10%; flex-wrap: wrap; }
         .dark-bg { background: #1a1a1a; flex-direction: row-reverse; }
-        .content { flex: 1; min-width: 300px; padding: 20px; }
-        .media { flex: 1; min-width: 300px; text-align: center; }
-        .media img { 
+        /* Ajuste das proporções das colunas */
+.content { flex: 1.2; min-width: 300px; padding: 20px; } /* Texto um pouco maior */
+.media { flex: 1.8; min-width: 300px; text-align: center; } /* Imagem com mais espaço */
+
+/* Ajuste da imagem para alinhar com o texto */
+.media img { 
     width: 100%; 
-    max-width: none; /* Remove o limite de 500px */
+    max-width: 700px; /* Aumentamos o limite para ela poder crescer */
     border-radius: 10px; 
-    box-shadow: 0 4px 15px rgba(0,255,0,0.3); 
+    box-shadow: 0 4px 20px rgba(0,255,0,0.4); 
     height: auto; 
-    display: block;
-    margin-left: -25%; /* Centraliza a imagem mesmo sendo maior que o container */
+    display: inline-block;
+    vertical-align: middle;
 }
         
         /* Estilo dos Widgets (CPF e Mural) */
