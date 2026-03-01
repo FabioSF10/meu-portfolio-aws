@@ -21,4 +21,4 @@ jobs:
 
       - name: Sincronizar arquivos com S3
         run: |
-          aws s3 sync . s3://NOME-DO-SEU-BUCKET --delete --exclude ".git*"
+          aws s3 sync . s3://meu-portfolio-fabio-stefano --delete --exclude ".git*"
