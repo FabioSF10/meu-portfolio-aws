@@ -1,34 +1,48 @@
-# ☁️ Jornada AWS - Estudos de Infraestrutura
+# ☁️ AWS Cloud Portfolio | Infraestrutura & Serverless
 
-Bem-vindo ao meu repositório de estudos focado em **Cloud Computing**. Aqui documento minha transição da TI tradicional para o mundo da nuvem, registrando cada novo conceito e configuração que aprendo na Amazon Web Services.
-
----
-LINK SITE: http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/
----
-
-## 📂 Projetos e Laboratórios
-
-Abaixo estão os links para os estudos detalhados, organizados por tópicos:
-
-### 1. Criando Instancia
-* **[Criando uma Instancia e acessando via SSH](./01-criacao-ec2-ssh/README.md)** *Onde aprendi a criar instâncias Linux, configurar Security Groups (Firewall), gerenciar chaves `.pem` no Windows e realizar conexões seguras via terminal.*
-
-### 2. Testando a Instancia
-* **[Pingando a Instancia](./02-teste-conectividade-icmp/README.md)** *Onde aprendi a configurar o protocolo correto para realizar o procedimento*
-
-### 3. Aplicações Serverless (AWS Lambda)
-* **[Gerador de CPF - Full Stack Serverless](./03-gerador-cpf/README.md)** - *Desenvolvimento de uma ferramenta utilizando Python em AWS Lambda, integrada via Function URL com Frontend hospedado na Vercel.
-
-### 4. Mural de Mensagens (Bando de dados DynamoDB no AWS)
-* **[Mural de Mensagens -DynamoDB](./04-MuralComDynamoDB/README.md)** - *Desenvolvimento de ferramenta para armazenar informações, usando LAmbda pra ativar codigos e integrado com front Ed no Vercel
+Bem-vindo ao repositório central dos meus projetos de **Cloud Computing**. Aqui documento a minha evolução técnica, consolidando conhecimentos em arquitetura, automação e integração de serviços na Amazon Web Services (AWS).
 
 ---
+🌐 **Acesse meu Portfólio ao Vivo:** [Clique aqui](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/)
+---
 
-## 🛠️ Ferramentas Utilizadas
-* **AWS Console** (Gestão de Recursos)
-* **CMD/Terminal** (Acesso Remoto e comandos `icacls`)
-* **Photopea** (Edição de evidências e segurança de dados)
-* * **Versel** (FrontEnd)
+## 📂 Ecossistema de Projetos
+
+Abaixo, apresento os laboratórios e aplicações desenvolvidos, com foco em escalabilidade e segurança:
+
+### 🤖 Inteligência Artificial & Cloud Híbrida
+* **[API de IA Generativa (AWS + Azure)](./API-de-IA-Generativa/)**
+  * Implementação de uma arquitetura cross-cloud conectando AWS Lambda à Azure AI Foundry (GPT-4o mini). Focado em orquestração de APIs e segurança de chaves.
+
+### ⚡ Serverless & Banco de Dados
+* **[Mural de Mensagens com DynamoDB](./MuralComDynamoDB/)**
+  * Aplicação Full Stack utilizando **Lambda** para persistência de dados em um banco **NoSQL (DynamoDB)**, com integração via API Gateway.
+* **[Gerador de CPF - Serverless Engine](./gerador-cpf/)**
+  * Ferramenta de processamento lógico em Python rodando em ambiente serverless, demonstrando o uso de Function URLs e baixo custo operacional.
+
+### 🏗️ Infraestrutura & Automação
+* **[Hospedagem S3 & Deploy Automatizado](./Hospedagem-S3-Deploy-Autom.../)**
+  * Configuração de instâncias de armazenamento estático (S3) com foco em alta disponibilidade para front-end.
+* **[Criação de EC2 & Acesso SSH](./criacao-ec2-ssh/)**
+  * Provisionamento de instâncias Linux, gestão de Security Groups (Firewall) e administração remota segura.
+
+### 🌐 Conectividade & Networking
+* **[Teste de Conectividade ICMP](./teste-conectividade-icmp/)**
+  * Laboratório focado em segurança de rede e protocolos de diagnóstico (ICMP), configurando regras de entrada para validação de latência.
 
 ---
-> *"A nuvem parece complexa até você entender que ela é feita de pequenos blocos de lógica e segurança."*
+
+## 🛠️ Stack Tecnológica
+
+* **Compute:** AWS Lambda, EC2 (Elastic Compute Cloud).
+* **Storage & DB:** Amazon S3, DynamoDB (NoSQL).
+* **Network & Security:** API Gateway, IAM, Security Groups, ICMP Protocol.
+* **Dev Tools:** Python, JavaScript, AWS CLI, Windows CMD/SSH.
+* **AI Engine:** Azure OpenAI Service (GPT-4o mini).
+
+---
+
+## 👨‍💻 Sobre Mim
+Atualmente focado em **AWS Cloud e Automação de Processos**. Meu objetivo é construir soluções que unam a robustez da infraestrutura em nuvem com a agilidade do desenvolvimento serverless.
+
+> *"A nuvem é o limite para quem domina a lógica por trás de cada serviço."*
