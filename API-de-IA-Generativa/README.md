@@ -30,16 +30,16 @@ O projeto segue um modelo de comunicação síncrona entre diferentes serviços 
 
 ------------------------------------------------------------------------
 
-## ⚙️ Como foi feito
+## ⚙️ Implementação Passo a Passo
 
-### 1. Criação do modelo no Azure
+### 1. Provisionamento do Modelo na Azure
+O primeiro passo foi configurar o "cérebro" da aplicação no **Azure AI Foundry**:
 
--   Acesso ao Azure AI Foundry
--   Criação de um projeto
--   Deploy do modelo (ex: fabio-digital-model)
--   Coleta de:
-    -   Endpoint
-    -   API Key
+* **Criação do Workspace:** Configurei um novo projeto dentro do Hub de IA da Azure para organizar os recursos.
+* **Deploy do Modelo:** Realizei o deploy do modelo **GPT-4o mini** (identificado como `fabio-digital-model`), definindo as capacidades de tokens e limites de taxa.
+* **Parâmetros de Conectividade:** Extraí as credenciais necessárias para a integração externa:
+    * **Endpoint:** A URL de destino para as requisições REST.
+    * **API Key:** A chave de autenticação para o cabeçalho das requisições.
 
 ------------------------------------------------------------------------
 
