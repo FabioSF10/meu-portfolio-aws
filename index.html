@@ -372,7 +372,15 @@ async function enviarFrase() {
     <div class="social-footer">
         <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/FabioSF10/meu-portfolio-aws"><i class="fab fa-github"></i></a>
-        <a href="mailto:fabio.sf10@email.com"><i class="fas fa-envelope"></i></a>
+      <div class="social-footer">
+    <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/FabioSF10/meu-portfolio-aws" target="_blank"><i class="fab fa-github"></i></a>
+    
+    <a href="javascript:void(0)" onclick="copiarEmail(this)" title="Copiar E-mail">
+        <i class="fas fa-envelope" id="icone-email"></i>
+        <span id="tooltip-email" style="display:none; font-size: 12px; position: absolute; background: var(--aws-orange); color: #232f3e; padding: 2px 8px; border-radius: 4px; margin-top: -30px;">Copiado!</span>
+    </a>
+</div>
     </div>
     <p style="margin-top: 20px;">Fabio Stefano de Figueiredo | Analista de Infraestrutura de TI</p>
     <p>São Paulo, Brasil | &copy; 2026</p>
