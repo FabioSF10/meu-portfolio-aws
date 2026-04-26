@@ -1,0 +1,112 @@
+# 🚀 API de IA Generativa (AWS + Azure)
+
+## 📌 Descrição
+
+Este projeto demonstra a integração entre AWS Lambda e Azure OpenAI para
+criação de uma API de IA Generativa.
+
+A aplicação permite que um usuário envie mensagens via frontend e receba
+respostas inteligentes em tempo real.
+
+------------------------------------------------------------------------
+
+## 🧠 Tecnologias Utilizadas
+
+-   AWS Lambda (Python)
+-   AWS API Gateway
+-   Azure OpenAI (Foundry)
+-   Python (requests)
+-   ChatGPT Mini (modelo leve e rápido)
+-   Windows (CMD para build das dependências)
+
+------------------------------------------------------------------------
+
+## 🏗️ Arquitetura
+
+Frontend → API Gateway → Lambda → Azure OpenAI → Resposta → Frontend
+
+------------------------------------------------------------------------
+
+## ⚙️ Como foi feito
+
+### 1. Criação do modelo no Azure
+
+-   Acesso ao Azure AI Foundry
+-   Criação de um projeto
+-   Deploy do modelo (ex: fabio-digital-model)
+-   Coleta de:
+    -   Endpoint
+    -   API Key
+
+------------------------------------------------------------------------
+
+### 2. Desenvolvimento da Lambda
+
+Código em Python utilizando requests:
+
+``` python
+import requests
+```
+
+A Lambda: - Recebe mensagem - Envia para Azure - Retorna resposta
+
+------------------------------------------------------------------------
+
+### 3. Instalação das dependências (Windows CMD)
+
+``` bash
+mkdir lambda-azure
+cd lambda-azure
+
+pip install requests -t .
+```
+
+------------------------------------------------------------------------
+
+### 4. Criação do ZIP
+
+Selecionar tudo dentro da pasta e zipar.
+
+------------------------------------------------------------------------
+
+### 5. Upload na AWS
+
+-   Criar Lambda
+-   Runtime: Python 3.9
+-   Upload do .zip
+
+------------------------------------------------------------------------
+
+### 6. Variáveis de ambiente
+
+-   AZURE_OPENAI_ENDPOINT
+-   AZURE_OPENAI_KEY
+
+------------------------------------------------------------------------
+
+### 7. API Gateway
+
+-   Criar endpoint POST
+-   Integrar com Lambda
+
+------------------------------------------------------------------------
+
+## 💬 Resultado
+
+-   Chat funcional
+-   Integração real entre AWS e Azure
+-   Comunicação em tempo real
+
+------------------------------------------------------------------------
+
+## 🚀 Possíveis melhorias
+
+-   Implementar RAG
+-   Interface melhorada
+-   Logs avançados
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Autor
+
+Fabio Stefano de Figueiredo
