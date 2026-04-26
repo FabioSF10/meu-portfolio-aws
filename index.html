@@ -449,7 +449,7 @@ async function chamarLambda() {
             <ul>
                 <li><strong>Backend:</strong> Script Python 3.x otimizado para execução rápida.</li>
                 <li><strong>Compute:</strong> Arquitetura Serverless (AWS Lambda) que escala sob demanda.</li>
-                <li><strong>Endpoint:</strong> Gatilho via API Gateway para chamadas via navegador.</li>
+                <li><strong>Endpoint:</strong> Gatilho via Lambda Function URL para chamadas diretas.</li>
             </ul>
             <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/03-gerador-cpf" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Ver Código no GitHub →</a>
         </div>
@@ -459,7 +459,7 @@ async function chamarLambda() {
                 <div id="cpf-display" style="font-size: 2.2rem; margin: 25px 0; font-family: 'Courier New', monospace; color: white; letter-spacing: 2px;">
                     000.000.000-00
                 </div>
-                <button onclick="gerarCPF()" id="btn-gerar" style="width: 100%; background-color: #238636; color: white; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s;">
+                <button onclick="chamarLambda()" id="btn-gerar" style="width: 100%; background-color: #238636; color: white; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s;">
                     <i class="fas fa-sync"></i> Gerar via AWS Lambda
                 </button>
                 <p style="font-size: 0.7em; margin-top: 15px; opacity: 0.6;">*Geração efetuada em tempo real no servidor AWS.</p>
