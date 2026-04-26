@@ -1,29 +1,32 @@
 # 🚀 API de IA Generativa (AWS + Azure)
 
 ## 📌 Descrição
+Este projeto consiste na implementação de uma arquitetura **Cross-Cloud**, conectando o ambiente da **AWS** com o motor de inteligência da **Azure**. O foco principal é demonstrar a comunicação segura entre provedores distintos através de uma API escalável e de alta disponibilidade.
 
-Este projeto demonstra a integração entre AWS Lambda e Azure OpenAI para
-criação de uma API de IA Generativa.
-
-A aplicação permite que um usuário envie mensagens via frontend e receba
-respostas inteligentes em tempo real.
+A aplicação processa requisições enviadas via frontend através de funções **Serverless**, permitindo que o usuário interaja com um modelo de linguagem avançado e receba respostas inteligentes em tempo real, sem a necessidade de manter servidores ativos.
 
 ------------------------------------------------------------------------
 
-## 🧠 Tecnologias Utilizadas
+## 🛠️ Stack Tecnológica
 
--   AWS Lambda (Python)
--   AWS API Gateway
--   Azure OpenAI (Foundry)
--   Python (requests)
--   ChatGPT Mini (modelo leve e rápido)
--   Windows (CMD para build das dependências)
+* **Compute:** AWS Lambda (Python 3.x) executando lógica de backend *serverless*.
+* **API Management:** Amazon API Gateway para exposição e segurança do endpoint HTTPS.
+* **AI Engine:** Azure AI Foundry operando como provedor do modelo de linguagem.
+* **Model:** GPT-4o mini (Modelo de alta performance e baixa latência para respostas rápidas).
+* **Libraries:** Python `requests` para integração via API REST.
+* **Build & Deploy:** Ambiente Windows (CMD) para empacotamento de dependências e gerenciamento de camadas da Lambda.
 
 ------------------------------------------------------------------------
 
-## 🏗️ Arquitetura
+## 🏗️ Arquitetura do Fluxo de Dados
 
-Frontend → API Gateway → Lambda → Azure OpenAI → Resposta → Frontend
+O projeto segue um modelo de comunicação síncrona entre diferentes serviços de nuvem:
+
+1. **Frontend:** Interface hospeda no S3 envia a requisição do usuário via HTTPS.
+2. **Amazon API Gateway:** Atua como a porta de entrada, gerenciando o tráfego e encaminhando a solicitação.
+3. **AWS Lambda:** Processa o evento em Python, realiza a autenticação e dispara a chamada para a IA.
+4. **Azure AI Foundry:** O modelo GPT-4o mini processa o prompt e gera a inteligência da resposta.
+5. **Ciclo de Retorno:** A resposta percorre o caminho inverso (Azure → Lambda → API Gateway) até ser renderizada no navegador do usuário.
 
 ------------------------------------------------------------------------
 
