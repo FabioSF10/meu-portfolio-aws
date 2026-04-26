@@ -40,9 +40,20 @@ Frontend → API Gateway → Lambda → Azure OpenAI → Resposta → Frontend
 
 ------------------------------------------------------------------------
 
-### 3. Desenvolvimento da Lambda
+### 2. Instalação das dependências (Windows CMD)
+Crie uma pasta em qualquer lugar e entre dentro dela pelo cmd, exemplo "labda-azure" e instale as dependencias dentro dela
+``` bash
+mkdir lambda-azure
+cd lambda-azure
 
-Código em Python utilizando requests:
+pip install requests -t .
+```
+
+------------------------------------------------------------------------
+### 3. Desenvolvimento da Lambda
+Crie um arquivo python chamado lambda_function.py
+Dentro dele eu usei os seguintes codigos:
+
 
 ```python
 import os
@@ -99,16 +110,6 @@ A Lambda: - Recebe mensagem - Envia para Azure - Retorna resposta
 
 ------------------------------------------------------------------------
 
-### 2. Instalação das dependências (Windows CMD)
-Crie uma pasta em qualquer lugar e entre dentro dela pelo cmd, exemplo "labda-azure" e instale as dependencias dentro dela
-``` bash
-mkdir lambda-azure
-cd lambda-azure
-
-pip install requests -t .
-```
-
-------------------------------------------------------------------------
 
 ### 4. Criação do ZIP
 
