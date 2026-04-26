@@ -189,7 +189,7 @@ Para consumir a API, utilizei uma combinação de **HTML5** e **JavaScript (Vani
 #### 📄 Implementação do Código
 Abaixo está a estrutura utilizada para realizar a conexão entre a interface e o backend:
 
-```
+``` html
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const btnChat = document.getElementById("btn-chat");
@@ -324,9 +324,6 @@ O desenvolvimento desta Prova de Conceito (PoC) resultou em uma infraestrutura m
 ---
 ### 🎥 Demonstração
 O chat está disponível em meu portfólio, permitindo interações em tempo real onde a inteligência da Azure é processada via backend AWS e entregue de forma instantânea no frontend.
-
-## 🔗 Link do Projeto
-O projeto está publicado e pode ser testado em tempo real através do link abaixo:
 
 🚀 [Visualizar Chat de IA no Portfólio](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/#)
 
