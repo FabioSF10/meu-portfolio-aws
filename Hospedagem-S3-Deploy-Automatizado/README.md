@@ -1,31 +1,41 @@
-# 📁 05 - Hospedagem S3 e Deploy Automatizado (CI/CD)
+# 📁 Hospedagem S3 e Deploy Automatizado (CI/CD)
 
-Nesta etapa, implementei a hospedagem definitiva do meu portfólio utilizando os serviços da **Amazon Web Services (AWS)**.
-
-### 🛠️ Tecnologias Utilizadas
-* **AWS S3:** Armazenamento dos arquivos estáticos (HTML/CSS/JS).
-* **GitHub Actions:** Automação do deploy (CI/CD).
-* **AWS IAM:** Configuração de políticas de acesso e chaves de segurança.
-
-* <img width="914" height="374" alt="image" src="https://github.com/user-attachments/assets/9d976a3b-e3bc-46c9-8721-1d70af525c08" />
-<img width="889" height="220" alt="image" src="https://github.com/user-attachments/assets/af6b791b-7f6a-494a-b3f3-e403b72f0b35" />
-<img width="918" height="369" alt="image" src="https://github.com/user-attachments/assets/054bdb28-b7c2-440e-9a98-f150f0dec897" />
-
-
-
-### 🧠 O que eu aprendi:
-1. **S3 Static Website Hosting:** Configurei um bucket para servir o site publicamente.
-2. **Bucket Policies:** Aprendi a liberar acesso de leitura via JSON para que o mundo veja o site.
-3. **Pipeline de CI/CD:** Configurei um "robô" (GitHub Actions) que atualiza o site na AWS automaticamente a cada `git push`.
-4. **Infraestrutura como Valor:** O site não depende mais de plataformas externas, rodando diretamente na infraestrutura da Amazon.
+Neste projeto, documentei a migração da infraestrutura do meu portfólio para um ambiente nativo **AWS**, utilizando o conceito de **Hospedagem Estática** e **Entrega Contínua**.
 
 ---
-*Status: Site online e automatizado!* 🚀
+
+## 🎯 Objetivo
+Migrar de plataformas externas para a infraestrutura da **Amazon Web Services (AWS)**, garantindo controle total sobre políticas de acesso (IAM), custos e automação do ciclo de vida da aplicação.
+
+## 🛠️ Tecnologias Utilizadas
+* **AWS S3:** Hospedagem de arquivos estáticos (HTML/CSS/JS).
+* **GitHub Actions:** Automação do pipeline de deploy (CI/CD).
+* **AWS IAM:** Gestão de identidades e permissões seguindo o princípio de menor privilégio.
+* **Markdown:** Documentação técnica do projeto.
+
 ---
 
-Sinta-se à vontade para se conectar comigo para trocarmos experiências sobre AWS e tecnologia!
+## 🚀 Passo a Passo: Como eu implementei
 
-* **LinkedIn:** [linkedin.com/in/fabio-figueiredo-5601041b2](https://www.linkedin.com/in/fabio-figueiredo-5601041b2)
-* **E-mail:** [Fabio.sf10@hotmail.com](mailto:Fabio.sf10@hotmail.com)
-* **Cargo:** *Analista de Suporte T.I. | Focado em AWS Cloud & AWS Certified Cloud Practitioner Path*
+### 1. Preparação do Bucket S3
+O primeiro passo foi criar e configurar o "balde" (**S3 Bucket**) que armazenaria os arquivos:
+* Criei o bucket com um nome único.
+* Desativei a opção de "Bloquear todo o acesso público" (passo essencial para sites que precisam ser vistos na web).
+* Habilitei a função **Static Website Hosting** nas propriedades do bucket, definindo o `index.html` como o ponto de entrada.
 
+### 2. Configuração de Segurança (Bucket Policy)
+Para que o site seja acessível publicamente via navegador, apliquei uma **Bucket Policy** em formato JSON. Isso garante que qualquer pessoa possa ler os objetos (o site), mas impede qualquer alteração não autorizada:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::SEU-NOME-DO-BUCKET/*"
+        }
+    ]
+}
