@@ -330,16 +330,19 @@ O projeto está publicado e pode ser testado em tempo real através do link abai
 
 🚀 [Visualizar Chat de IA no Portfólio](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/#)
 
-------------------------------------------------------------------------
+## 🚀 Próximos Passos & Melhorias Futuras
 
-## 🚀 Possíveis melhorias
+Este projeto é uma base sólida para expansões. As melhorias planejadas incluem:
 
--   Implementar RAG
--   Interface melhorada
--   Logs avançados
+* **Implementação de RAG (Retrieval-Augmented Generation):** Conectar a API a uma base de dados (como um arquivo PDF ou banco de vetores) para que a IA responda com base em informações específicas do meu currículo e histórico profissional.
+* **Otimização da UI/UX:** Refinar a interface do chat com animações de digitação, suporte a Markdown nas respostas e melhor adaptação para dispositivos móveis.
+* **Monitoramento e Logs Avançados:** Integrar o **AWS CloudWatch Insights** para gerar métricas de tempo de resposta, volume de requisições e monitoramento de possíveis erros em tempo real.
 
-------------------------------------------------------------------------
+---
 
 ## 👨‍💻 Autor
 
-Fabio Stefano de Figueiredo
+**Fabio Stefano de Figueiredo** *Analista de Infraestrutura de TI | AWS Cloud | Automação de Processos & Suporte*
+
+---
+> "Transformando conectividade em inteligência através da nuvem." 🚀
