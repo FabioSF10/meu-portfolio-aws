@@ -18,13 +18,11 @@ Migrar de plataformas externas para a infraestrutura da **Amazon Web Services (A
 ## 🚀 Passo a Passo: Como eu implementei
 
 ### 1. Preparação do Bucket S3
-<img width="914" height="374" alt="image" src="https://github.com/user-attachments/assets/9d976a3b-e3bc-46c9-8721-1d70af525c08" />
-<img width="889" height="220" alt="image" src="https://github.com/user-attachments/assets/af6b791b-7f6a-494a-b3f3-e403b72f0b35" />
-<img width="918" height="369" alt="image" src="https://github.com/user-attachments/assets/054bdb28-b7c2-440e-9a98-f150f0dec897" />
 O primeiro passo foi criar e configurar o "balde" (**S3 Bucket**) que armazenaria os arquivos:
 * Criei o bucket com um nome único.
 * Desativei a opção de "Bloquear todo o acesso público" (passo essencial para sites que precisam ser vistos na web).
 * Habilitei a função **Static Website Hosting** nas propriedades do bucket, definindo o `index.html` como o ponto de entrada.
+<img width="914" height="374" alt="image" src="https://github.com/user-attachments/assets/9d976a3b-e3bc-46c9-8721-1d70af525c08" />
 
 ### 2. Configuração de Segurança (Bucket Policy)
 Para que o site seja acessível publicamente via navegador, apliquei uma **Bucket Policy** em formato JSON. Isso garante que qualquer pessoa possa ler os objetos (o site), mas impede qualquer alteração não autorizada:
@@ -43,11 +41,14 @@ Para que o site seja acessível publicamente via navegador, apliquei uma **Bucke
     ]
 }
 ```
+<img width="918" height="369" alt="image" src="https://github.com/user-attachments/assets/054bdb28-b7c2-440e-9a98-f150f0dec897" />
+
 ### 3. Gestão de Identidade (IAM)
 Para que o GitHub tenha permissão de enviar arquivos para a AWS com segurança, apliquei as melhores práticas de identidade:
 * Criei um usuário no **IAM** específico para essa tarefa (ex: `github-actions-deployer`).
 * Gerei as **Access Keys** (ID e Secret) exclusivas para este serviço.
 * Anexei uma política de permissão restrita (inline policy), permitindo apenas as ações `s3:PutObject` e `s3:ListBucket` exclusivamente no bucket do projeto. **Segurança em primeiro lugar: o usuário não possui permissões administrativas.**
+<img width="889" height="220" alt="image" src="https://github.com/user-attachments/assets/af6b791b-7f6a-494a-b3f3-e403b72f0b35" />
 
 ### 4. Pipeline de CI/CD com GitHub Actions
 Implementei a automação para que o site se atualize sozinho. Toda vez que eu realizo um `git push` no meu repositório, o GitHub inicia um workflow que sincroniza os arquivos locais com o S3.
