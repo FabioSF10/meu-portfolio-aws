@@ -129,37 +129,65 @@ def lambda_handler(event, context):
 
 ------------------------------------------------------------------------
 
+### 4. Empacotamento do Deployment Package (ZIP)
+Para que a AWS Lambda reconheça o código e as dependências, o formato do pacote deve ser rigorosamente um arquivo `.zip` contendo os arquivos na raiz.
 
-### 4. Criação do ZIP
+* **Procedimento:** Entre na pasta `lambda-azure`, selecione todos os arquivos e subpastas (incluindo a pasta da biblioteca `requests` e o seu `lambda_function.py`) e compacte-os.
+* **Aviso Importante:** Não compacte a pasta "mãe". O arquivo `lambda_function.py` deve estar na "raiz" do arquivo ZIP, e não dentro de uma subpasta, caso contrário a AWS retornará erro de *Runtime.ImportModuleError*.
 
-Selecionar tudo dentro da pasta e zipar.
-
-------------------------------------------------------------------------
-
-### 5. Upload na AWS
-
--   Criar Lambda
--   Runtime: Python 3.9
--   Faça upload do .zip
+> **Dica:** Utilize o formato `.zip` padrão do Windows. Formatos como `.rar` ou `.7z` não são suportados pelo ambiente de execução da AWS.
 
 ------------------------------------------------------------------------
 
-### 6. Variáveis de ambiente
-Aqui você irá armazenar as chaves de acesso do API do Azure, pra chave não ficar exposta no codigo, precisa ficar dentro destas variaveis que o AMAZON AWS disponibiliza dentro do Lambda
+### 5. Provisionamento e Upload na AWS Lambda
+Com o pacote `.zip` pronto, o próximo passo foi criar a infraestrutura necessária no console da **AWS** para hospedar e executar o código.
 
--   AZURE_OPENAI_ENDPOINT
--   AZURE_OPENAI_KEY
+* **Criação da Função:** No console do AWS Lambda, selecionei "Criar função" e escolhi a opção "Criar do zero".
+* **Configurações de Runtime:** Defini o ambiente de execução como **Python 3.9** (ou superior), garantindo compatibilidade com a biblioteca `requests`.
+* **Permissões (IAM):** Certifiquei-me de que a função tivesse uma Role básica de execução para registrar logs no CloudWatch, facilitando o monitoramento.
+
+#### Como realizar o Upload:
+1.  Dentro da aba **Código (Code)** da sua função Lambda, localize o botão **"Fazer upload de"**.
+2.  Selecione a opção **"Arquivo .zip"**.
+3.  Escolha o arquivo que você criou na etapa anterior e salve.
+
+> **Dica de Ouro:** Se o seu arquivo `.zip` tiver mais de 10MB, a AWS recomenda fazer o upload via **Amazon S3** para evitar falhas de timeout durante o envio.
+------------------------------------------------------------------------
+
+### 6. Configuração de Variáveis de Ambiente (Segurança)
+Para seguir as melhores práticas de segurança em nuvem, utilizei as **Variáveis de Ambiente** da AWS Lambda. Isso garante que chaves de API e endpoints sensíveis não fiquem expostos diretamente no código-fonte, protegendo a aplicação contra acessos não autorizados.
+
+* **Onde configurar:** No console da sua função Lambda, acesse a aba **Configurações (Configuration)** e selecione a opção **Variáveis de ambiente (Environment variables)**.
+* **Chaves configuradas:**
+    * `AZURE_OPENAI_ENDPOINT`: A URL de destino do seu modelo na Azure.
+    * `AZURE_OPENAI_KEY`: A chave secreta de autenticação.
+
+> **Benefício Técnico:** Ao utilizar variáveis de ambiente, o código se torna portátil. Se eu precisar trocar de modelo ou de região na Azure, basta alterar o valor no console da AWS, sem a necessidade de editar ou subir um novo arquivo `.zip`.
+------------------------------------------------------------------------
+
+### 7. Amazon API Gateway (A Porta de Entrada)
+O **API Gateway** funciona como a interface pública do projeto. Como a AWS Lambda por si só não possui uma URL acessível via navegador, utilizei o API Gateway para criar um "ponto de encontro" seguro na internet.
+
+* **Criação do Endpoint:** Configurei um recurso do tipo **POST**, que é o método ideal para enviar mensagens de texto do chat para o servidor.
+* **Integração com Lambda:** Vinculei este endpoint à minha função Lambda, garantindo que cada vez que o Gateway recebe uma mensagem, ele "acorda" a função para processar a resposta.
+* **Segurança e CORS:** Habilitei o **CORS (Cross-Origin Resource Sharing)**, permitindo que apenas o domínio do meu portfólio consiga realizar chamadas para esta API, evitando o uso indevido por terceiros.
+
+> **Resumo:** O API Gateway recebe a pergunta do site, entrega para a Lambda e devolve a resposta da IA para o usuário.
 
 ------------------------------------------------------------------------
 
-### 7. API Gateway
-Aqui é a conexão da porta de saida com o codigo, pra vigiar o que entra e o que sai.
--   Criar endpoint POST
--   Integrar com Lambda
+## 8. Integração com o Front-end
+Para consumir a API, utilizei uma combinação de **HTML5** e **JavaScript (Vanilla)**. O objetivo foi criar uma interface de chat leve e responsiva, que se comunica diretamente com o Amazon API Gateway.
 
-------------------------------------------------------------------------
+### Funcionalidades do Script:
+* **Manipulação de Eventos:** O script captura o envio do formulário e evita o recarregamento da página.
+* **Consumo de API (Fetch API):** Utilizei o método `fetch()` para realizar a chamada assíncrona para o endpoint da AWS.
+* **Gerenciamento de Estado:** Enquanto a IA processa a resposta, o script exibe um feedback visual (como "Pensando...") para melhorar a experiência do usuário.
+* **Renderização Dinâmica:** Assim que a resposta JSON retorna da Lambda, o JavaScript injeta o texto diretamente na bolha de chat do site.
 
-## 8. Front End, o codigo que eu usei no site foi este, o script junto do html:
+---
+#### 📄 Implementação do Código
+Abaixo está a estrutura utilizada para realizar a conexão entre a interface e o backend:
 
 ```
 <script>
@@ -284,11 +312,23 @@ async function enviarMensagemIA() {
 </section>
 ```
 ------------------------------------------------------------------------
-RESULTADO
+## 🏆 Resultados Alcançados
 
--   Chat funcional
--   Integração real entre AWS e Azure
--   Comunicação em tempo real
+O desenvolvimento desta Prova de Conceito (PoC) resultou em uma infraestrutura moderna e totalmente funcional, destacando-se pelos seguintes pontos:
+
+* **Interoperabilidade Cloud:** Sucesso na comunicação fluida entre **AWS** e **Azure**, provando competência em arquiteturas multi-cloud.
+* **Performance e Latência:** Graças ao uso do modelo **GPT-4o mini**, o tempo de resposta da IA é extremamente baixo, proporcionando uma experiência de conversação natural.
+* **Escalabilidade Serverless:** A API está preparada para suportar desde poucos acessos até picos de tráfego, sem necessidade de intervenção manual ou gerenciamento de servidores.
+* **Segurança de Dados:** Implementação rigorosa de variáveis de ambiente e políticas de CORS, garantindo a integridade das chaves de API.
+
+---
+### 🎥 Demonstração
+O chat está disponível em meu portfólio, permitindo interações em tempo real onde a inteligência da Azure é processada via backend AWS e entregue de forma instantânea no frontend.
+
+## 🔗 Link do Projeto
+O projeto está publicado e pode ser testado em tempo real através do link abaixo:
+
+🚀 [Visualizar Chat de IA no Portfólio](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/#)
 
 ------------------------------------------------------------------------
 
