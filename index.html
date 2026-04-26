@@ -3,399 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabio Figueiredo | Portfólio AWS</title>
+    <title>Fabio Figueiredo | Cloud Infrastructure Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #00ff00; --bg: #121212; --text: #e0e0e0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+        :root { 
+            --aws-blue: #232f3e; 
+            --aws-orange: #ff9900; 
+            --primary: #3498db; 
+            --bg: #0f172a; 
+            --card-bg: #1e293b;
+            --text: #f1f5f9; 
+        }
+
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+        
+        /* Hero Section Profissional */
         header {
-    background-color: #000; /* Cor de segurança caso a imagem falhe */
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo-index.png'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    padding: 60px 20px; /* Aumentei o respiro para valorizar a imagem */
-    text-align: center;
-    border-bottom: 2px solid var(--primary);
-}
-        header h1 { color: var(--primary); margin: 0; font-size: 2.5em; }
-        header p { margin: 10px 0; font-size: 1.1em; opacity: 0.8; }
-        .nav-links a { color: var(--primary); text-decoration: none; margin: 0 10px; font-weight: bold; border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
-        .nav-links a:hover { background: var(--primary); color: #000; }
+            background: linear-gradient(135deg, var(--aws-blue) 0%, #1a1a1a 100%);
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--aws-orange);
+        }
+        header h1 { margin: 0; font-size: 3em; font-weight: 800; letter-spacing: -1px; }
+        header .subtitle { color: var(--aws-orange); font-size: 1.4em; font-weight: 500; margin: 10px 0; }
+        header .bio { max-width: 700px; margin: 20px auto; opacity: 0.9; font-size: 1.1em; }
         
-        section { display: flex; align-items: center; padding: 60px 10%; flex-wrap: wrap; }
-        .dark-bg { background: #1a1a1a; flex-direction: row-reverse; }
-        /* Ajuste das proporções das colunas */
-.content { flex: 1.2; min-width: 300px; padding: 20px; } /* Texto um pouco maior */
-.media { flex: 1.8; min-width: 300px; text-align: center; } /* Imagem com mais espaço */
+        .nav-links { margin-top: 30px; }
+        .nav-links a { 
+            color: white; text-decoration: none; margin: 0 10px; font-weight: 600; 
+            background: rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 8px; 
+            transition: 0.3s; border: 1px solid transparent;
+        }
+        .nav-links a:hover { background: var(--aws-orange); border-color: white; color: var(--aws-blue); }
 
-/* Ajuste da imagem para alinhar com o texto */
-.media img { 
-    width: 100%; 
-    max-width: 700px; /* Aumentamos o limite para ela poder crescer */
-    border-radius: 10px; 
-    box-shadow: 0 4px 20px rgba(0,255,0,0.4); 
-    height: auto; 
-    display: inline-block;
-    vertical-align: middle;
-}
+        /* Badges de Certificação */
+        .cert-container { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
+        .cert-badge { 
+            background: white; color: #000; padding: 10px 20px; border-radius: 8px; 
+            font-weight: bold; display: flex; align-items: center; gap: 10px; font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        section { padding: 80px 10%; border-bottom: 1px solid #334155; }
+        .dark-bg { background: var(--card-bg); }
         
-        /* Estilo dos Widgets (CPF e Mural) */
-        .widget { background: #222; padding: 20px; border-radius: 10px; border: 1px solid #333; margin-top: 20px; }
-        input, textarea { width: 90%; padding: 10px; margin-bottom: 10px; background: #333; border: 1px solid #444; color: #fff; border-radius: 5px; }
-        button { background: var(--primary); color: #000; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; }
+        h2 { font-size: 2em; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
+        h2 i { color: var(--aws-orange); }
 
-        footer { background: #000; text-align: center; padding: 30px; border-top: 1px solid #333; font-size: 0.9em; }
+        .project-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } }
+
+        .content h3 { color: var(--aws-orange); margin-top: 0; }
+        .content ul { padding-left: 20px; }
+        .content li { margin-bottom: 8px; }
+
+        .media img { 
+            width: 100%; border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #475569;
+        }
+
+        /* Widgets Customizados */
+        .widget { background: #0f172a; padding: 30px; border-radius: 15px; border: 1px solid var(--aws-orange); }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #1e293b; border: 1px solid #334155; color: #fff; border-radius: 8px; }
+        button { background: var(--aws-orange); color: var(--aws-blue); border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 8px; width: 100%; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,153,0,0.4); }
+
+        footer { background: #020617; text-align: center; padding: 50px; color: #94a3b8; }
+        .social-footer a { color: var(--text); font-size: 1.5em; margin: 0 15px; transition: 0.3s; }
+        .social-footer a:hover { color: var(--aws-orange); }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Fabio Figueiredo</h1>
-    <p>Cloud & Infrastructure Enthusiast | Suporte de TI | AWS Studies</p>
+    <p class="subtitle">Analista de Infraestrutura de TI | Cloud AWS | Especialista em Automação</p>
+    <p class="bio">
+        Focado em arquiteturas serverless e otimização de custos na nuvem. 
+        Recentemente certificado como <strong>AWS Cloud Practitioner</strong>, 
+        especializado em integrar processos de TI com inteligência artificial generativa.
+    </p>
+    
+    <div class="cert-container">
+        <div class="cert-badge">
+            <i class="fab fa-aws fa-2x" style="color: #232f3e;"></i>
+            <span>AWS Certified Cloud Practitioner</span>
+        </div>
+        <div class="cert-badge" style="opacity: 0.6; background: #e2e8f0;">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Solutions Architect Associate (Em andamento)</span>
+        </div>
+    </div>
+
     <div class="nav-links">
-        <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/FabioSF10/meu-portfolio-aws" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/FabioSF10/meu-portfolio-aws" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
 </header>
-    
-<!-- #1 CRIANDO A INSTANCIA` -->
-      
-<section>
-  <div class="content">
-    <h2>🚀 01. Servidor Cloud (EC2 & Segurança)</h2>
-    <p>Configuração de servidor Linux na AWS com foco em <strong>conectividade segura</strong> e protocolos de rede.</p>
-    
-    <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 15px;">
-            <strong>🛡️ Security Groups:</strong> Firewall configurado sob o princípio de <em>Least Privilege</em>, liberando a porta 22 (SSH) apenas para meu IP público.
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong>💻 Windows vs Linux:</strong> Troubleshooting de permissões de chave <code>.pem</code> utilizando o comando <code>icacls</code> para garantir o padrão OpenSSH.
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong>🔑 Gestão de Identidade:</strong> Acesso via chaves criptográficas, eliminando o uso de senhas vulneráveis.
-        </li>
-    </ul>
 
-    <div style="background: #000; padding: 10px; border-left: 3px solid var(--primary); font-family: monospace; margin-top: 20px;">
-        <span style="color: #888;"># Comando de acesso:</span><br>
-        ssh -i "chave.pem" ec2-user@ip-publico
-    </div>
-    
-    <br>
-    <a href="https://github.com/FabioSF10/meu-portfolio-aws/blob/main/01-criacao-ec2-ssh/README.md" target="_blank" style="color: var(--primary); text-decoration: underline; font-size: 0.9em;">
-        Ver documentação técnica no GitHub →
-    </a>
-</div>
-    <div class="media">
-        <img src="01-criacao-ec2-ssh/PrimeiraInstanciaEc2-2.png" size=150% alt="Dashboard EC2">
-    </div>
-</section>
-
-  <!-- #2 PINGANDO A INSTANCIA` -->
-    
-<section class="dark-bg">
-    <div class="content">
-       <h2>🧪 02. Conectividade e Validação (ICMP)</h2>
-    <p>Após o SSH, apliquei um <strong>plano de teste de conectividade</strong> para validar a estabilidade e a segurança da instância.</p>
-    
-    <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 15px;">
-            <strong>🚫 Cenário de Falha:</strong> Identifiquei que o comando <code>ping</code> falhava por padrão. Como parte do processo de <em>troubleshooting</em>, mapeei que o <em>Security Group</em> bloqueia pacotes ICMP nativamente para aumentar a invisibilidade do servidor.
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong>🔌 Execução do Ajuste:</strong> Configurei uma <em>Inbound Rule</em> específica para <strong>All ICMP - IPv4</strong>, seguindo o princípio de <em>Least Privilege</em> (acesso limitado apenas ao meu IP público).
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong>✅ Validação Final (QA):</strong> O sucesso dos pacotes "indo e voltando" confirmou que a rota de rede estava 100% operacional. Este teste garantiu a integridade da infraestrutura antes da subida da aplicação.
-        </li>
-    </ul>
-
-        <div style="background: #000; padding: 10px; border-left: 3px solid var(--primary); font-family: monospace; margin-top: 20px;">
-            <span style="color: #888;"># Testando conectividade:</span><br>
-            ping 18.212.xxx.xxx
-        </div>
-        
-        <br>
-        <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/02-teste-conectividade-icmp" target="_blank" style="color: var(--primary); text-decoration: underline; font-size: 0.9em;">
-            Ver detalhes no GitHub →
-        </a>
-    </div>
-    <div class="media">
-        <img src="02-teste-conectividade-icmp/02-teste-ping-img-01.png" alt="Teste de Ping AWS">
-    </div>
-</section>
-<!-- #3 GERADOR DE CPF LAMBDA -->
-     
-
-<section>
-    <div class="content">
-        <h2>⚡ 03. Gerador de CPF - Full Stack Serverless</h2>
-        <p>Desenvolvimento de uma ferramenta funcional utilizando <strong>Python</strong> em <strong>AWS Lambda</strong>, integrada via <em>Function URL</em>.</p>
-        
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 15px;">
-                <strong>🐍 Python Backend:</strong> Algoritmo para cálculo de dígitos verificadores seguindo as normas da Receita Federal.
-            </li>
-            <li style="margin-bottom: 15px;">
-                <strong>☁️ Arquitetura:</strong> Uso de <em>Function as a Service (FaaS)</em>, eliminando a gestão de servidores e reduzindo custos.
-            </li>
-            <li style="margin-bottom: 15px;">
-                <strong>🛠️ Integração:</strong> Frontend conectado via <em>Fetch API</em> com tratamento de estados de carregamento.
-            </li>
-        </ul>
-        
-        <br>
-        <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/03-gerador-cpf" target="_blank" style="color: var(--primary); text-decoration: underline; font-size: 0.9em;">
-            Ver documentação no GitHub →
-        </a>
-    </div>
-
-    <div class="media">
-        <div class="widget" style="background: #161b22; padding: 40px; border-radius: 12px; border: 2px solid #30363d; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <h3 style="color: var(--primary); margin-top: 0;">Gerador de CPF</h3>
-            <p style="font-size: 0.8em; color: #8b949e;">Projeto AWS Lambda + Python</p>
-            
-            <div id="cpf-display" style="font-size: 2rem; font-weight: bold; color: #3fb950; margin: 30px 0; font-family: 'Courier New', monospace; letter-spacing: 2px;">
-                ---.---.--- --
-            </div>
-
-            <button onclick="chamarLambda()" id="btn-gerar" style="width: auto; padding: 15px 30px; background-color: #238636; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s;">
-                Gerar Novo CPF
-            </button>
-        </div>
-    </div>
-</section>
-
-    <!-- #4 MURAL DE MENSAGENS -->
-
-
-<section class="dark-bg">
-    <div class="content">
-        <h2>📝 04. Mural de Feedbacks (DynamoDB + NoSQL)</h2>
-        <p>Este projeto demonstra a integração completa de uma aplicação: o que você escreve aqui atravessa a nuvem e é gravado permanentemente em um banco de dados <strong>NoSQL</strong>.</p>
-        
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 15px;">
-                <strong>🗄️ Database:</strong> Uso do <strong>Amazon DynamoDB</strong> para armazenamento de alto desempenho e baixa latência.
-            </li>
-            <li style="margin-bottom: 15px;">
-                <strong>🤝 Compaixão e Liberdade:</strong> Um espaço aberto para conexões autênticas, onde a tecnologia serve ao propósito humano.
-            </li>
-            <li style="margin-bottom: 15px;">
-                <strong>🛠️ Serverless Flow:</strong> Frontend -> API Gateway -> Lambda -> DynamoDB.
-            </li>
-        </ul>
-
-        <div style="margin-top: 20px; padding: 10px; border: 1px dashed var(--primary); border-radius: 8px; background: rgba(59, 185, 80, 0.05);">
-    <p style="margin: 0; font-size: 0.9em;">      
-        
-        <a href="https://github.com/FabioSF10/meu-portfolio-aws/blob/main/04-MuralComDynamoDB/README.md" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none;">
-            <strong>📂 Ver documentação tecnica no Github</strong>
-        </a>
-    </p>
-</div>
-      
-           </div>
-
-    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-        
-        <div style="flex: 1; min-width: 250px;">
-            <h4 style="color: var(--primary); font-size: 0.9em; text-transform: uppercase;">Últimas 5 Postagens:</h4>
-            <div id="mensagens-container" style="font-size: 0.85em;">
-                <div style="background: #222; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
-                    <strong style="color: #fff;">Maria Silva:</strong>
-                    <p style="color: #ccc; margin: 5px 0;">Adorei a jornada Serverless! Parabéns pelo projeto.</p>
-                    <small style="color: #888;">27/02/2026 - us-east-1</small>
-                </div>
-                
-                <div style="background: #222; padding: 10px; border-radius: 5px;">
-                    <strong style="color: #fff;">João Souza:</strong>
-                    <p style="color: #ccc; margin: 5px 0;">Estudo muito bom, tirou minhas dúvidas sobre DynamoDB.</p>
-                    <small style="color: #888;">26/02/2026 - sa-east-1</small>
-                </div>
-            </div>
-        </div>
-
-        <div style="flex: 1; min-width: 250px;">
-            <div class="widget" style="background: #1a1a1a; padding: 30px; border-radius: 12px; border: 1px solid #333; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <h3 style="color: var(--primary); margin-top: 0; text-align: center;">Deixe sua mensagem</h3>
-                
-                <label style="font-size: 0.8em; color: #888;">Seu Nome ou Nick:</label>
-                <input type="text" id="nick" placeholder="Ex: Fabio Stefano" style="width: 100%; padding: 10px; margin: 5px 0 15px 0; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px;">
-                
-                <label style="font-size: 0.8em; color: #888;">Sua Frase:</label>
-                <textarea id="frase" placeholder="O que você está achando da jornada?" style="width: 100%; padding: 10px; height: 80px; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px; resize: none;"></textarea>
-
-                <button onclick="enviarFrase()" id="btn-mural" style="margin-top: 15px; background-color: var(--primary); color: #000; font-weight: bold;">Enviar para o DynamoDB</button>
-                <p id="status-mural" style="margin-top: 10px; font-size: 0.8em; text-align: center;"></p>
-            </div>
-        </div>
-    </div>
-</section>
-
- <!-- #5 Hoespedagem de site na propria amazon -->
-
-<section>
-  <div class="content">
-    <h2>🚀 Hospedagem Própria na AWS S3</h2>
-    <p>
-      Evolução do projeto: Migrei o site da Vercel para uma infraestrutura 100% própria na <strong>AWS (Amazon Web Services)</strong>. 
-      O site agora é servido através de um bucket S3 configurado como <i>Static Website Hosting</i>.
-    </p>
-    <p>
-      <strong>Link antigo:</strong> <del>estudos-aws.vercel.app</del><br>
-      <strong>Link atual (Infra AWS):</strong> 
-      <a href="http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/" target="_blank">
-        http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/
-      </a><br>
-
-        <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/05-Hospedagem-S3-Deploy-Automatizado" target="_blank" style="color: var(--primary); text-decoration: underline; font-size: 0.9em;">
-            Ver documentação no GitHub →
-        </a>
-    </p>
-  </div>
-</section>
-    
-    
-
-<footer>
-    <p>Fabio Stefano de Figueiredo | 31 anos</p>
-    <p>São Paulo, SP - Brasil</p>
-    <p>&copy; 2026 - Desenvolvido com AWS & Vercel</p>
-</footer>
 
 <script>
-    // Função para o Gerador de CPF (Seção 03)
-    async function chamarLambda() {
-        const display = document.getElementById('cpf-display');
-        const botao = document.getElementById('btn-gerar');
+document.addEventListener("DOMContentLoaded", () => {
+    const btnChat = document.getElementById("btn-chat");
+    const chatInput = document.getElementById("chat-input");
 
-        // Desabilita para evitar múltiplos cliques
-        botao.disabled = true;
-        display.innerText = "Gerando...";
+    if (btnChat) btnChat.addEventListener("click", enviarMensagemIA);
+    if (chatInput) {
+        chatInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") enviarMensagemIA();
+        });
+    }
+});
 
-        try {
-            // URL da sua Function URL da AWS
-            const urlDaSuaLambda = 'https://l56buoq6dljc53d4orun63jq6q0xxelu.lambda-url.us-east-1.on.aws';
-            
-            const resposta = await fetch(urlDaSuaLambda);
-            
-            if (!resposta.ok) throw new Error('Erro na rede');
+function addMensagem(texto, tipo) {
+    const display = document.getElementById('chat-display');
+    const div = document.createElement('div');
+    
+    div.style.padding = "10px";
+    div.style.borderRadius = "8px";
+    div.style.marginBottom = "10px";
+    div.style.maxWidth = "85%";
+    div.style.fontSize = "0.9em";
+    div.style.lineHeight = "1.4";
+    div.style.display = "block";
+    div.style.clear = "both";
 
-            const dados = await resposta.json();
-
-            // Atualiza o display com o CPF vindo da nuvem
-            display.innerText = dados.cpf;
-        } catch (erro) {
-            display.innerText = "Erro ao conectar";
-            console.error("Erro na chamada:", erro);
-        } finally {
-            // Reativa o botão
-            botao.disabled = false;
-        }
+    if (tipo === 'user') {
+        div.style.background = "#ff9900";
+        div.style.color = "#232f3e";
+        div.style.marginLeft = "auto";
+        div.style.borderBottomRightRadius = "2px";
+        div.innerHTML = `<strong>Você:</strong><br>${texto}`;
+    } else {
+        div.style.background = "#1e293b";
+        div.style.color = "white";
+        div.style.marginRight = "auto";
+        div.style.borderLeft = "3px solid #ff9900";
+        div.style.borderBottomLeftRadius = "2px";
+        div.innerHTML = `<strong>IA:</strong><br>${texto}`;
     }
 
+    display.appendChild(div);
+    display.scrollTop = display.scrollHeight;
+}
 
-// --- FUNÇÃO PARA CARREGAR MENSAGENS DO DYNAMODB (SEÇÃO 04) ---
-   async function carregarMensagens() {
-    const container = document.getElementById('mensagens-container');
-    const urlMural = 'https://inz3drxxdn7eswrsl55c4hmj2u0egmgd.lambda-url.us-east-1.on.aws/';
+async function enviarMensagemIA() {
+    const input = document.getElementById('chat-input');
+    const btn = document.getElementById('btn-chat');
+    const display = document.getElementById('chat-display');
+
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    addMensagem(msg, "user");
+    input.value = "";
+    btn.disabled = true;
+
+    const typingIndicator = document.createElement('div');
+    typingIndicator.id = "typing";
+    typingIndicator.style.color = "#ff9900";
+    typingIndicator.style.fontSize = "0.8em";
+    typingIndicator.style.padding = "5px";
+    typingIndicator.innerHTML = "<em>Processando...</em>";
+    display.appendChild(typingIndicator);
+    display.scrollTop = display.scrollHeight;
 
     try {
-        const resposta = await fetch(urlMural);
-        
-        // Se a AWS responder erro (500 ou 403), não tenta rodar o forEach
-        if (!resposta.ok) {
-            throw new Error("Resposta da AWS não foi OK");
-        }
+        const res = await fetch("https://9u6eokphxh.execute-api.us-east-1.amazonaws.com/prod/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg })
+        });
 
-        const mensagens = await resposta.json();
+        const data = await res.json();
+        const indicator = document.getElementById("typing");
+        if (indicator) indicator.remove();
 
-        // Garante que 'mensagens' é realmente uma lista antes de usar o forEach
-        if (!Array.isArray(mensagens)) {
-            throw new Error("AWS não retornou uma lista");
-        }
+        addMensagem(data.response || "Sem resposta da IA.", "ia");
 
+    } catch (e) {
+        const indicator = document.getElementById("typing");
+        if (indicator) indicator.remove();
+        addMensagem("Erro ao conectar com a nuvem.", "ia");
+    } finally {
+        btn.disabled = false;
+        input.focus();
+    }
+}
+const urlMural = 'https://inz3drxxdn7eswrsl55c4hmj2u0egmgd.lambda-url.us-east-1.on.aws/';
+
+// Esta linha faz o mural carregar assim que o site abre
+document.addEventListener("DOMContentLoaded", carregarMensagens);
+
+async function carregarMensagens() {
+    const container = document.getElementById('mensagens-container');
+    if (!container) return;
+
+    try {
+        const res = await fetch(urlMural);
+        const mensagens = await res.json();
         container.innerHTML = ""; 
 
         if (mensagens.length === 0) {
-            container.innerHTML = "<p style='color: #666;'>Nenhuma mensagem ainda.</p>";
+            container.innerHTML = "<p style='font-size: 0.8em; opacity: 0.5;'>Nenhuma mensagem ainda.</p>";
             return;
         }
 
         mensagens.forEach(msg => {
-            const div = document.createElement('div');
-            div.style = "background: #222; padding: 10px; border-radius: 5px; margin-bottom: 10px; border-left: 3px solid #3fb950;";
-            div.innerHTML = `
-                <strong style="color: #fff;">${msg.nick || 'Anônimo'}:</strong>
-                <p style="color: #ccc; margin: 5px 0;">${msg.frase || ''}</p>
-                <small style="color: #888;">${msg.data || ''} - AWS Cloud</small>
-            `;
-            container.appendChild(div);
+            const item = document.createElement('div');
+            item.style.background = "#1e293b";
+            item.style.padding = "10px";
+            item.style.borderRadius = "5px";
+            item.style.marginBottom = "10px";
+            item.style.borderLeft = "3px solid #ff9900";
+            item.innerHTML = `<strong>${msg.nick}:</strong> <p style="margin: 5px 0 0 0; font-size: 0.9em;">${msg.frase}</p>`;
+            container.appendChild(item);
         });
-    } catch (e) {
-        console.error("Erro no Mural:", e);
-        container.innerHTML = "<p style='color: #ff4a4a;'>⚠️ Erro ao carregar o mural da AWS.</p>";
+    } catch (e) { 
+        container.innerHTML = "<p style='color: red;'>Erro ao carregar mural.</p>"; 
     }
 }
 
-    // --- FUNÇÃO PARA ENVIAR FRASE (SEÇÃO 04) ---
-    async function enviarFrase() {
-        const nickInput = document.getElementById('nick');
-        const fraseInput = document.getElementById('frase');
-        const status = document.getElementById('status-mural');
-        const btn = document.getElementById('btn-mural');
+async function enviarFrase() {
+    const nickInput = document.getElementById('nick');
+    const fraseInput = document.getElementById('frase');
+    const btn = event.target;
 
-        if (!nickInput.value || !fraseInput.value) {
-            status.innerText = "⚠️ Preencha os dois campos!";
-            status.style.color = "yellow";
-            return;
-        }
-
-        btn.disabled = true;
-        status.innerText = "Gravando na AWS...";
-        status.style.color = "white";
-
-        try {
-            const urlMural = 'https://inz3drxxdn7eswrsl55c4hmj2u0egmgd.lambda-url.us-east-1.on.aws/'; 
-            
-            const resposta = await fetch(urlMural, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    nick: nickInput.value, 
-                    frase: fraseInput.value 
-                })
-            });
-
-            if (resposta.ok) {
-                status.innerText = "✅ Sucesso! Atualizando mural...";
-                status.style.color = "#3fb950";
-                nickInput.value = "";
-                fraseInput.value = "";
-                // Recarrega as mensagens para mostrar a nova sem dar F5
-                setTimeout(carregarMensagens, 1000);
-            } else {
-                throw new Error();
-            }
-        } catch (e) {
-            status.innerText = "❌ Erro ao enviar.";
-            status.style.color = "#ff4a4a";
-        } finally {
-            btn.disabled = false;
-        }
+    if (!nickInput.value || !fraseInput.value) {
+        alert("Preencha nome e mensagem.");
+        return;
     }
 
-    // --- EXECUTA AO CARREGAR A PÁGINA ---
-    window.onload = carregarMensagens;
+    btn.disabled = true;
+    btn.innerText = "Enviando...";
+
+    try {
+        await fetch(urlMural, {
+            method: 'POST',
+            body: JSON.stringify({ nick: nickInput.value, frase: fraseInput.value })
+        });
+        
+        nickInput.value = "";
+        fraseInput.value = "";
+        await carregarMensagens();
+    } catch (e) { 
+        alert("Erro ao enviar"); 
+    } finally {
+        btn.disabled = false;
+        btn.innerText = "Publicar no Mural";
+    }
+}
 </script>
 
 
 
-    
 
-    
+<section>
+    <div class="project-grid">
+        <div class="content">
+            <h2><i class="fas fa-robot"></i> 01. API de IA Generativa</h2>
+            <h3>Integração Serverless Híbrida (AWS & Azure)</h3>
+            <p>Este projeto demonstra a comunicação segura e eficiente entre provedores de nuvem distintos para entregar inteligência artificial como serviço.</p>
+            <ul>
+                <li><strong>Gateway de API:</strong> Exposição de endpoint seguro via AWS API Gateway.</li>
+                <li><strong>Processamento:</strong> AWS Lambda atuando como middleware para orquestração de chamadas.</li>
+                <li><strong>Inteligência:</strong> Consumo de modelos LLM via Azure OpenAI Service (Foundry).</li>
+                <li><strong>Arquitetura:</strong> Design desacoplado focado em baixa latência e escalabilidade.</li>
+            </ul>
+            <a href="https://github.com/FabioSF10/meu-portfolio-aws" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Repositório do Projeto →</a>
+        </div>
+        <div class="media">
+            <div class="widget chat-box">
+                <h3 style="color: var(--aws-orange); text-align: center; margin-top: 0;">🤖 Fabio-IA Explorer</h3>
+                <p style="font-size: 0.8em; text-align: center; margin-top: -10px; opacity: 0.7;">Integração em tempo real via Lambda</p>
+                <div id="chat-display" style="height: 250px; overflow-y: auto; background: #020617; border-radius: 8px; padding: 15px; margin-bottom: 10px; font-size: 0.9em; border: 1px solid #334155;">
+                    <div class="msg ia" style="background: #1e293b; padding: 8px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid var(--aws-orange);">
+                        Olá! Sou uma IA conectada via AWS e Azure. Como posso ajudar seu dia hoje?
+                    </div>
+                </div>
+                <div class="chat-input-area" style="display: flex; gap: 8px;">
+                    <input type="text" id="chat-input" placeholder="Envie um comando para a IA..." style="margin-bottom: 0;">
+                    <button id="btn-chat" style="width: 60px; flex-shrink: 0;">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dark-bg">
+    <div class="project-grid" style="direction: rtl;">
+        <div class="content" style="direction: ltr;">
+            <h2><i class="fas fa-server"></i> 02. Infraestrutura Modernizada</h2>
+            <h3>Pipeline de Deploy Automático</h3>
+            <p>Migração estratégica de aplicações para infraestrutura nativa AWS, eliminando intermediários e reduzindo latência.</p>
+            
+            <div style="display: flex; align-items: center; gap: 15px; margin: 25px 0; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border: 1px solid #334155;">
+                <div style="text-align: center; flex: 1;">
+                    <i class="fab fa-github fa-2x" style="color: white;"></i>
+                    <p style="font-size: 0.7em; margin-top: 5px;">Code</p>
+                </div>
+                <i class="fas fa-arrow-right" style="opacity: 0.5;"></i>
+                <div style="text-align: center; flex: 1;">
+                    <i class="fas fa-cogs fa-2x" style="color: var(--aws-orange);"></i>
+                    <p style="font-size: 0.7em; margin-top: 5px;">Actions</p>
+                </div>
+                <i class="fas fa-arrow-right" style="opacity: 0.5;"></i>
+                <div style="text-align: center; flex: 1;">
+                    <i class="fas fa-box-open fa-2x" style="color: #3498db;"></i>
+                    <p style="font-size: 0.7em; margin-top: 5px;">S3 Bucket</p>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>S3:</strong> Hospedagem estática com 99.9% de disponibilidade.</li>
+                <li><strong>CloudFront:</strong> CDN global para entrega de conteúdo ultra-rápida.</li>
+                <li><strong>Otimização:</strong> Redução de custos ao centralizar a stack na AWS.</li>
+            </ul>
+        </div>
+
+        <div class="media" style="direction: ltr;">
+            <div style="background: #0f172a; border-radius: 15px; overflow: hidden; border: 1px solid #334155; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div style="background: #1e293b; padding: 10px 15px; display: flex; gap: 8px;">
+                    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+                    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+                    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+                </div>
+                <div style="padding: 30px; text-align: center;">
+                    <i class="fas fa-globe-americas fa-4x" style="color: var(--aws-orange); margin-bottom: 20px; opacity: 0.8;"></i>
+                    <h4 style="margin: 0 0 10px 0;">Endpoint Público</h4>
+                    <p style="font-size: 0.85em; opacity: 0.7; margin-bottom: 20px;">Acesse a instância ao vivo via AWS S3:</p>
+                    
+                    <a href="http://meu-portfolio-fabio.s3-website-us-east-1.amazonaws.com" target="_blank" 
+                       style="display: block; background: rgba(255,153,0,0.1); border: 1px solid var(--aws-orange); color: var(--aws-orange); padding: 12px; border-radius: 8px; text-decoration: none; font-family: monospace; font-size: 0.8em; transition: 0.3s;">
+                       <i class="fas fa-external-link-alt"></i> Visitar Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="project-grid">
+        <div class="content">
+            <h2><i class="fas fa-database"></i> 03. Mural Serverless (NoSQL)</h2>
+            <p>Sistema de persistência de dados em tempo real utilizando banco de dados não-relacional.</p>
+            <ul>
+                <li><strong>API Gateway:</strong> Gerenciamento de rotas e segurança.</li>
+                <li><strong>DynamoDB:</strong> Tabela escalável para armazenamento de feedbacks.</li>
+                <li><strong>Lambda:</strong> Funções eficientes para escrita e leitura de dados.</li>
+            </ul>
+            
+            <h4 style="color: var(--aws-orange); margin-top: 20px;">Mensagens Recentes:</h4>
+            <div id="mensagens-container" style="max-height: 300px; overflow-y: auto; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px;">
+                <p style="font-size: 0.8em; opacity: 0.6;">Carregando mural...</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="widget">
+                <input type="text" id="nick" placeholder="Seu Nome">
+                <textarea id="frase" placeholder="Sua mensagem para o DynamoDB..."></textarea>
+                <button onclick="enviarFrase()">Publicar no Mural</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="social-footer">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="mailto:fabio@email.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top: 20px;">Fabio Stefano de Figueiredo | Analista de Infraestrutura de TI</p>
+    <p>São Paulo, Brasil | &copy; 2026</p>
+</footer>
 
 </body>
 </html>
