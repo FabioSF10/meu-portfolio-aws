@@ -39,3 +39,38 @@ Para que o site seja acessível publicamente via navegador, apliquei uma **Bucke
         }
     ]
 }
+```
+### 3. Gestão de Identidade (IAM)
+Para que o GitHub tenha permissão de enviar arquivos para a AWS com segurança, apliquei as melhores práticas de identidade:
+* Criei um usuário no **IAM** específico para essa tarefa (ex: `github-actions-deployer`).
+* Gerei as **Access Keys** (ID e Secret) exclusivas para este serviço.
+* Anexei uma política de permissão restrita (inline policy), permitindo apenas as ações `s3:PutObject` e `s3:ListBucket` exclusivamente no bucket do projeto. **Segurança em primeiro lugar: o usuário não possui permissões administrativas.**
+
+### 4. Pipeline de CI/CD com GitHub Actions
+Implementei a automação para que o site se atualize sozinho. Toda vez que eu realizo um `git push` no meu repositório, o GitHub inicia um workflow que sincroniza os arquivos locais com o S3.
+
+**O que eu configurei:**
+1.  Armazenei as chaves da AWS nos **Secrets** do repositório do GitHub para proteger dados sensíveis.
+2.  Criei o arquivo `.github/workflows/main.yml` que utiliza a AWS CLI para executar o comando de sincronização:
+    `aws s3 sync . s3://meu-portfolio-fabio --delete`
+    *(O parâmetro --delete garante que arquivos removidos localmente também sejam removidos do S3).*
+
+---
+
+## 🧠 Principais Aprendizados
+1.  **Segurança (Least Privilege):** Entendi a importância de nunca usar chaves de administrador em automações, criando usuários com permissões cirúrgicas.
+2.  **Agilidade com CI/CD:** A configuração inicial da automação elimina o trabalho repetitivo e o risco de erro humano no upload manual via console.
+3.  **Eficiência de Custos:** O uso do S3 para sites estáticos é extremamente econômico e altamente escalável em comparação com manter servidores (EC2) ligados 24/7.
+
+---
+
+## 🔗 Conecte-se comigo
+
+* **Website Online:** [Visite meu Portfólio](http://meu-portfolio-fabio.s3-website-us-east-1.amazonaws.com)
+* **LinkedIn:** [linkedin.com/in/fabio-figueiredo-5601041b2](https://www.linkedin.com/in/fabio-figueiredo-5601041b2)
+* **E-mail:** [Fabio.sf10@hotmail.com](mailto:Fabio.sf10@hotmail.com)
+
+**Cargo:** *Analista de Infraestrutura de TI | AWS Cloud | Automação de Processos & Suporte*
+
+---
+*Este projeto reflete minha evolução técnica rumo à certificação AWS Solutions Architect.* 🚀
