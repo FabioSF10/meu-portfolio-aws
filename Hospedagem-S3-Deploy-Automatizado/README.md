@@ -18,6 +18,9 @@ Migrar de plataformas externas para a infraestrutura da **Amazon Web Services (A
 ## 🚀 Passo a Passo: Como eu implementei
 
 ### 1. Preparação do Bucket S3
+<img width="914" height="374" alt="image" src="https://github.com/user-attachments/assets/9d976a3b-e3bc-46c9-8721-1d70af525c08" />
+<img width="889" height="220" alt="image" src="https://github.com/user-attachments/assets/af6b791b-7f6a-494a-b3f3-e403b72f0b35" />
+<img width="918" height="369" alt="image" src="https://github.com/user-attachments/assets/054bdb28-b7c2-440e-9a98-f150f0dec897" />
 O primeiro passo foi criar e configurar o "balde" (**S3 Bucket**) que armazenaria os arquivos:
 * Criei o bucket com um nome único.
 * Desativei a opção de "Bloquear todo o acesso público" (passo essencial para sites que precisam ser vistos na web).
