@@ -411,6 +411,35 @@ function mostrarSucesso(aviso, icone) {
     <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/04-MuralComDynamoDB" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Repositório do Projeto →</a>
 </section>
 
+<section>
+    <div class="project-grid">
+        <div class="content">
+            <h2><i class="fab fa-python"></i> 03. Gerador de CPF Serverless</h2>
+            <h3>Microserviço em Python & AWS Lambda</h3>
+            <p>Desenvolvimento de uma ferramenta utilitária que processa lógica de validação e geração de dados via funções Lambda.</p>
+            <ul>
+                <li><strong>Backend:</strong> Script Python 3.x otimizado para execução rápida.</li>
+                <li><strong>Compute:</strong> Arquitetura Serverless (AWS Lambda) que escala sob demanda.</li>
+                <li><strong>Endpoint:</strong> Gatilho via API Gateway para chamadas via navegador.</li>
+            </ul>
+            <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/03-gerador-cpf" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Ver Código no GitHub →</a>
+        </div>
+        <div class="media">
+            <div class="widget" style="background: #0f172a; border: 1px solid #334155; text-align: center; padding: 30px;">
+                <h3 style="color: var(--aws-orange); margin-top: 0;">Validador de Dados</h3>
+                <div id="cpf-display" style="font-size: 2.2rem; margin: 25px 0; font-family: 'Courier New', monospace; color: white; letter-spacing: 2px;">
+                    000.000.000-00
+                </div>
+                <button onclick="gerarCPF()" id="btn-gerar" style="width: 100%; background-color: #238636; color: white; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s;">
+                    <i class="fas fa-sync"></i> Gerar via AWS Lambda
+                </button>
+                <p style="font-size: 0.7em; margin-top: 15px; opacity: 0.6;">*Geração efetuada em tempo real no servidor AWS.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
 <footer>
    <div class="social-footer">
     <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/" target="_blank"><i class="fab fa-linkedin"></i></a>
