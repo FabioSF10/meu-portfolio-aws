@@ -43,20 +43,31 @@ O primeiro passo foi configurar o "cérebro" da aplicação no **Azure AI Foundr
 
 ------------------------------------------------------------------------
 
-### 2. Instalação das dependências (Windows CMD)
-Crie uma pasta em qualquer lugar e entre dentro dela pelo cmd, exemplo "labda-azure" e instale as dependencias dentro dela
-``` bash
+### 2. Preparação do Pacote de Dependências (Windows CMD)
+Como a AWS Lambda não possui a biblioteca `requests` nativamente, realizei o empacotamento manual das dependências utilizando o CMD do Windows:
+
+* **Isolamento de Ambiente:** Criei um diretório local para organizar os artefatos do projeto.
+* **Instalação Target:** Utilizei o comando `pip install` com o parâmetro `-t .` para instalar a biblioteca diretamente na raiz da pasta, garantindo que ela seja incluída no arquivo `.zip` final.
+
+```bash
+# Criando e acessando a pasta do projeto
 mkdir lambda-azure
 cd lambda-azure
 
+# Instalando a biblioteca 'requests' na raiz do diretório
 pip install requests -t .
 ```
+* **Nota Técnica: Esse processo é essencial para que o ambiente de execução da Lambda tenha acesso a todas as bibliotecas externas necessárias durante o runtime.
 
 ------------------------------------------------------------------------
-### 3. Desenvolvimento da Lambda
-Crie um arquivo python chamado lambda_function.py
-Dentro dele eu usei os seguintes codigos:
+### 3. Desenvolvimento da Função Lambda
+Com as dependências instaladas, criei o arquivo principal `lambda_function.py` na raiz da mesma pasta. O script foi desenvolvido para atuar como o orquestrador da comunicação entre o frontend e a IA.
 
+**O código realiza as seguintes operações:**
+1. **Captura:** Recebe o corpo da requisição (JSON) vindo do API Gateway.
+2. **Integração:** Formata o payload e dispara uma requisição autenticada para o endpoint da Azure.
+3. **Tratamento:** Extrai apenas o conteúdo relevante da resposta da IA.
+4. **Entrega:** Retorna o resultado para o usuário com os cabeçalhos de CORS configurados.
 
 ```python
 import os
@@ -109,7 +120,12 @@ def lambda_handler(event, context):
     }
 
 ```
-A Lambda: - Recebe mensagem - Envia para Azure - Retorna resposta
+
+---
+
+**Em resumo, o fluxo da Lambda é:**
+`Receber Mensagem` ➔ `Enviar para Azure` ➔ `Tratar Retorno` ➔ `Responder ao Frontend`
+
 
 ------------------------------------------------------------------------
 
