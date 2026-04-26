@@ -472,7 +472,10 @@ async function chamarLambda() {
     <section style="margin-top: 50px;">
     <div class="project-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         
-        <div class="content" style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid #ff9900;">
+        <div class="content card-clicavel" 
+             onclick="window.open('https://github.com/FabioSF10/meu-portfolio-aws/tree/main/criacao-ec2-ssh', '_blank')"
+             style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid #ff9900; cursor: pointer; transition: transform 0.3s, border-color 0.3s;">
+            
             <h2 style="font-size: 1.4em; margin-bottom: 15px;">
                 <i class="fas fa-server"></i> 05. Provisionamento Linux EC2
             </h2>
@@ -484,10 +487,13 @@ async function chamarLambda() {
                 <li>Gerenciamento de chaves .pem para acesso criptografado.</li>
                 <li>Administração Linux via terminal SSH.</li>
             </ul>
-            <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/criacao-ec2-ssh" target="_blank" style="color: #ff9900; font-weight: bold; text-decoration: none; font-size: 0.9em;">Documentação Técnica →</a>
+            <span style="color: #ff9900; font-weight: bold; font-size: 0.9em;">Documentação Técnica →</span>
         </div>
 
-        <div class="content" style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid #ff9900;">
+        <div class="content card-clicavel" 
+             onclick="window.open('https://github.com/FabioSF10/meu-portfolio-aws/tree/main/teste-conectividade-icmp', '_blank')"
+             style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid #ff9900; cursor: pointer; transition: transform 0.3s, border-color 0.3s;">
+            
             <h2 style="font-size: 1.4em; margin-bottom: 15px;">
                 <i class="fas fa-network-wired"></i> 06. Conectividade Híbrida (ICMP)
             </h2>
@@ -499,11 +505,19 @@ async function chamarLambda() {
                 <li>Validação de latência entre ambiente On-premise e AWS.</li>
                 <li>Teste de "Ping" funcional para verificação de rotas.</li>
             </ul>
-            <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/teste-conectividade-icmp" target="_blank" style="color: #ff9900; font-weight: bold; text-decoration: none; font-size: 0.9em;">Ver Laboratório →</a>
+            <span style="color: #ff9900; font-weight: bold; font-size: 0.9em;">Ver Laboratório →</span>
         </div>
 
     </div>
 </section>
+
+<style>
+    .card-clicavel:hover {
+        transform: translateY(-5px);
+        border-top-color: #ffffff !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+</style>
     
 <footer>
    <div class="social-footer">
