@@ -253,6 +253,40 @@ async function enviarFrase() {
         btn.innerText = "Publicar no Mural";
     }
 }
+
+    function copiarEmail() {
+    const email = "fabio.sf10@hotmail.com";
+    const aviso = document.getElementById("aviso-copiado");
+    const icone = document.getElementById("icone-email");
+
+    // Método moderno
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(() => mostrarSucesso(aviso, icone));
+    } else {
+        // Método reserva (Fallback) para casos onde o moderno falha
+        const inputTemporario = document.createElement("input");
+        inputTemporario.value = email;
+        document.body.appendChild(inputTemporario);
+        inputTemporario.select();
+        try {
+            document.execCommand("copy");
+            mostrarSucesso(aviso, icone);
+        } catch (err) {
+            console.error("Erro ao copiar", err);
+        }
+        document.body.removeChild(inputTemporario);
+    }
+}
+
+function mostrarSucesso(aviso, icone) {
+    aviso.style.display = "block";
+    icone.style.color = "#ff9900";
+
+    setTimeout(() => {
+        aviso.style.display = "none";
+        icone.style.color = "";
+    }, 2000);
+}
 </script>
 
 
