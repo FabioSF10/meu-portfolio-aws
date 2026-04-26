@@ -59,6 +59,8 @@ Implementei a automação para que o site se atualize sozinho. Toda vez que eu r
     `aws s3 sync . s3://meu-portfolio-fabio --delete`
     *(O parâmetro --delete garante que arquivos removidos localmente também sejam removidos do S3).*
 
+<img width="944" height="434" alt="image" src="https://github.com/user-attachments/assets/023c6c3f-9a0a-40e0-afc2-97cd7d90c12f" />
+
 ---
 
 ## 🧠 Principais Aprendizados
