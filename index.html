@@ -297,31 +297,26 @@ function mostrarSucesso(aviso, icone) {
     }, 2000);
 }
 
-    async function gerarCPF() {
+async function chamarLambda() {
     const display = document.getElementById('cpf-display');
     const btn = document.getElementById('btn-gerar');
     
-    // URL da sua função Lambda (substitua pela sua URL funcional se for diferente desta)
-    const urlLambda = "https://9u6eokphxh.execute-api.us-east-1.amazonaws.com/prod/cpf"; 
+    // Sua URL real da Lambda
+    const urlMural = 'https://l56buoq6dljc53d4orun63jq6q0xxelu.lambda-url.us-east-1.on.aws';
 
-    // Feedback visual de carregamento
     btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando...';
     display.style.opacity = "0.5";
 
     try {
-        const response = await fetch(urlLambda);
-        const data = await response.json();
-
-        // Assume que seu Lambda retorna { "cpf": "..." }
-        if (data.cpf) {
-            display.innerText = data.cpf;
-        } else {
-            // Caso o retorno venha em formato diferente (ex: string direta)
-            display.innerText = data; 
-        }
-    } catch (error) {
-        console.error("Erro ao chamar Lambda:", error);
+        const res = await fetch(urlMural);
+        const dados = await res.json();
+        
+        // Exibe o CPF que vem da sua função Python
+        display.innerText = dados.cpf || dados; 
+        display.style.color = "white";
+    } catch (e) {
+        console.error("Erro:", e);
         display.innerText = "Erro na API";
         display.style.color = "#ff4444";
     } finally {
