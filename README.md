@@ -21,7 +21,7 @@ Abaixo, apresento os laboratórios e aplicações desenvolvidos, com foco em esc
   * Ferramenta de processamento lógico em Python rodando em ambiente serverless, demonstrando o uso de Function URLs e baixo custo operacional.
 
 ### 🏗️ Infraestrutura & Automação
-* **[Hospedagem S3 & Deploy Automatizado](./Hospedagem-S3-Deploy-Autom.../)**
+* **[Hospedagem S3 & Deploy Automatizado](./Hospedagem-S3-Deploy-Automatizado/)**
   * Configuração de instâncias de armazenamento estático (S3) com foco em alta disponibilidade para front-end.
 * **[Criação de EC2 & Acesso SSH](./criacao-ec2-ssh/)**
   * Provisionamento de instâncias Linux, gestão de Security Groups (Firewall) e administração remota segura.
