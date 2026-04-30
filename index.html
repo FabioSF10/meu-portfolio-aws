@@ -3,123 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabio Figueiredo | Cloud Infrastructure Analyst</title>
+    <title>Fabio Figueiredo | Cloud Infrastructure Analyst | Azure & AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { 
-            --aws-blue: #232f3e; 
-            --aws-orange: #ff9900; 
-            --primary: #3498db; 
-            --bg: #0f172a; 
-            --card-bg: #1e293b;
+            --azure-blue: #0078d4; 
+            --azure-dark: #002050; 
+            --azure-light: #50e6ff;
+            --primary: #0078d4; 
+            --bg: #0b1120; 
+            --card-bg: #111827;
             --text: #f1f5f9; 
         }
 
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
         
-        /* Hero Section Profissional */
-       /* Hero Section Profissional com Imagem de Fundo */
+        /* Hero Section Azure */
         header {
-            position: relative; /* Mantém as camadas alinhadas */
+            position: relative; 
             background: #020617; 
             padding: 100px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--aws-orange);
+            border-bottom: 4px solid var(--azure-blue);
             overflow: hidden; 
         }
 
-        /* Camada da Imagem de Fundo (Mapa Mundi) */
+        /* Camada da Imagem de Fundo */
         header::before {
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('https://raw.githubusercontent.com/FabioSF10/meu-portfolio-aws/main/fundo-index.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 1;
+        }
 
-    background-image: url('https://raw.githubusercontent.com/FabioSF10/meu-portfolio-aws/main/fundo-index.png');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.25
-    z-index: 1;
-}
-
-        /* Camada de Gradiente Azul (Efeito LinkedIn) */
+        /* Camada de Gradiente Azure */
         header::after {
             content: "";
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(35, 47, 62, 0.8) 0%, rgba(2, 6, 23, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(0, 32, 80, 0.9) 0%, rgba(2, 6, 23, 0.9) 100%);
             z-index: 2;
         }
 
-        /* Força o conteúdo a ficar na frente de tudo */
         header h1, header .subtitle, header .bio, header .cert-container, header .nav-links {
             position: relative;
             z-index: 3;
         }
-        header h1 { margin: 0; font-size: 3em; font-weight: 800; letter-spacing: -1px; }
-        header .subtitle { color: var(--aws-orange); font-size: 1.4em; font-weight: 500; margin: 10px 0; }
-        header .bio { max-width: 700px; margin: 20px auto; opacity: 0.9; font-size: 1.1em; }
+
+        header h1 { margin: 0; font-size: 3.2em; font-weight: 800; letter-spacing: -1px; color: #fff; }
+        header .subtitle { color: var(--azure-light); font-size: 1.4em; font-weight: 500; margin: 10px 0; }
+        header .bio { max-width: 750px; margin: 20px auto; opacity: 0.9; font-size: 1.1em; color: #cbd5e1; }
         
         .nav-links { margin-top: 30px; }
         .nav-links a { 
             color: white; text-decoration: none; margin: 0 10px; font-weight: 600; 
-            background: rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 8px; 
-            transition: 0.3s; border: 1px solid transparent;
+            background: rgba(255,255,255,0.05); padding: 12px 25px; border-radius: 8px; 
+            transition: 0.3s; border: 1px solid rgba(0, 120, 212, 0.3);
         }
-        .nav-links a:hover { background: var(--aws-orange); border-color: white; color: var(--aws-blue); }
+        .nav-links a:hover { background: var(--azure-blue); border-color: var(--azure-light); color: white; }
 
         /* Badges de Certificação */
         .cert-container { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
         .cert-badge { 
-            background: white; color: #000; padding: 10px 20px; border-radius: 8px; 
+            background: #fff; color: var(--azure-dark); padding: 10px 20px; border-radius: 8px; 
             font-weight: bold; display: flex; align-items: center; gap: 10px; font-size: 0.9em;
-            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
         }
 
-        section { padding: 80px 10%; border-bottom: 1px solid #334155; }
+        section { padding: 80px 10%; border-bottom: 1px solid #1e293b; }
         .dark-bg { background: var(--card-bg); }
         
         h2 { font-size: 2em; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
-        h2 i { color: var(--aws-orange); }
+        h2 i { color: var(--azure-blue); }
 
-        .project-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
-        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } }
-
-        .content h3 { color: var(--aws-orange); margin-top: 0; }
-        .content ul { padding-left: 20px; }
-        .content li { margin-bottom: 8px; }
-
-        .media img { 
-            width: 100%; border-radius: 12px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #475569;
+        .content h3 { color: var(--azure-light); margin-top: 0; }
+        .widget { background: #0b1120; padding: 30px; border-radius: 15px; border: 1px solid var(--azure-blue); }
+        
+        button { 
+            background: var(--azure-blue); color: white; border: none; padding: 15px; 
+            font-weight: bold; cursor: pointer; border-radius: 8px; width: 100%; 
+            text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; 
         }
+        button:hover { background: #005a9e; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,120,212,0.4); }
 
-        /* Widgets Customizados */
-        .widget { background: #0f172a; padding: 30px; border-radius: 15px; border: 1px solid var(--aws-orange); }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #1e293b; border: 1px solid #334155; color: #fff; border-radius: 8px; }
-        button { background: var(--aws-orange); color: var(--aws-blue); border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 8px; width: 100%; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,153,0,0.4); }
-
-        footer { background: #020617; text-align: center; padding: 50px; color: #94a3b8; }
+        footer { background: #020617; text-align: center; padding: 50px; color: #64748b; }
         .social-footer a { color: var(--text); font-size: 1.5em; margin: 0 15px; transition: 0.3s; }
-        .social-footer a:hover { color: var(--aws-orange); }
+        .social-footer a:hover { color: var(--azure-light); }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Fabio Figueiredo</h1>
-    <p class="subtitle">Infraestrutura de TI | Redes | Active Directory | AWS (em evolução)</p>
+    <p class="subtitle">Infraestrutura de TI | Azure Cloud | IA Generativa | Redes & AD</p>
     <p class="bio">
-    Profissional de Infraestrutura de TI com mais de 10 anos de experiência em suporte técnico e ambientes corporativos, atuando com redes, Active Directory e sistemas Windows.
-Atualmente em transição para Cloud Computing (AWS), com experiência prática em projetos utilizando EC2, S3, Lambda e automação.
-Certificado AWS Cloud Practitioner e com inglês nível B2, foco em evolução para ambientes Cloud e melhoria contínua de processos.
-</p>
+        Analista de Infraestrutura com mais de 10 anos de jornada em suporte técnico e ambientes corporativos complexos. 
+        Especialista em ecossistemas Microsoft (Active Directory, Windows Server) e redes.
+        <br><br>
+        Atualmente escalando soluções em <b>Microsoft Azure</b>, integrando automação com IA Generativa e serviços de Cloud (Blob Storage, Functions, App Services). 
+        Focado em modernização de processos, segurança de dados e arquitetura de nuvem resiliente.
+    </p>
     
    <div class="cert-container">
     <a href="https://www.credly.com/badges/2abfd1ae-11af-4dbc-befb-40b48389afe7/public_url" target="_blank" style="text-decoration: none;">
