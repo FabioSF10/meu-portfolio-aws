@@ -3,7 +3,7 @@
 Bem-vindo ao repositório central dos meus projetos de **Cloud Computing**. Aqui documento a minha evolução técnica, consolidando conhecimentos em arquitetura, automação e integração de serviços na Amazon Web Services (AWS).
 
 ---
-🌐 **Acesse meu Portfólio ao Vivo:** [Clique aqui](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/)
+🌐 **Acesse meu Portfólio ao Vivo:** [[Clique aqui](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/)](http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/)
 ---
 
 ## 📂 Ecossistema de Projetos
