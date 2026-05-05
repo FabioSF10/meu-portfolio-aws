@@ -513,20 +513,50 @@ async function chamarLambda() {
                         <i class="fas fa-cloud fa-4x" style="color: var(--accent-color); opacity: 0.8;"></i>
                         <i class="fas fa-check-circle" style="position: absolute; bottom: 0; right: 0; color: #27c93f; background: #0f172a; border-radius: 50%;"></i>
                     </div>
-                    <h4 style="margin: 0 0 10px 0; font-size: 1.2em;">Endpoint Sincronizado</h4>
+                    <h4 style="margin: 0 0 10px 0; font-size: 1.2em;">Escolha o Provedor Cloud</h4>
                     <p style="font-size: 0.85em; opacity: 0.7; margin-bottom: 25px;">
-                        O ambiente que você está visualizando agora é uma das pontas da nossa arquitetura espelhada.
+                        Selecione a infraestrutura que deseja validar agora:
                     </p>
                     
-                    <a id="mirror-button" href="#" 
-                       style="display: block; background: var(--accent-color); color: var(--primary-color); padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.8em; text-transform: uppercase;">
-                        Carregando espelho...
-                    </a>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/" 
+                           id="btn-aws"
+                           style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #232f3e; color: #ff9900; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.8em; border: 1px solid #ff9900; transition: 0.3s;">
+                            <i class="fab fa-aws fa-lg"></i> EXPERIÊNCIA AWS S3
+                        </a>
+
+                        <a href="https://armazenamentositefabio.z15.web.core.windows.net/" 
+                           id="btn-azure"
+                           style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #002050; color: #0078d4; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.8em; border: 1px solid #0078d4; transition: 0.3s;">
+                            <i class="fab fa-microsoft fa-lg"></i> EXPERIÊNCIA AZURE BLOB
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    // Script para destacar qual botão é o atual
+    window.addEventListener('load', function() {
+        const hostname = window.location.hostname;
+        const btnAws = document.getElementById('btn-aws');
+        const btnAzure = document.getElementById('btn-azure');
+
+        if (hostname.includes('amazonaws.com')) {
+            btnAws.style.boxShadow = "0 0 15px #ff9900";
+            btnAws.innerHTML += " (ATUAL)";
+            btnAws.style.pointerEvents = "none";
+            btnAws.style.opacity = "0.8";
+        } else if (hostname.includes('windows.net')) {
+            btnAzure.style.boxShadow = "0 0 15px #0078d4";
+            btnAzure.innerHTML += " (ATUAL)";
+            btnAzure.style.pointerEvents = "none";
+            btnAzure.style.opacity = "0.8";
+        }
+    });
+</script>
 
 <section>
     <div class="project-grid">
