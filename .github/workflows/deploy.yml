@@ -25,15 +25,16 @@ jobs:
           aws s3 sync . s3://meu-portfolio-fabio-stefano --delete --exclude ".git*"
 
       # --- ETAPA AZURE ---
-     # --- ETAPA AZURE (VERSÃO CORRIGIDA) ---
-      - name: Upload para o Azure Storage
-        uses: Azure/cli@v1
+# --- ETAPA AZURE (MÉTODO ESTÁVEL) ---
+      - name: Deploy para Azure Blob Storage
+        uses: azure/CLI@v1
         with:
           inlineScript: |
             az storage blob upload-batch \
-              --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
               --account-name armazenamentositefabio \
               --auth-mode key \
+              --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
               -d '$web' \
               -s . \
-              --overwrite true
+              --overwrite true \
+              --exclude-path ".git*" ".github*"
