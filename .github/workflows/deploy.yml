@@ -1,24 +1,37 @@
-name: Deploy to S3
+name: Multi-Cloud Deploy (AWS & Azure)
 
 on:
   push:
     branches:
-      - main  # Ou o nome da sua branch principal
+      - main
 
 jobs:
-  deploy:
+  deploy-multi-cloud:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
 
+      # --- ETAPA AWS ---
       - name: Configurar AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  # Verifique se o seu S3 está nessa região
+          aws-region: us-east-1
 
-      - name: Sincronizar arquivos com S3
+      - name: Sincronizar com AWS S3
         run: |
           aws s3 sync . s3://meu-portfolio-fabio-stefano --delete --exclude ".git*"
+
+      # --- ETAPA AZURE ---
+      - name: Upload para o Azure Storage
+        uses: Azure/cli@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name armazenamentositefabio \
+              --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+              -d '$web' \
+              -s . \
+              --overwrite true
