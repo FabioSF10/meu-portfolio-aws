@@ -8,28 +8,32 @@ on:
 jobs:
   deploy-multi-cloud:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # --- ETAPA AWS ---
+      # --- AWS ---
       - name: Configurar AWS CLI
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Sincronizar com AWS S3
+      - name: Deploy para S3
         run: |
           aws s3 sync . s3://meu-portfolio-fabio-stefano --delete --exclude ".git*"
 
-      # --- ETAPA AZURE ---
-# --- ETAPA AZURE (MÉTODO ULTRA ESTÁVEL) ---
-      - name: Deploy para Azure Blob Storage
-        uses: azure/storage-deploy@v2
-        with:
-          connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-          blob-container-name: '$web'
-          source-path: '.'
-          cleanup-dest-blobs: true # Limpa arquivos antigos para manter sincronizado
+      # --- AZURE ---
+      - name: Instalar Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+      - name: Deploy para Azure Blob
+        run: |
+          az storage blob upload-batch \
+            --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+            --destination '$web' \
+            --source . \
+            --overwrite
