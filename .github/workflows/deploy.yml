@@ -25,17 +25,18 @@ jobs:
         run: |
           aws s3 sync . s3://meu-portfolio-fabio-stefano --delete --exclude ".git*"
 
-      # --- AZURE ---
-        # --- AZURE ---
+
+            # --- AZURE ---
       - name: Instalar Azure CLI
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-      - name: Deploy para Azure Blob (CORRIGIDO)
+      - name: Deploy Azure (FORÇADO E ESTÁVEL)
         run: |
           az storage blob upload-batch \
-            --account-name armazenamentositefabio \
             --destination '$web' \
             --source . \
             --overwrite \
-            --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+            --account-name armazenamentositefabio \
+            --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+            --auth-mode key
