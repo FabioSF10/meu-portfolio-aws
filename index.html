@@ -571,8 +571,8 @@ async function chamarLambda() {
                 <li><strong>Lambda:</strong> Funções eficientes para escrita e leitura de dados.</li>
             </ul>
             
-            <h4 style="color: var(--aws-orange); margin-top: 20px;">Mensagens Recentes:</h4>
-            <div id="mensagens-container" style="max-height: 300px; overflow-y: auto; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px;">
+            <h4 style="color: var(--accent-color); margin-top: 20px;">Mensagens Recentes:</h4>
+            <div id="mensagens-container" style="max-height: 300px; overflow-y: auto; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
                 <p style="font-size: 0.8em; opacity: 0.6;">Carregando mural...</p>
             </div>
         </div>
@@ -580,11 +580,15 @@ async function chamarLambda() {
             <div class="widget">
                 <input type="text" id="nick" placeholder="Seu Nome">
                 <textarea id="frase" placeholder="Sua mensagem para o DynamoDB..."></textarea>
-                <button onclick="enviarFrase()">Publicar no Mural</button>
+                <button onclick="enviarFrase()" style="background-color: var(--accent-color); color: var(--primary-color); font-weight: bold; border: none; cursor: pointer; transition: 0.3s; width: 100%; padding: 12px; border-radius: 5px;">
+                    Publicar no Mural
+                </button>
             </div>
         </div>
     </div>
-    <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/MuralComDynamoDB" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Repositório do Projeto →</a>
+    <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/MuralComDynamoDB" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px;">
+        Repositório do Projeto →
+    </a>
 </section>
 
 <section>
@@ -599,16 +603,16 @@ async function chamarLambda() {
                 <li><strong>Compute:</strong> Arquitetura Serverless (AWS Lambda) que escala sob demanda.</li>
                 <li><strong>Endpoint:</strong> Gatilho via Lambda Function URL para chamadas diretas.</li>
             </ul>
-            <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/gerador-cpf" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Ver Código no GitHub →</a>
+            <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/gerador-cpf" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">Ver Código no GitHub →</a>
         </div>
 
         <div class="media" style="direction: ltr;">
-            <div class="widget" style="background: #0f172a; border: 1px solid #334155; text-align: center; padding: 30px;">
-                <h3 style="color: var(--aws-orange); margin-top: 0;">Validador de Dados</h3>
+            <div class="widget" style="background: #0f172a; border: 1px solid var(--accent-color); text-align: center; padding: 30px;">
+                <h3 style="color: var(--accent-color); margin-top: 0;">Validador de Dados</h3>
                 <div id="cpf-display" style="font-size: 2.2rem; margin: 25px 0; font-family: 'Courier New', monospace; color: white; letter-spacing: 2px;">
                     000.000.000-00
                 </div>
-                <button onclick="chamarLambda()" id="btn-gerar" style="width: 100%; background-color: #238636; color: white; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s;">
+                <button onclick="chamarLambda()" id="btn-gerar" style="width: 100%; background-color: var(--accent-color); color: var(--primary-color); padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s;">
                     <i class="fas fa-sync"></i> Gerar via AWS Lambda
                 </button>
                 <p style="font-size: 0.7em; margin-top: 15px; opacity: 0.6;">*Geração efetuada em tempo real no servidor AWS.</p>
@@ -617,12 +621,12 @@ async function chamarLambda() {
     </div>
 </section>
 
-    <section style="margin-top: 50px;">
+   <section style="margin-top: 50px;">
     <div class="project-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         
         <div class="content card-clicavel" 
              onclick="window.open('https://github.com/FabioSF10/meu-portfolio-aws/tree/main/criacao-ec2-ssh', '_blank')"
-             style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid #ff9900; cursor: pointer; transition: transform 0.3s, border-color 0.3s;">
+             style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid var(--accent-color); cursor: pointer; transition: transform 0.3s, border-color 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             
             <h2 style="font-size: 1.4em; margin-bottom: 15px;">
                 <i class="fas fa-server"></i> 05. Provisionamento Linux EC2
@@ -635,12 +639,12 @@ async function chamarLambda() {
                 <li>Gerenciamento de chaves .pem para acesso criptografado.</li>
                 <li>Administração Linux via terminal SSH.</li>
             </ul>
-            <span style="color: #ff9900; font-weight: bold; font-size: 0.9em;">Documentação Técnica →</span>
+            <span style="color: var(--accent-color); font-weight: bold; font-size: 0.9em;">Documentação Técnica →</span>
         </div>
 
         <div class="content card-clicavel" 
              onclick="window.open('https://github.com/FabioSF10/meu-portfolio-aws/tree/main/teste-conectividade-icmp', '_blank')"
-             style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid #ff9900; cursor: pointer; transition: transform 0.3s, border-color 0.3s;">
+             style="background: #1e293b; padding: 25px; border-radius: 12px; border-top: 4px solid var(--accent-color); cursor: pointer; transition: transform 0.3s, border-color 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             
             <h2 style="font-size: 1.4em; margin-bottom: 15px;">
                 <i class="fas fa-network-wired"></i> 06. Conectividade Híbrida (ICMP)
@@ -653,7 +657,7 @@ async function chamarLambda() {
                 <li>Validação de latência entre ambiente On-premise e AWS.</li>
                 <li>Teste de "Ping" funcional para verificação de rotas.</li>
             </ul>
-            <span style="color: #ff9900; font-weight: bold; font-size: 0.9em;">Ver Laboratório →</span>
+            <span style="color: var(--accent-color); font-weight: bold; font-size: 0.9em;">Ver Laboratório →</span>
         </div>
 
     </div>
