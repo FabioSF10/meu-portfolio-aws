@@ -165,6 +165,18 @@
         footer { background: #020617; text-align: center; padding: 50px; color: #94a3b8; }
         .social-footer a { color: var(--text); font-size: 1.5em; margin: 0 15px; transition: 0.3s; }
         .social-footer a:hover { color: var(--accent-color); } /* Dinâmico */
+
+/* Efeito passar mouse em cima do Email no final da pagina */
+    .card-clicavel:hover {
+        transform: translateY(-5px);
+        /* Troquei #ffffff pela cor do tema */
+        border-top-color: var(--accent-color) !important; 
+        /* Adicionei um brilho na cor do tema também */
+        box-shadow: 0 10px 20px var(--accent-color);
+        transition: 0.3s;
+    }
+
+        
     </style>
 </head>
 <body>
@@ -685,13 +697,6 @@ async function chamarLambda() {
     </div>
 </section>
 
-<style>
-    .card-clicavel:hover {
-        transform: translateY(-5px);
-        border-top-color: #ffffff !important;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-</style>
     
 <footer>
    <div class="social-footer">
