@@ -454,48 +454,74 @@ async function chamarLambda() {
 <section class="dark-bg">
     <div class="project-grid" style="direction: rtl;">
         <div class="content" style="direction: ltr;">
-            <h2><i class="fas fa-server"></i> 02. Infraestrutura Modernizada</h2>
-            <h3>Pipeline de Deploy Automático</h3>
-            <p>Migração estratégica de aplicações para infraestrutura nativa AWS, eliminando intermediários e reduzindo latência.</p>
+            <h2><i class="fas fa-network-wired"></i> 02. Infraestrutura Multi-Cloud</h2>
+            <h3>Pipeline de Deploy Automatizado</h3>
+            <p>Arquitetura moderna com <strong>CI/CD</strong> via GitHub Actions, espelhando o código em tempo real para AWS e Azure, garantindo redundância e alta disponibilidade.</p>
             
-            <div style="display: flex; align-items: center; gap: 15px; margin: 25px 0; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border: 1px solid #334155;">
+            <div style="display: flex; align-items: center; gap: 10px; margin: 25px 0; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; border: 1px solid var(--accent-color);">
                 <div style="text-align: center; flex: 1;">
                     <i class="fab fa-github fa-2x" style="color: white;"></i>
-                    <p style="font-size: 0.7em; margin-top: 5px;">Code</p>
+                    <p style="font-size: 0.7em; margin-top: 5px; font-weight: bold;">GITHUB</p>
                 </div>
-                <i class="fas fa-arrow-right" style="opacity: 0.5;"></i>
+                
+                <i class="fas fa-chevron-right" style="opacity: 0.3;"></i>
+
                 <div style="text-align: center; flex: 1;">
-                    <i class="fas fa-cogs fa-2x" style="color: var(--aws-orange);"></i>
-                    <p style="font-size: 0.7em; margin-top: 5px;">Actions</p>
+                    <i class="fas fa-sync-alt fa-spin fa-2x" style="color: var(--accent-color);"></i>
+                    <p style="font-size: 0.7em; margin-top: 5px; font-weight: bold;">ACTIONS</p>
                 </div>
-                <i class="fas fa-arrow-right" style="opacity: 0.5;"></i>
-                <div style="text-align: center; flex: 1;">
-                    <i class="fas fa-box-open fa-2x" style="color: #3498db;"></i>
-                    <p style="font-size: 0.7em; margin-top: 5px;">S3 Bucket</p>
+
+                <i class="fas fa-chevron-right" style="opacity: 0.3;"></i>
+
+                <div style="display: flex; flex-direction: column; gap: 10px; flex: 1.2;">
+                    <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,153,0,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid rgba(255,153,0,0.3);">
+                        <i class="fab fa-aws" style="color: #ff9900;"></i>
+                        <span style="font-size: 0.65em; font-weight: bold;">S3 BUCKET</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; background: rgba(0,120,212,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid rgba(0,120,212,0.3);">
+                        <i class="fab fa-microsoft" style="color: #0078d4;"></i>
+                        <span style="font-size: 0.65em; font-weight: bold;">BLOB STORAGE</span>
+                    </div>
                 </div>
             </div>
 
-            <ul>
-                <li><strong>S3:</strong> Hospedagem estática com 99.9% de disponibilidade.</li>
-                <li><strong>CloudFront:</strong> CDN global para entrega de conteúdo ultra-rápida.</li>
-                <li><strong>Otimização:</strong> Redução de custos ao centralizar a stack na AWS.</li>
+            <ul style="margin-bottom: 30px;">
+                <li><strong>Redundância:</strong> Site hospedado simultaneamente em S3 (AWS) e Blob Storage (Azure).</li>
+                <li><strong>GitHub Actions:</strong> Deploy automatizado sem intervenção manual.</li>
+                <li><strong>Cloud Native:</strong> Uso de serviços otimizados para redução de custos operacionais.</li>
             </ul>
-             <a href="https://github.com/FabioSF10/meu-portfolio-aws/tree/main/Hospedagem-S3-Deploy-Automatizado" target="_blank" style="color: var(--aws-orange); font-weight: bold; text-decoration: none;">Repositório do Projeto →</a>
+
+            <a href="https://github.com/FabioSF10/meu-portfolio-aws" target="_blank" 
+               style="display: inline-block; background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); padding: 12px 25px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: 0.3s;">
+                <i class="fab fa-github"></i> Ver Código no GitHub →
+            </a>
         </div>
 
         <div class="media" style="direction: ltr;">
-            <div style="background: #0f172a; border-radius: 15px; overflow: hidden; border: 1px solid #334155; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <div style="background: #1e293b; padding: 10px 15px; display: flex; gap: 8px;">
-                    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-                    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-                    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            <div style="background: #0f172a; border-radius: 15px; overflow: hidden; border: 1px solid var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div style="background: #1e293b; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; gap: 8px;">
+                        <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+                        <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+                        <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+                    </div>
+                    <span style="font-size: 0.7em; opacity: 0.5; font-family: monospace;">status: active</span>
                 </div>
-                <div style="padding: 30px; text-align: center;">
-                    <i class="fas fa-globe-americas fa-4x" style="color: var(--aws-orange); margin-bottom: 20px; opacity: 0.8;"></i>
-                    <h4 style="margin: 0 0 10px 0;">Endpoint Público</h4>
-                    <p style="font-size: 0.85em; opacity: 0.7; margin-bottom: 20px;">Este ambiente é atualizado automaticamente via GitHub Actions. Qualquer alteração no código fonte reflete em tempo real nesta hospedagem S3.</p>
+                
+                <div style="padding: 40px 30px; text-align: center;">
+                    <div style="position: relative; display: inline-block; margin-bottom: 20px;">
+                        <i class="fas fa-cloud fa-4x" style="color: var(--accent-color); opacity: 0.8;"></i>
+                        <i class="fas fa-check-circle" style="position: absolute; bottom: 0; right: 0; color: #27c93f; background: #0f172a; border-radius: 50%;"></i>
+                    </div>
+                    <h4 style="margin: 0 0 10px 0; font-size: 1.2em;">Endpoint Sincronizado</h4>
+                    <p style="font-size: 0.85em; opacity: 0.7; margin-bottom: 25px;">
+                        O ambiente que você está visualizando agora é uma das pontas da nossa arquitetura espelhada.
+                    </p>
                     
-                   
+                    <a id="mirror-button" href="#" 
+                       style="display: block; background: var(--accent-color); color: var(--primary-color); padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.8em; text-transform: uppercase;">
+                        Carregando espelho...
+                    </a>
                 </div>
             </div>
         </div>
