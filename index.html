@@ -152,11 +152,19 @@
         /* Widgets Customizados */
         .widget { background: #0f172a; padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); } /* Dinâmico */
         input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #1e293b; border: 1px solid #334155; color: #fff; border-radius: 8px; }
-        button { 
-            background: var(--accent-color); /* Dinâmico */
-            color: var(--primary-color); /* Dinâmico */
-            border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 8px; width: 100%; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; 
-        }
+        button:not(#btn-email) { 
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s; 
+}
         button:hover { 
             transform: translateY(-2px); 
             box-shadow: 0 5px 15px rgba(255,153,0,0.4); 
