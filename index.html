@@ -171,20 +171,39 @@
         }
 
        } 
-        footer { background: #020617; text-align: center; padding: 50px; color: #94a3b8; } 
-        .social-footer a { color: var(--text); font-size: 1.5em; margin: 0 15px; transition: 0.3s; } 
-        .social-footer a:hover { color: var(--accent-color); } 
-        .social-footer {
+        footer { 
+    background: #020617; 
+    text-align: center; 
+    padding: 50px; 
+    color: #94a3b8; 
+}
+
+.social-footer {
     display: flex;
     justify-content: center;
     align-items: center;
-            footer p {
-    text-align: center;
 }
+
+.social-footer a,
+#btn-email {
+    color: var(--text);
+    font-size: 1.5em;
+    margin: 0 15px;
+    transition: 0.3s;
 }
 
 .social-footer a {
     text-decoration: none;
+}
+
+.social-footer a:hover,
+#btn-email:hover {
+    color: var(--accent-color);
+}
+
+/* AGORA FUNCIONA */
+footer p {
+    text-align: center;
 }
    
 /* Efeito passar mouse em cima do Email no final da pagina */
