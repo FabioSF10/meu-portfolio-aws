@@ -333,14 +333,31 @@ async function enviarMensagemIA() {
     input.value = "";
     btn.disabled = true;
 
-    const typingIndicator = document.createElement('div');
-    typingIndicator.id = "typing";
-    typingIndicator.style.color = "var(--accent-color)";
-    typingIndicator.style.fontSize = "0.8em";
-    typingIndicator.style.padding = "5px";
-    typingIndicator.innerHTML = "<em>Processando...</em>";
-    display.appendChild(typingIndicator);
-    display.scrollTop = display.scrollHeight;
+   const typingIndicator = document.createElement('div');
+typingIndicator.id = "typing";
+typingIndicator.style.color = "var(--accent-color)";
+typingIndicator.style.fontSize = "0.75em";
+typingIndicator.style.padding = "5px";
+typingIndicator.innerHTML = "";
+
+display.appendChild(typingIndicator);
+display.scrollTop = display.scrollHeight;
+
+const steps = [
+    "⚡ Enviando requisição...",
+    "☁️ AWS Lambda processando...",
+    "🔗 Integrando com Azure...",
+    "🤖 Gerando resposta..."
+];
+
+let i = 0;
+
+const interval = setInterval(() => {
+    if (i < steps.length) {
+        typingIndicator.innerHTML += steps[i] + "<br>";
+        i++;
+    }
+}, 600);
 
     try {
         const res = await fetch("https://9u6eokphxh.execute-api.us-east-1.amazonaws.com/prod/chat", {
@@ -352,12 +369,14 @@ async function enviarMensagemIA() {
         const data = await res.json();
         const indicator = document.getElementById("typing");
         if (indicator) indicator.remove();
+        clearInterval(interval);
 
         addMensagem(data.response || "Sem resposta da IA.", "ia");
 
     } catch (e) {
         const indicator = document.getElementById("typing");
         if (indicator) indicator.remove();
+        clearInterval(interval);
         addMensagem("Erro ao conectar com a nuvem.", "ia");
     } finally {
         btn.disabled = false;
