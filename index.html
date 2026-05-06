@@ -260,20 +260,20 @@ function addMensagem(texto, tipo) {
     div.style.display = "block";
     div.style.clear = "both";
 
-    if (tipo === 'user') {
-        div.style.background = "#ff9900";
-        div.style.color = "#232f3e";
-        div.style.marginLeft = "auto";
-        div.style.borderBottomRightRadius = "2px";
-        div.innerHTML = `<strong>Você:</strong><br>${texto}`;
-    } else {
-        div.style.background = "#1e293b";
-        div.style.color = "white";
-        div.style.marginRight = "auto";
-        div.style.borderLeft = "3px solid #ff9900";
-        div.style.borderBottomLeftRadius = "2px";
-        div.innerHTML = `<strong>IA:</strong><br>${texto}`;
-    }
+   if (tipo === 'user') {
+    div.style.background = "var(--accent-color)";
+    div.style.color = "var(--primary-color)";
+    div.style.marginLeft = "auto";
+    div.style.borderBottomRightRadius = "2px";
+    div.innerHTML = `<strong>Você:</strong><br>${texto}`;
+} else {
+    div.style.background = "#1e293b";
+    div.style.color = "white";
+    div.style.marginRight = "auto";
+    div.style.borderLeft = "3px solid var(--accent-color)";
+    div.style.borderBottomLeftRadius = "2px";
+    div.innerHTML = `<strong>IA:</strong><br>${texto}`;
+}
 
     display.appendChild(div);
     display.scrollTop = display.scrollHeight;
@@ -293,7 +293,7 @@ async function enviarMensagemIA() {
 
     const typingIndicator = document.createElement('div');
     typingIndicator.id = "typing";
-    typingIndicator.style.color = "#ff9900";
+    typingIndicator.style.color = "var(--accent-color)";
     typingIndicator.style.fontSize = "0.8em";
     typingIndicator.style.padding = "5px";
     typingIndicator.innerHTML = "<em>Processando...</em>";
@@ -347,7 +347,7 @@ async function carregarMensagens() {
             item.style.padding = "10px";
             item.style.borderRadius = "5px";
             item.style.marginBottom = "10px";
-            item.style.borderLeft = "3px solid #ff9900";
+            item.style.borderLeft = "3px solid var(--accent-color)";
             item.innerHTML = `<strong>${msg.nick}:</strong> <p style="margin: 5px 0 0 0; font-size: 0.9em;">${msg.frase}</p>`;
             container.appendChild(item);
         });
@@ -412,7 +412,7 @@ async function enviarFrase() {
 
 function mostrarSucesso(aviso, icone) {
     aviso.style.display = "block";
-    icone.style.color = "#ff9900";
+    icone.style.color = "var(--accent-color)";
 
     setTimeout(() => {
         aviso.style.display = "none";
@@ -557,7 +557,7 @@ async function chamarLambda() {
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <a href="http://meu-portfolio-fabio-stefano.s3-website-us-east-1.amazonaws.com/" 
                            id="btn-aws"
-                           style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #232f3e; color: #ff9900; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.8em; border: 1px solid #ff9900; transition: 0.3s;">
+                           style="display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--primary-color); color: var(--accent-color); padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.8em; border: 1px solid var(--accent-color); transition: 0.3s;">
                             <i class="fab fa-aws fa-lg"></i> EXPERIÊNCIA AWS S3
                         </a>
 
