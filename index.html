@@ -500,13 +500,21 @@ async function chamarLambda() {
         <div class="content">
             <h2><i class="fas fa-robot"></i> 01. API de IA Generativa</h2>
             <h3>Integração Serverless Híbrida (AWS & Azure)</h3>
-            <p>Este projeto demonstra a comunicação segura e eficiente entre provedores de nuvem distintos para entregar inteligência artificial como serviço.</p>
-            <ul>
-                <li><strong>Gateway de API:</strong> Exposição de endpoint seguro via AWS API Gateway.</li>
-                <li><strong>Processamento:</strong> AWS Lambda atuando como middleware para orquestração de chamadas.</li>
-                <li><strong>Inteligência:</strong> Consumo de modelos LLM via Azure OpenAI Service (Foundry).</li>
-                <li><strong>Arquitetura:</strong> Design desacoplado focado em baixa latência e escalabilidade.</li>
-            </ul>
+           <p>
+Este projeto demonstra, na prática, a construção de uma arquitetura híbrida entre AWS e Azure para entrega de inteligência artificial em tempo real.
+</p>
+
+<ul>
+    <li><strong>Gateway de API:</strong> Endpoint público exposto via AWS API Gateway, garantindo segurança e controle de requisições.</li>
+    
+    <li><strong>Orquestração Serverless:</strong> AWS Lambda responsável por receber, validar e processar as mensagens do usuário antes de encaminhar para o modelo de IA.</li>
+    
+    <li><strong>Integração Multi-Cloud:</strong> Comunicação direta com o Azure OpenAI Service, consumindo modelos LLM para geração de respostas inteligentes.</li>
+    
+    <li><strong>Contexto Inteligente (RAG leve):</strong> A IA é enriquecida com informações reais do meu perfil profissional, permitindo respostas personalizadas sobre minha experiência, projetos e carreira.</li>
+    
+    <li><strong>Arquitetura:</strong> Sistema desacoplado, escalável e com baixo custo operacional, seguindo boas práticas de Cloud Computing.</li>
+</ul>
             <a href="https://github.com/FabioSF10/meu-portfolio-aws/blob/main/API-de-IA-Generativa/README.md" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">Repositório do Projeto →</a>
         </div>
         <div class="media">
