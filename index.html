@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabio Figueiredo | Cloud Infrastructure Analyst</title>
+    <title>Fabio Figueiredo | Infrastructure & Cloud Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Variáveis de Cores Globais e Padrão (Tema AWS) */
@@ -45,14 +45,28 @@
         }
         
         /* Hero Section Profissional com Imagem de Fundo */
-        header {
-            position: relative; /* Mantém as camadas alinhadas */
-            background: #020617; 
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-color); /* Dinâmico */
-            overflow: hidden; 
-        }
+      header {
+    position: relative;
+    background: #020617;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-color);
+    overflow: hidden;
+
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
         /* Camada da Imagem de Fundo (Mapa Mundi) */
         header::before {
@@ -169,7 +183,7 @@
     #btn-email:hover {
     transform: none;
 }
-       } 
+        
         footer { 
     background: #020617; 
     text-align: center; 
