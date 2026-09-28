@@ -2,49 +2,67 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SkillVerse by Fabio | Fabio Figueiredo</title>
+<meta charset="UTF-8">
 
-    <meta name="description"
-          content="Crie sua própria SkillVerse e descubra quem você seria em quatro universos fictícios. Projeto de Fabio Figueiredo.">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<title>SkillVerse by Fabio | Fabio Figueiredo</title>
+
+<meta name="description"
+      content="SkillVerse by Fabio. Transforme sua profissão, personalidade e habilidades em quatro versões fictícias usando Inteligência Artificial.">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 
 <style>
 
 /* =========================================================
-   TEMA
+   CORES
    AWS = LARANJA
    AZURE = AZUL
 ========================================================= */
 
 :root {
+
     --bg: #0f172a;
     --bg-dark: #020617;
-    --card: #111c31;
-    --card-light: #1e293b;
+    --card: #111827;
+
     --text: #f1f5f9;
     --muted: #94a3b8;
     --border: #334155;
 
     --primary-color: #232f3e;
+
     --accent-color: #ff9900;
-    --accent-soft: rgba(255,153,0,0.10);
+
+    --accent-soft: rgba(255,153,0,.10);
+
 }
+
 
 body.theme-azure {
+
     --primary-color: #002050;
+
     --accent-color: #0078d4;
-    --accent-soft: rgba(0,120,212,0.10);
+
+    --accent-soft: rgba(0,120,212,.10);
+
 }
 
+
 body.theme-aws {
+
     --primary-color: #232f3e;
+
     --accent-color: #ff9900;
-    --accent-soft: rgba(255,153,0,0.10);
+
+    --accent-soft: rgba(255,153,0,.10);
+
 }
 
 
@@ -53,485 +71,524 @@ body.theme-aws {
 ========================================================= */
 
 * {
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
+
 
 body {
+
     margin: 0;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
     background: var(--bg);
+
     color: var(--text);
-    line-height: 1.6;
+
 }
 
-a {
-    color: inherit;
-}
 
 .container {
-    width: min(1180px, calc(100% - 40px));
+
+    width: min(1120px, calc(100% - 36px));
+
     margin: auto;
+
 }
 
 
 /* =========================================================
-   NAVBAR
+   CABEÇALHO PROFISSIONAL COMPACTO
 ========================================================= */
 
-.navbar {
-    background: rgba(2,6,23,0.97);
+.topbar {
+
+    background: #020617;
+
     border-bottom: 1px solid var(--border);
-}
 
-.nav-inner {
-    min-height: 82px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 25px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-}
-
-.brand-icon {
-    color: var(--accent-color);
-    font-size: 1.2rem;
-}
-
-.brand-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-name {
-    font-size: 1.05rem;
-    font-weight: 850;
-}
-
-.brand-role {
-    color: var(--muted);
-    font-size: .74rem;
-    letter-spacing: .5px;
-}
-
-.nav-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-button {
-    text-decoration: none;
-
-    padding: 10px 16px;
-
-    border-radius: 8px;
-
-    border: 1px solid var(--accent-color);
-
-    font-size: .82rem;
-    font-weight: 800;
-
-    transition: .25s;
-}
-
-.nav-button:hover {
-    background: var(--accent-color);
-    color: var(--primary-color);
 }
 
 
-/* =========================================================
-   HERO COMPACTO
-========================================================= */
+.topbar-inner {
 
-.hero {
-    position: relative;
-
-    background:
-        radial-gradient(
-            circle at 80% 40%,
-            var(--accent-soft),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 15% 80%,
-            var(--accent-soft),
-            transparent 25%
-        ),
-        var(--bg-dark);
-
-    border-bottom: 3px solid var(--accent-color);
-
-    overflow: hidden;
-}
-
-.hero-inner {
-    min-height: 420px;
-
-    display: grid;
-    grid-template-columns: 1.35fr .65fr;
-
-    align-items: center;
-
-    gap: 60px;
-
-    padding-top: 65px;
-    padding-bottom: 65px;
-}
-
-.project-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    color: var(--accent-color);
-
-    border: 1px solid var(--accent-color);
-    background: var(--accent-soft);
-
-    border-radius: 50px;
-
-    padding: 6px 13px;
-
-    font-size: .72rem;
-    font-weight: 900;
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    margin-bottom: 16px;
-}
-
-.hero h1 {
-    margin: 0;
-
-    font-size: clamp(2.7rem, 6vw, 4.6rem);
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-}
-
-.hero h1 span {
-    color: var(--accent-color);
-}
-
-.hero-subtitle {
-    font-size: 1.35rem;
-
-    margin: 18px 0 10px;
-
-    color: #dbeafe;
-
-    font-weight: 650;
-}
-
-.hero-description {
-    max-width: 700px;
-
-    color: var(--muted);
-
-    margin: 0;
-
-    font-size: .98rem;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 26px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    padding: 12px 19px;
-
-    border-radius: 8px;
-
-    text-decoration: none;
-
-    font-size: .86rem;
-    font-weight: 850;
-
-    cursor: pointer;
-
-    transition: .25s;
-
-    border: none;
-}
-
-.btn-primary {
-    background: var(--accent-color);
-    color: var(--primary-color);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px var(--accent-color);
-}
-
-.btn-secondary {
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,.03);
-    color: white;
-}
-
-.btn-secondary:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-}
-
-
-/* HERO — IDENTIDADE PROFISSIONAL */
-
-.creator-card {
-    background: rgba(15,23,42,.75);
-
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent-color);
-
-    border-radius: 16px;
-
-    padding: 25px;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,.3);
-}
-
-.creator-card-label {
-    color: var(--accent-color);
-
-    font-size: .7rem;
-    font-weight: 900;
-
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.creator-card h3 {
-    margin: 7px 0 4px;
-
-    font-size: 1.25rem;
-}
-
-.creator-card > p {
-    color: var(--muted);
-
-    font-size: .84rem;
-
-    margin: 0 0 18px;
-}
-
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 7px;
-}
-
-.tech-tag {
-    background: var(--accent-soft);
-
-    border: 1px solid var(--border);
-
-    padding: 6px 9px;
-
-    border-radius: 6px;
-
-    font-size: .7rem;
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   COMO FAZER
-========================================================= */
-
-.quick-start {
-    padding: 58px 0 50px;
-}
-
-.section-heading {
-    text-align: center;
-
-    margin-bottom: 32px;
-}
-
-.section-heading .eyebrow {
-    color: var(--accent-color);
-
-    font-size: .72rem;
-    font-weight: 900;
-
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-}
-
-.section-heading h2 {
-    margin: 6px 0 6px;
-
-    font-size: 2rem;
-}
-
-.section-heading p {
-    color: var(--muted);
-
-    margin: 0;
-
-    font-size: .9rem;
-}
-
-.steps {
-    display: grid;
-
-    grid-template-columns: repeat(4,1fr);
-
-    gap: 14px;
-}
-
-.step {
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
-
-    padding: 22px;
-
-    position: relative;
-
-    transition: .25s;
-}
-
-.step:hover {
-    border-color: var(--accent-color);
-
-    transform: translateY(-3px);
-}
-
-.step-top {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 13px;
-}
-
-.step-number {
-    flex: 0 0 34px;
-
-    width: 34px;
-    height: 34px;
-
-    border-radius: 50%;
-
-    background: var(--accent-color);
-    color: var(--primary-color);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: 900;
-}
-
-.step-icon {
-    color: var(--accent-color);
-}
-
-.step h3 {
-    font-size: 1rem;
-
-    margin: 0;
-}
-
-.step p {
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: .82rem;
-
-    line-height: 1.55;
-}
-
-.step strong {
-    color: white;
-}
-
-
-/* =========================================================
-   CALL TO COPY
-========================================================= */
-
-.ready {
-    margin-top: 27px;
-
-    padding: 20px 24px;
-
-    background: var(--bg-dark);
-
-    border: 1px solid var(--accent-color);
-
-    border-radius: 12px;
+    min-height: 66px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
+
 }
 
-.ready-text strong {
-    display: block;
 
-    font-size: 1rem;
+.identity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
 }
 
-.ready-text span {
+
+.identity-icon {
+
+    color: var(--accent-color);
+
+    font-size: 1.25rem;
+
+}
+
+
+.identity-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.identity-name {
+
+    font-weight: 850;
+
+    font-size: .92rem;
+
+}
+
+
+.identity-role {
+
     color: var(--muted);
 
-    font-size: .8rem;
+    font-size: .64rem;
+
+    margin-top: 1px;
+
 }
 
-.ready .btn {
-    flex-shrink: 0;
+
+.identity-tech {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 4px;
+
+    color: var(--accent-color);
+
+    font-size: .65rem;
+
+}
+
+
+.portfolio-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    text-decoration: none;
+
+    border: 1px solid var(--accent-color);
+
+    border-radius: 7px;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    font-size: .7rem;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition: .2s;
+
+}
+
+
+.portfolio-button:hover {
+
+    background: var(--accent-color);
+
+    color: var(--primary-color);
+
 }
 
 
 /* =========================================================
-   PROMPT
+   PRIMEIRA TELA
+========================================================= */
+
+.intro {
+
+    min-height: calc(100svh - 66px);
+
+    background:
+
+        radial-gradient(
+            circle at 85% 25%,
+            var(--accent-soft),
+            transparent 27%
+        ),
+
+        #020617;
+
+    border-bottom: 3px solid var(--accent-color);
+
+}
+
+
+.intro-inner {
+
+    min-height: calc(100svh - 66px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding-top: 32px;
+
+    padding-bottom: 32px;
+
+}
+
+
+.project-label {
+
+    align-self: flex-start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 6px 11px;
+
+    border: 1px solid var(--accent-color);
+
+    border-radius: 50px;
+
+    color: var(--accent-color);
+
+    background: var(--accent-soft);
+
+    font-size: .65rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.intro h1 {
+
+    margin:
+
+        18px
+        0
+        7px;
+
+    font-size: clamp(2.5rem, 7vw, 4.6rem);
+
+    line-height: .98;
+
+    letter-spacing: -2px;
+
+}
+
+
+.intro h1 span {
+
+    color: var(--accent-color);
+
+}
+
+
+.main-question {
+
+    margin: 8px 0 0;
+
+    font-size: 1.2rem;
+
+    font-weight: 750;
+
+}
+
+
+.trend-description {
+
+    max-width: 720px;
+
+    color: var(--muted);
+
+    font-size: .88rem;
+
+    line-height: 1.55;
+
+    margin:
+
+        9px
+        0
+        0;
+
+}
+
+
+/* =========================================================
+   MINI TUTORIAL
+========================================================= */
+
+.how-title {
+
+    color: var(--accent-color);
+
+    font-size: .67rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.quick-steps {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 10px;
+
+}
+
+
+.quick-step {
+
+    background: rgba(15,23,42,.75);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    padding: 14px;
+
+}
+
+
+.step-number {
+
+    width: 27px;
+
+    height: 27px;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--accent-color);
+
+    color: var(--primary-color);
+
+    font-weight: 900;
+
+    font-size: .72rem;
+
+    margin-bottom: 8px;
+
+}
+
+
+.quick-step strong {
+
+    display: block;
+
+    font-size: .79rem;
+
+    margin-bottom: 4px;
+
+}
+
+
+.quick-step p {
+
+    color: var(--muted);
+
+    font-size: .69rem;
+
+    line-height: 1.45;
+
+    margin: 0;
+
+}
+
+
+.quick-step b {
+
+    color: white;
+
+}
+
+
+.go-down {
+
+    text-align: center;
+
+    margin-top: 19px;
+
+    color: var(--accent-color);
+
+    font-size: .68rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+}
+
+
+.go-down i {
+
+    display: block;
+
+    margin-top: 5px;
+
+    animation: down 1.5s infinite;
+
+}
+
+
+@keyframes down {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+}
+
+
+/* =========================================================
+   SEGUNDA TELA — PROMPT
 ========================================================= */
 
 .prompt-section {
-    background: var(--card-light);
 
-    padding: 60px 0;
+    min-height: 100svh;
+
+    padding:
+
+        42px
+        0
+        55px;
+
+    background: var(--bg);
+
 }
 
+
+.prompt-heading {
+
+    text-align: center;
+
+    margin-bottom: 23px;
+
+}
+
+
+.prompt-heading small {
+
+    color: var(--accent-color);
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    font-size: .65rem;
+
+}
+
+
+.prompt-heading h2 {
+
+    margin:
+
+        5px
+        0
+        5px;
+
+    font-size: 2rem;
+
+}
+
+
+.prompt-heading p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: .78rem;
+
+}
+
+
 .prompt-box {
-    max-width: 1050px;
+
+    max-width: 1000px;
 
     margin: auto;
+
+    background: #020617;
 
     border: 1px solid var(--accent-color);
 
@@ -539,878 +596,824 @@ a {
 
     overflow: hidden;
 
-    background: var(--bg-dark);
-
-    box-shadow: 0 15px 45px rgba(0,0,0,.35);
 }
 
-.prompt-toolbar {
-    min-height: 64px;
 
-    padding: 12px 18px;
+.prompt-toolbar {
 
     background: #111827;
 
+    border-bottom: 1px solid var(--border);
+
+    padding: 13px 16px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 15px;
 
-    border-bottom: 1px solid var(--border);
 }
 
-.prompt-title {
+
+.prompt-name {
+
     display: flex;
+
     align-items: center;
 
-    gap: 9px;
+    gap: 8px;
 
-    font-size: .85rem;
-    font-weight: 800;
+    font-size: .78rem;
+
+    font-weight: 850;
+
 }
 
-.prompt-title i {
+
+.prompt-name i {
+
     color: var(--accent-color);
+
 }
+
 
 .copy-button {
-    width: auto;
 
-    border: none;
-
-    background: var(--accent-color);
-    color: var(--primary-color);
+    border: 0;
 
     border-radius: 7px;
 
     padding: 10px 15px;
 
+    background: var(--accent-color);
+
+    color: var(--primary-color);
+
     font-weight: 900;
+
+    font-size: .72rem;
 
     cursor: pointer;
 
-    transition: .25s;
 }
 
-.copy-button:hover {
-    transform: translateY(-2px);
-}
-
-.prompt-preview {
-    position: relative;
-}
 
 #promptText {
+
     margin: 0;
 
-    padding: 25px;
+    padding: 22px;
 
-    max-height: 360px;
+    max-height: 62vh;
 
     overflow-y: auto;
 
     white-space: pre-wrap;
 
-    color: #cbd5e1;
+    color: #aeb8ca;
 
-    font-family: Consolas, "Courier New", monospace;
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
 
-    font-size: .79rem;
+    font-size: .75rem;
 
     line-height: 1.55;
+
 }
 
-.prompt-help {
-    padding: 13px 18px;
 
-    background: rgba(255,255,255,.025);
+.prompt-tip {
 
     border-top: 1px solid var(--border);
 
-    color: var(--muted);
+    background: #0b1120;
 
-    font-size: .74rem;
+    padding: 12px 16px;
 
     text-align: center;
+
+    color: var(--muted);
+
+    font-size: .7rem;
+
 }
 
-.prompt-help i {
+
+.prompt-tip i {
+
     color: var(--accent-color);
+
 }
+
 
 #copyStatus {
+
     display: none;
 
-    color: var(--accent-color);
-
     text-align: center;
 
-    font-size: .8rem;
+    margin-top: 12px;
+
+    color: var(--accent-color);
+
+    font-size: .75rem;
+
     font-weight: 800;
 
-    margin-top: 14px;
 }
 
 
 /* =========================================================
-   SOBRE FABIO
-========================================================= */
-
-.about {
-    padding: 65px 0;
-
-    background: var(--bg);
-}
-
-.about-grid {
-    display: grid;
-
-    grid-template-columns: .75fr 1.25fr;
-
-    gap: 45px;
-
-    align-items: center;
-}
-
-.about-visual {
-    background:
-        radial-gradient(
-            circle at center,
-            var(--accent-soft),
-            transparent 60%
-        ),
-        var(--bg-dark);
-
-    min-height: 290px;
-
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent-color);
-
-    border-radius: 16px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 30px;
-}
-
-.about-symbol i {
-    color: var(--accent-color);
-
-    font-size: 3.3rem;
-
-    margin-bottom: 15px;
-}
-
-.about-symbol strong {
-    display: block;
-
-    font-size: 1.25rem;
-}
-
-.about-symbol span {
-    display: block;
-
-    color: var(--muted);
-
-    margin-top: 5px;
-
-    font-size: .8rem;
-}
-
-.about-content .eyebrow {
-    color: var(--accent-color);
-
-    font-size: .72rem;
-    font-weight: 900;
-
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.about-content h2 {
-    margin: 7px 0 15px;
-
-    font-size: 2rem;
-}
-
-.about-content p {
-    color: #cbd5e1;
-
-    font-size: .9rem;
-}
-
-.about-actions {
-    margin-top: 22px;
-
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-
-/* =========================================================
-   OUTROS PROJETOS
-========================================================= */
-
-.projects {
-    padding: 65px 0;
-
-    background: var(--card-light);
-}
-
-.project-cards {
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 16px;
-}
-
-.project-card {
-    background: var(--bg);
-
-    border: 1px solid var(--border);
-
-    border-top: 3px solid var(--accent-color);
-
-    border-radius: 12px;
-
-    padding: 24px;
-
-    text-decoration: none;
-
-    transition: .25s;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-
-    border-color: var(--accent-color);
-
-    box-shadow: 0 10px 25px rgba(0,0,0,.3);
-}
-
-.project-card i {
-    color: var(--accent-color);
-
-    font-size: 1.6rem;
-
-    margin-bottom: 14px;
-}
-
-.project-card h3 {
-    font-size: 1rem;
-
-    margin: 0 0 7px;
-}
-
-.project-card p {
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: .78rem;
-}
-
-.all-projects {
-    text-align: center;
-
-    margin-top: 28px;
-}
-
-
-/* =========================================================
-   FOOTER
+   RODAPÉ MÍNIMO
 ========================================================= */
 
 footer {
-    background: var(--bg-dark);
-
-    padding: 38px 20px;
 
     text-align: center;
 
-    color: var(--muted);
+    padding: 18px;
+
+    background: #020617;
 
     border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: .67rem;
+
 }
 
-.footer-social {
-    display: flex;
-    justify-content: center;
 
-    gap: 22px;
+footer a {
 
-    margin-bottom: 14px;
-}
-
-.footer-social a {
-    color: white;
-
-    font-size: 1.35rem;
-
-    transition: .2s;
-}
-
-.footer-social a:hover {
     color: var(--accent-color);
-}
 
-footer p {
-    margin: 4px 0;
+    text-decoration: none;
 
-    font-size: .78rem;
+    font-weight: 800;
+
 }
 
 
 /* =========================================================
-   RESPONSIVO
+   MOBILE
 ========================================================= */
-
-@media(max-width:900px) {
-
-    .hero-inner {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .creator-card {
-        display: none;
-    }
-
-    .steps {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-}
 
 @media(max-width:600px) {
 
+
     .container {
-        width: min(100% - 28px, 1180px);
+
+        width:
+            calc(100% - 30px);
+
     }
 
-    .nav-inner {
-        min-height: 70px;
+
+    /* CABEÇALHO BEM MENOR */
+
+    .topbar-inner {
+
+        min-height: 58px;
+
+        gap: 8px;
+
     }
 
-    .brand-role {
-        display: none;
+
+    .identity {
+
+        gap: 8px;
+
     }
 
-    .brand-name {
-        font-size: .9rem;
+
+    .identity-icon {
+
+        font-size: 1rem;
+
     }
 
-    .nav-button {
-        font-size: .7rem;
+
+    .identity-name {
+
+        font-size: .78rem;
+
+    }
+
+
+    .identity-role {
+
+        font-size: .52rem;
+
+    }
+
+
+    .identity-tech {
+
+        gap: 5px;
+
+        font-size: .55rem;
+
+    }
+
+
+    .portfolio-button {
+
+        padding: 7px 9px;
+
+        font-size: .6rem;
+
+    }
+
+
+    /* PRIMEIRA TELA */
+
+    .intro {
+
+        min-height:
+            calc(100svh - 58px);
+
+    }
+
+
+    .intro-inner {
+
+        min-height:
+            calc(100svh - 58px);
+
+        justify-content:
+            flex-start;
+
+        padding-top:
+            27px;
+
+        padding-bottom:
+            18px;
+
+    }
+
+
+    .project-label {
+
+        font-size: .55rem;
+
+        padding: 5px 9px;
+
+    }
+
+
+    .intro h1 {
+
+        margin:
+            15px
+            0
+            6px;
+
+        font-size:
+            clamp(2.5rem, 12vw, 3.4rem);
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .main-question {
+
+        font-size: .96rem;
+
+        line-height: 1.3;
+
+    }
+
+
+    .trend-description {
+
+        font-size: .73rem;
+
+        line-height: 1.45;
+
+        margin-top: 7px;
+
+    }
+
+
+    .how-title {
+
+        margin-top: 19px;
+
+        margin-bottom: 8px;
+
+        font-size: .58rem;
+
+    }
+
+
+    /* NO CELULAR OS 3 PASSOS FICAM VERTICAIS E COMPACTOS */
+
+    .quick-steps {
+
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+    }
+
+
+    .quick-step {
+
+        display: grid;
+
+        grid-template-columns:
+            29px
+            1fr;
+
+        column-gap: 9px;
+
+        align-items: center;
 
         padding: 8px 10px;
+
     }
 
-    .hero-inner {
-        min-height: auto;
 
-        padding-top: 48px;
-        padding-bottom: 48px;
+    .step-number {
+
+        grid-row:
+            1 / 3;
+
+        width: 27px;
+
+        height: 27px;
+
+        margin: 0;
+
     }
 
-    .hero h1 {
-        font-size: 2.8rem;
+
+    .quick-step strong {
+
+        margin: 0;
+
+        font-size: .7rem;
+
     }
 
-    .hero-subtitle {
-        font-size: 1.1rem;
+
+    .quick-step p {
+
+        margin-top: 1px;
+
+        font-size: .61rem;
+
+        line-height: 1.35;
+
     }
 
-    .steps {
-        grid-template-columns: 1fr;
+
+    .go-down {
+
+        margin-top: 12px;
+
+        font-size: .58rem;
+
     }
 
-    .ready {
-        flex-direction: column;
 
-        text-align: center;
+    /* SEGUNDA TELA */
+
+    .prompt-section {
+
+        padding:
+            30px
+            0
+            40px;
+
     }
 
-    .ready .btn {
-        width: 100%;
+
+    .prompt-heading {
+
+        margin-bottom: 17px;
+
     }
+
+
+    .prompt-heading h2 {
+
+        font-size: 1.65rem;
+
+    }
+
+
+    .prompt-heading p {
+
+        font-size: .69rem;
+
+    }
+
 
     .prompt-toolbar {
+
         flex-direction: column;
 
         align-items: stretch;
+
+        padding: 12px;
+
     }
+
+
+    .prompt-name {
+
+        font-size: .7rem;
+
+    }
+
 
     .copy-button {
+
         width: 100%;
+
+        padding: 11px;
+
+        font-size: .68rem;
+
     }
 
+
     #promptText {
-        font-size: .7rem;
+
+        padding: 17px;
+
+        max-height: 60vh;
+
+        font-size: .66rem;
+
+    }
+
+
+    .prompt-tip {
+
+        font-size: .62rem;
+
+        padding: 10px;
+
     }
 
 }
 
+
 </style>
+
 </head>
+
 
 
 <body>
 
 
 <!-- =========================================================
-     NAVBAR
+     CABEÇALHO PROFISSIONAL
 ========================================================= -->
 
-<nav class="navbar">
+<nav class="topbar">
 
-    <div class="container nav-inner">
+<div class="container topbar-inner">
 
-        <div class="brand">
 
-            <i class="fas fa-code brand-icon"></i>
+    <div class="identity">
 
-            <div class="brand-info">
 
-                <span class="brand-name">
-                    Fabio Figueiredo
-                </span>
+        <i class="fas fa-code identity-icon"></i>
 
-                <span class="brand-role">
-                    Infrastructure • Cloud • Automation
-                </span>
 
-            </div>
+        <div class="identity-text">
+
+
+            <span class="identity-name">
+
+                Fabio Figueiredo
+
+            </span>
+
+
+            <span class="identity-role">
+
+                Infraestrutura de TI
+
+            </span>
+
+
+            <span class="identity-tech">
+
+                <i class="fab fa-windows"></i>
+
+                <i class="fas fa-network-wired"></i>
+
+                <i class="fas fa-wifi"></i>
+
+                <i class="fas fa-cloud"></i>
+
+            </span>
+
 
         </div>
 
-
-        <div class="nav-actions">
-
-            <a href="index.html"
-               class="nav-button">
-
-                <i class="fas fa-arrow-left"></i>
-                Ver Portfólio
-
-            </a>
-
-        </div>
 
     </div>
+
+
+
+    <a href="index.html"
+       class="portfolio-button">
+
+        Outros projetos
+
+        <i class="fas fa-arrow-right"></i>
+
+    </a>
+
+
+</div>
 
 </nav>
 
 
 
 <!-- =========================================================
-     HERO
+     PRIMEIRA TELA
 ========================================================= -->
 
-<header class="hero">
-
-    <div class="container hero-inner">
+<section class="intro">
 
 
-        <!-- TEXTO -->
+<div class="container intro-inner">
 
-        <div>
 
-            <div class="project-label">
+    <div class="project-label">
 
-                <i class="fas fa-wand-magic-sparkles"></i>
+        <i class="fas fa-wand-magic-sparkles"></i>
 
-                Projeto 08 • IA Generativa
+        Projeto 08 • IA Generativa
+
+    </div>
+
+
+
+    <h1>
+
+        SkillVerse
+
+        <span>
+            by Fabio
+        </span>
+
+    </h1>
+
+
+
+    <div class="main-question">
+
+        E se suas habilidades existissem
+        em outros universos?
+
+    </div>
+
+
+
+    <p class="trend-description">
+
+        Uma trend criada para transformar sua
+        <strong style="color:white;">
+            profissão, habilidades e personalidade
+        </strong>
+        em quatro versões fictícias de você usando
+        Inteligência Artificial.
+
+    </p>
+
+
+
+    <div class="how-title">
+
+        COMO FAZER • É SÓ ISSO
+
+    </div>
+
+
+
+    <div class="quick-steps">
+
+
+        <!-- PASSO 1 -->
+
+        <div class="quick-step">
+
+
+            <div class="step-number">
+
+                1
 
             </div>
 
 
-            <h1>
-                SkillVerse
-                <span>by Fabio</span>
-            </h1>
+            <strong>
+
+                Profissão + 4 universos
+
+            </strong>
 
 
-            <div class="hero-subtitle">
+            <p>
 
-                Descubra quem você seria em 4 universos.
-
-            </div>
-
-
-            <p class="hero-description">
-
-                Escolha seus universos favoritos, informe sua profissão,
-                envie uma foto e deixe a Inteligência Artificial transformar
-                suas habilidades e personalidade em quatro versões de você.
+                No começo do prompt, escreva sua
+                <b>profissão</b>
+                e escolha
+                <b>4 universos</b>
+                que você gosta.
 
             </p>
 
-
-            <div class="hero-buttons">
-
-                <a href="#criar"
-                   class="btn btn-primary">
-
-                    <i class="fas fa-wand-magic-sparkles"></i>
-
-                    Criar minha SkillVerse
-
-                </a>
-
-
-                <a href="#projetos"
-                   class="btn btn-secondary">
-
-                    <i class="fas fa-layer-group"></i>
-
-                    Outros projetos
-
-                </a>
-
-            </div>
 
         </div>
 
 
 
-        <!-- MINI CARD PROFISSIONAL -->
+        <!-- PASSO 2 -->
 
-        <div class="creator-card">
+        <div class="quick-step">
 
-            <span class="creator-card-label">
 
-                Projeto do portfólio de
+            <div class="step-number">
 
-            </span>
+                2
 
-            <h3>
-                Fabio Stefano de Figueiredo
-            </h3>
+            </div>
+
+
+            <strong>
+
+                Anexe uma foto sua
+
+            </strong>
+
 
             <p>
-                Profissional de Infraestrutura explorando
-                Cloud Computing, Automação e Inteligência Artificial.
+
+                Envie junto uma
+                <b>foto clara do seu rosto.</b>
+
             </p>
 
 
-            <div class="tech-tags">
+        </div>
 
-                <span class="tech-tag">
-                    <i class="fab fa-aws"></i>
-                    AWS
-                </span>
 
-                <span class="tech-tag">
-                    <i class="fab fa-microsoft"></i>
-                    Azure
-                </span>
 
-                <span class="tech-tag">
-                    <i class="fab fa-linux"></i>
-                    Linux
-                </span>
+        <!-- PASSO 3 -->
 
-                <span class="tech-tag">
-                    <i class="fas fa-network-wired"></i>
-                    Infraestrutura
-                </span>
+        <div class="quick-step">
 
-                <span class="tech-tag">
-                    <i class="fas fa-gears"></i>
-                    Automação
-                </span>
 
-                <span class="tech-tag">
-                    <i class="fas fa-robot"></i>
-                    IA
-                </span>
+            <div class="step-number">
+
+                3
 
             </div>
+
+
+            <strong>
+
+                Cole e dê Enter
+
+            </strong>
+
+
+            <p>
+
+                Cole tudo no
+                <b>ChatGPT ou na sua IA favorita.</b>
+                O restante já está pronto.
+
+            </p>
+
 
         </div>
 
 
     </div>
 
-</header>
 
 
+    <a href="#prompt"
+       class="go-down">
 
-<!-- =========================================================
-     PASSO A PASSO
-========================================================= -->
+        PROMPT PRONTO LOGO ABAIXO
 
-<section class="quick-start"
-         id="criar">
+        <i class="fas fa-chevron-down"></i>
 
-    <div class="container">
+    </a>
 
 
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                É só isso
-            </div>
-
-            <h2>
-                Crie a sua em 4 passos
-            </h2>
-
-            <p>
-                Não precisa editar o resto do prompt.
-                Preencha essas informações, copie e envie.
-            </p>
-
-        </div>
-
-
-
-        <div class="steps">
-
-
-            <!-- PASSO 1 -->
-
-            <div class="step">
-
-                <div class="step-top">
-
-                    <div class="step-number">
-                        1
-                    </div>
-
-                    <i class="fas fa-briefcase step-icon"></i>
-
-                    <h3>
-                        Escreva sua profissão
-                    </h3>
-
-                </div>
-
-                <p>
-
-                    No início do prompt, substitua
-
-                    <strong>
-                        [ESCREVA AQUI]
-                    </strong>
-
-                    pela sua profissão ou área.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- PASSO 2 -->
-
-            <div class="step">
-
-                <div class="step-top">
-
-                    <div class="step-number">
-                        2
-                    </div>
-
-                    <i class="fas fa-earth-americas step-icon"></i>
-
-                    <h3>
-                        Escolha 4 universos
-                    </h3>
-
-                </div>
-
-                <p>
-
-                    Anime, série, filme, jogo ou desenho.
-
-                    <strong>
-                        Escolha quatro que você curte.
-                    </strong>
-
-                </p>
-
-            </div>
-
-
-
-            <!-- PASSO 3 -->
-
-            <div class="step">
-
-                <div class="step-top">
-
-                    <div class="step-number">
-                        3
-                    </div>
-
-                    <i class="fas fa-camera step-icon"></i>
-
-                    <h3>
-                        Envie uma foto
-                    </h3>
-
-                </div>
-
-                <p>
-
-                    Anexe
-
-                    <strong>
-                        uma foto clara do seu rosto
-                    </strong>
-
-                    junto com o prompt.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- PASSO 4 -->
-
-            <div class="step">
-
-                <div class="step-top">
-
-                    <div class="step-number">
-                        4
-                    </div>
-
-                    <i class="fas fa-paper-plane step-icon"></i>
-
-                    <h3>
-                        Cole e dê Enter
-                    </h3>
-
-                </div>
-
-                <p>
-
-                    Cole tudo no
-
-                    <strong>
-                        ChatGPT ou na sua IA de preferência.
-                    </strong>
-
-                    O restante já está pronto.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- CHAMADA PARA PROMPT -->
-
-        <div class="ready">
-
-            <div class="ready-text">
-
-                <strong>
-                    Pronto. Agora é só copiar. 👇
-                </strong>
-
-                <span>
-                    Preencha profissão + 4 universos, anexe sua foto e envie.
-                </span>
-
-            </div>
-
-
-            <a href="#prompt"
-               class="btn btn-primary">
-
-                <i class="fas fa-copy"></i>
-
-                Ir para o prompt
-
-            </a>
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
 
 
 
 <!-- =========================================================
-     PROMPT
+     SEGUNDA TELA — PROMPT
 ========================================================= -->
 
 <section class="prompt-section"
          id="prompt">
 
-    <div class="container">
+
+<div class="container">
 
 
-        <div class="section-heading">
+    <div class="prompt-heading">
 
-            <div class="eyebrow">
-                Copiar e usar
+
+        <small>
+
+            Agora é com você
+
+        </small>
+
+
+        <h2>
+
+            Prompt SkillVerse
+
+        </h2>
+
+
+        <p>
+
+            Altere apenas sua profissão e os
+            quatro universos no começo.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="prompt-box">
+
+
+        <div class="prompt-toolbar">
+
+
+            <div class="prompt-name">
+
+
+                <i class="fas fa-terminal"></i>
+
+                SkillVerseByFabio.prompt
+
+
             </div>
 
-            <h2>
-                Prompt SkillVerse
-            </h2>
 
-            <p>
-                Você só precisa alterar os campos no começo.
-                Não precisa mexer no restante.
-            </p>
+
+            <button
+                class="copy-button"
+                id="copyButton"
+                onclick="copiarPrompt()">
+
+
+                <i class="fas fa-copy"></i>
+
+                COPIAR PROMPT COMPLETO
+
+
+            </button>
+
 
         </div>
 
 
 
-        <div class="prompt-box">
+        <!--
+        =====================================================
+        IMPORTANTE
 
+        COLE ENTRE AS TAGS PRE O MESMO PROMPT COMPLETO
+        QUE JÁ ESTÁ NO SEU HTML ATUAL.
 
-            <div class="prompt-toolbar">
-
-                <div class="prompt-title">
-
-                    <i class="fas fa-terminal"></i>
-
-                    SkillVerseByFabio.prompt
-
-                </div>
-
-
-                <button class="copy-button"
-                        id="copyButton"
-                        onclick="copiarPrompt()">
-
-                    <i class="fas fa-copy"></i>
-
-                    COPIAR PROMPT COMPLETO
-
-                </button>
-
-            </div>
-
+        NÃO COLOQUE OUTRA TAG HTML DENTRO DO PROMPT.
+        =====================================================
+        -->
 
 
 <pre id="promptText">// ENVIE 1 FOTO SUA JUNTO COM ESTE PROMPT
@@ -1425,149 +1428,52 @@ Universos:
 4. [UNIVERSO 4]
 
 
-Antes de começar, não esqueça:
-
-- use a foto que enviei como referência do meu rosto
-- use também tudo que você sabe sobre mim nesta conversa
-- não se baseie só no meu cargo atual
-- considere também minha personalidade, forma de pensar, gostos, energia, estilo de vida, jeito de falar, interesses e modo de resolver problemas
-
-
 Agora crie uma única imagem em formato vertical 4:5, pensada para postagem no LinkedIn.
 
 A imagem deve ser dividida em 4 partes iguais, com 2 universos em cima e 2 embaixo.
 
+Objetivo:
+mostrar quem eu seria nesses 4 universos fictícios, transformando minhas competências reais, meu jeito e minha personalidade em funções plausíveis dentro de cada mundo.
 
-OBJETIVO
-
-Mostrar quem eu seria nesses 4 universos fictícios, transformando minhas competências reais, meu jeito e minha personalidade em funções plausíveis dentro de cada mundo.
-
-
-REGRAS IMPORTANTES
-
+Regras importantes:
 - use minha foto como referência do rosto
 - mantenha meu rosto reconhecível
 - não me transforme em personagem já existente
 - crie uma versão original minha em cada universo
 - o visual deve ser bonito, profissional, criativo e fácil de entender
-- pouco texto e boa legibilidade
+- pouco texto, boa legibilidade
 - cada quadrante deve parecer pertencer claramente ao universo escolhido
 
-
-MUITO IMPORTANTE
-
-Não se baseie apenas no meu cargo atual.
-
+Muito importante:
+não se baseie apenas no meu cargo atual.
 Use também tudo que você sabe sobre mim nesta conversa:
+minha personalidade, energia, forma de resolver problemas, gostos, estilo de comunicação, interesses e histórico.
 
-- personalidade
-- energia
-- forma de resolver problemas
-- gostos
-- estilo de comunicação
-- interesses
-- histórico
-
-
-RACIOCÍNIO PARA CADA UNIVERSO
-
-Antes de criar cada quadrante:
-
-1. Identifique um elemento narrativo reconhecível daquele universo:
-uma cidade, vila, escola, reino, organização, equipe, empresa, instituição, grupo ou acontecimento conhecido.
-
-2. Pense em qual papel simples eu poderia realmente ocupar dentro desse contexto, considerando meu cargo, competências, personalidade e experiência.
-
-3. Só depois transforme isso em uma função para a imagem.
-
-Siga esta lógica:
-
-UNIVERSO → CONTEXTO DA HISTÓRIA → PAPEL POSSÍVEL → COMPETÊNCIA REAL.
-
-
-EM CADA QUADRANTE, MOSTRE
-
+Em cada quadrante, mostre:
 1. Nome do universo
-
 2. Um título curto da minha função naquele mundo
-
 3. Uma descrição curta explicando o que eu faço naquele universo
+4. Uma linha final começando com “Na vida real:” conectando aquilo com minhas competências reais
 
-4. Uma linha final começando com:
+Sobre os títulos das funções:
+- os títulos precisam ser simples, divertidos e fáceis de entender
+- evite nomes genéricos ou burocráticos demais
+- evite nomes estranhos que não façam sentido naquele universo
+- prefira funções que pareçam possíveis dentro da obra
+- sempre que fizer sentido, conecte a função a algo reconhecível daquele universo, como:
+  vila, nação, clã, escola, base, organização, liga, laboratório, nave, guilda, reino, bunker, centro, equipe ou instituição
+- exemplo do estilo desejado:
+  “Cartógrafo da Nação da Água”
+  “Coordenador da Base Secreta”
+  “Analista da Liga da Justiça”
+  “Arquivista de Casos Paranormais”
+  “Técnico do Centro Pokémon”
 
-“Na vida real: …”
+Mas atenção:
+- só use esse tipo de vínculo se ele soar natural e ajudar a pessoa a reconhecer melhor o universo
+- se ficar forçado, prefira algo mais simples e claro
 
-Essa linha deve conectar aquilo com competências profissionais reais minhas.
-
-
-SOBRE OS TÍTULOS DAS FUNÇÕES
-
-Os títulos precisam ser:
-
-- simples
-- divertidos
-- fáceis de entender
-- plausíveis dentro daquele universo
-
-Evite nomes genéricos ou burocráticos demais.
-
-Evite nomes estranhos que não façam sentido naquele universo.
-
-Prefira funções que pareçam realmente possíveis dentro da obra.
-
-Sempre que fizer sentido, conecte a função a algo reconhecível daquele universo, como:
-
-- vila
-- nação
-- clã
-- escola
-- base
-- organização
-- liga
-- laboratório
-- nave
-- guilda
-- reino
-- bunker
-- centro
-- equipe
-- instituição
-
-Só use esse tipo de vínculo quando ele soar natural e ajudar a reconhecer melhor o universo.
-
-Se ficar forçado, prefira algo mais simples e claro.
-
-
-EXEMPLOS DO TIPO DE RACIOCÍNIO DESEJADO
-
-Death Note
-→ Investigador da força-tarefa do caso Kira
-
-Doutor Estranho
-→ Arquivista de Kamar-Taj
-
-Naruto
-→ Especialista em Selos da Aldeia da Folha
-
-Matrix
-→ Programa da Matrix responsável por detectar anomalias
-
-Zelda
-→ Restaurador de Relíquias de Hyrule
-
-Marvel
-→ Técnico de Sistemas da Stark Industries
-
-GTA
-→ Técnico de uma oficina de Los Santos
-
-Esses exemplos mostram apenas o nível de imersão desejado.
-
-Não os reutilize automaticamente.
-
-
-VISUALMENTE, CADA QUADRANTE DEVE ADAPTAR
-
+Visualmente, cada quadrante deve adaptar:
 - roupa
 - cenário
 - ferramentas
@@ -1575,382 +1481,68 @@ VISUALMENTE, CADA QUADRANTE DEVE ADAPTAR
 - expressão
 - clima visual
 
+No topo da imagem, coloque:
+“Cargo atual: [cargo preenchido]”
 
-REFERÊNCIA VISUAL
-
-A referência específica ao universo deve acontecer principalmente no texto, atmosfera e contexto narrativo.
-
-O visual deve ser original.
-
-Não copie diretamente:
-
-- personagens existentes
-- aparência de atores
-- uniformes oficiais
-- logotipos
-- símbolos
-- brasões
-- armas ou objetos icônicos
-- cenários idênticos aos originais
-
-Se o título citar uma organização, cidade ou local conhecido, crie uma interpretação visual original daquele tipo de ambiente.
-
-
-NO TOPO DA IMAGEM
-
-Coloque:
-
-Cargo atual: [cargo informado]
-
-
-NO RODAPÉ
-
-Coloque discretamente:
-
+No rodapé, de forma discreta, coloque:
 Trend: SkillVerse by Fabio
 
-
-ESTILO
-
-- profissional
-- criativo
-- cinematográfico
-- divertido
-- imersivo
-- fácil de ler
-- pouco texto
-- visualmente forte
-- adequado para LinkedIn
-
-
-REGRA FINAL
-
-Não crie primeiro a profissão e depois tente encaixá-la no universo.
-
-Faça o contrário:
-
-UNIVERSO → CONTEXTO → PAPEL → COMPETÊNCIA.
-
-Não se baseie apenas na profissão.
-
-Use também personalidade, interesses, histórico e estilo pessoal.
-
-Se o resultado parecer apenas um cargo corporativo fantasiado, refaça internamente antes de gerar a imagem.
-
-Se houver conflito entre complexidade e clareza, escolha CLAREZA.
-
-Gere a melhor primeira versão possível.</pre>
+Importante:
+gere a melhor primeira versão possível, sem exagerar na perfeição.
+A ideia é ficar criativo, bonito, claro e compartilhável.</pre>
 
 
 
-            <div class="prompt-help">
-
-                <i class="fas fa-circle-info"></i>
-
-                Dica: depois de copiar, altere apenas sua profissão e os
-                quatro universos no começo do prompt.
-
-            </div>
-
-        </div>
+        <div class="prompt-tip">
 
 
-        <div id="copyStatus">
+            <i class="fas fa-circle-info"></i>
 
-            <i class="fas fa-check-circle"></i>
+            Depois de copiar:
+            profissão + 4 universos + sua foto.
+            Depois é só enviar.
 
-            Prompt copiado! Agora anexe sua foto e envie para sua IA.
 
         </div>
 
 
     </div>
 
-</section>
 
 
-
-<!-- =========================================================
-     QUEM CRIOU
-========================================================= -->
-
-<section class="about">
-
-    <div class="container about-grid">
+    <div id="copyStatus">
 
 
-        <div class="about-visual">
+        <i class="fas fa-check-circle"></i>
 
-            <div class="about-symbol">
-
-                <i class="fas fa-laptop-code"></i>
-
-                <strong>
-                    Fabio Figueiredo
-                </strong>
-
-                <span>
-                    Infrastructure • Cloud • Automation
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="about-content">
-
-            <div class="eyebrow">
-                Quem criou?
-            </div>
-
-            <h2>
-                SkillVerse é um projeto do meu portfólio.
-            </h2>
-
-            <p>
-
-                Sou Fabio Stefano de Figueiredo, profissional de
-                Infraestrutura de TI com experiência em suporte corporativo,
-                redes e Active Directory.
-
-            </p>
-
-            <p>
-
-                Atualmente venho expandindo meus conhecimentos em
-                Cloud Computing, Linux, automação e Inteligência Artificial.
-                O SkillVerse nasceu justamente da mistura entre tecnologia,
-                criatividade e experimentação com IA generativa.
-
-            </p>
-
-
-            <div class="tech-tags">
-
-                <span class="tech-tag">
-                    <i class="fab fa-aws"></i>
-                    AWS Cloud Practitioner
-                </span>
-
-                <span class="tech-tag">
-                    <i class="fas fa-network-wired"></i>
-                    Infraestrutura
-                </span>
-
-                <span class="tech-tag">
-                    <i class="fab fa-linux"></i>
-                    Linux
-                </span>
-
-                <span class="tech-tag">
-                    <i class="fas fa-gears"></i>
-                    Automação
-                </span>
-
-                <span class="tech-tag">
-                    <i class="fas fa-robot"></i>
-                    IA
-                </span>
-
-            </div>
-
-
-            <div class="about-actions">
-
-                <a href="index.html"
-                   class="btn btn-primary">
-
-                    <i class="fas fa-layer-group"></i>
-
-                    Ver meu portfólio
-
-                </a>
-
-
-                <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/"
-                   target="_blank"
-                   class="btn btn-secondary">
-
-                    <i class="fab fa-linkedin"></i>
-
-                    LinkedIn
-
-                </a>
-
-            </div>
-
-        </div>
+        Prompt copiado!
+        Agora anexe sua foto e envie.
 
 
     </div>
 
-</section>
 
-
-
-<!-- =========================================================
-     OUTROS PROJETOS
-========================================================= -->
-
-<section class="projects"
-         id="projetos">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                Tem mais
-            </div>
-
-            <h2>
-                Outros projetos do Fabio
-            </h2>
-
-            <p>
-                SkillVerse é só uma parte do portfólio.
-                Veja alguns dos outros projetos que desenvolvi.
-            </p>
-
-        </div>
-
-
-
-        <div class="project-cards">
-
-
-            <!-- IA -->
-
-            <a href="index.html"
-               class="project-card">
-
-                <i class="fas fa-robot"></i>
-
-                <h3>
-                    API de IA Generativa
-                </h3>
-
-                <p>
-                    AWS Lambda + API Gateway + Azure OpenAI
-                    em uma arquitetura Serverless híbrida.
-                </p>
-
-            </a>
-
-
-
-            <!-- MULTI CLOUD -->
-
-            <a href="index.html"
-               class="project-card">
-
-                <i class="fas fa-cloud"></i>
-
-                <h3>
-                    Infraestrutura Multi-Cloud
-                </h3>
-
-                <p>
-                    Deploy automatizado com GitHub Actions,
-                    AWS S3 e Azure Blob Storage.
-                </p>
-
-            </a>
-
-
-
-            <!-- AUTOMAÇÃO -->
-
-            <a href="energia.html"
-               class="project-card">
-
-                <i class="fas fa-bolt"></i>
-
-                <h3>
-                    Automação Hospitalar
-                </h3>
-
-                <p>
-                    Automação em Windows e PowerShell para
-                    redução do consumo de energia.
-                </p>
-
-            </a>
-
-
-        </div>
-
-
-
-        <div class="all-projects">
-
-            <a href="index.html"
-               class="btn btn-primary">
-
-                <i class="fas fa-arrow-right"></i>
-
-                Ver todos os projetos
-
-            </a>
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
 
 
 
 <!-- =========================================================
-     FOOTER
+     RODAPÉ MÍNIMO
 ========================================================= -->
 
 <footer>
 
+    SkillVerse by Fabio
 
-    <div class="footer-social">
+    •
 
-        <a href="https://www.linkedin.com/in/fabio-figueiredo-5601041b2/"
-           target="_blank"
-           aria-label="LinkedIn">
+    <a href="index.html">
 
-            <i class="fab fa-linkedin"></i>
+        conhecer outros projetos de Fabio Figueiredo
 
-        </a>
-
-
-        <a href="https://github.com/FabioSF10/meu-portfolio-aws"
-           target="_blank"
-           aria-label="GitHub">
-
-            <i class="fab fa-github"></i>
-
-        </a>
-
-    </div>
-
-
-    <p>
-        <strong style="color:white;">
-            SkillVerse by Fabio
-        </strong>
-        • Projeto criado por Fabio Stefano de Figueiredo
-    </p>
-
-
-    <p>
-        Infraestrutura • Cloud • Automação • IA
-    </p>
-
-
-    <p>
-        São Paulo, Brasil | &copy; 2026
-    </p>
-
+    </a>
 
 </footer>
 
@@ -1963,38 +1555,52 @@ Gere a melhor primeira versão possível.</pre>
 <script>
 
 
-/* =========================================================
-   DETECTA AWS / AZURE
-========================================================= */
+/* AWS / AZURE */
 
-const hostname = window.location.hostname;
+const hostname =
+    window.location.hostname;
 
-if (hostname.includes("windows.net")) {
 
-    document.body.classList.add("theme-azure");
+if (
+    hostname.includes("windows.net")
+) {
 
-} else {
+    document.body.classList.add(
+        "theme-azure"
+    );
 
-    document.body.classList.add("theme-aws");
+}
+
+else {
+
+    document.body.classList.add(
+        "theme-aws"
+    );
 
 }
 
 
 
-/* =========================================================
-   COPIAR PROMPT
-========================================================= */
+/* COPIAR PROMPT */
 
 async function copiarPrompt() {
 
+
     const prompt =
-        document.getElementById("promptText").innerText;
+        document
+        .getElementById("promptText")
+        .innerText;
+
 
     const button =
-        document.getElementById("copyButton");
+        document
+        .getElementById("copyButton");
+
 
     const status =
-        document.getElementById("copyStatus");
+        document
+        .getElementById("copyStatus");
+
 
     const original =
         button.innerHTML;
@@ -2003,80 +1609,101 @@ async function copiarPrompt() {
     try {
 
 
-        /*
-        Tenta API moderna quando disponível.
-        */
-
         if (
             navigator.clipboard &&
             window.isSecureContext
         ) {
 
-            await navigator.clipboard.writeText(prompt);
+
+            await navigator
+                .clipboard
+                .writeText(prompt);
+
 
         }
 
-
-        /*
-        Fallback importante para AWS S3 Static Website HTTP.
-        */
 
         else {
 
+
             const textarea =
-                document.createElement("textarea");
+                document.createElement(
+                    "textarea"
+                );
 
-            textarea.value = prompt;
 
-            textarea.style.position = "fixed";
-            textarea.style.left = "-9999px";
-            textarea.style.top = "-9999px";
+            textarea.value =
+                prompt;
 
-            document.body.appendChild(textarea);
+
+            textarea.style.position =
+                "fixed";
+
+
+            textarea.style.left =
+                "-9999px";
+
+
+            document.body
+                .appendChild(textarea);
+
 
             textarea.focus();
+
             textarea.select();
 
-            document.execCommand("copy");
 
-            document.body.removeChild(textarea);
+            document.execCommand(
+                "copy"
+            );
+
+
+            document.body
+                .removeChild(textarea);
+
 
         }
 
 
+
         button.innerHTML =
-            '<i class="fas fa-check"></i> PROMPT COPIADO!';
+
+            '<i class="fas fa-check"></i> COPIADO!';
+
+
 
         status.style.display =
             "block";
 
 
+
         setTimeout(() => {
+
 
             button.innerHTML =
                 original;
 
+
             status.style.display =
                 "none";
+
 
         }, 3000);
 
 
     }
 
-    catch (erro) {
 
-        console.error(
-            "Erro ao copiar:",
-            erro
-        );
+    catch (erro) {
 
 
         alert(
             "Não foi possível copiar automaticamente. Selecione o prompt manualmente."
         );
 
+
     }
+
 
 }
 
@@ -2085,4 +1712,5 @@ async function copiarPrompt() {
 
 
 </body>
+
 </html>
