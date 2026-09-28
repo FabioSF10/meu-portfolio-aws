@@ -1022,8 +1022,7 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
 
 </section>
 
-<!-- PROJETO 08 — SKILLVERSE BY FABIO -->
-<!-- PROJETO 08 — SKILLVERSE BY FABIO -->
+
 <!-- PROJETO 08 — SKILLVERSE BY FABIO -->
 <section>
 
@@ -1041,173 +1040,56 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
              LADO ESQUERDO — CARD SKILLVERSE
         ========================================== -->
 
-        <div style="
-            flex: 0 1 520px;
-            width: 100%;
-            min-width: 0;
-        ">
+       <!-- LADO ESQUERDO — IMAGEM SKILLVERSE -->
 
-            <a href="SkillVersebyFabio.html"
-               style="
-                   display: block;
-                   width: 100%;
-                   text-decoration: none;
-               ">
+<div style="
+    flex: 0 1 520px;
+    width: 100%;
+    min-width: 0;
+">
 
-                <div
-                    style="
-                        width: 100%;
-                        min-height: 390px;
-                        box-sizing: border-box;
+    <a href="SkillVersebyFabio.html"
+       style="
+           display: block;
+           width: 100%;
+           text-decoration: none;
+       ">
 
-                        border-radius: 16px;
-                        border: 1px solid var(--accent-color);
+        <img
+            src="ImagemSkilVerse.png"
+            alt="SkillVerse by Fabio - Projeto de Inteligência Artificial"
+            style="
+                display: block;
+                width: 100%;
+                height: auto;
 
-                        background:
-                            radial-gradient(
-                                circle at 20% 20%,
-                                var(--accent-color),
-                                transparent 30%
-                            ),
-                            radial-gradient(
-                                circle at 80% 80%,
-                                var(--accent-color),
-                                transparent 30%
-                            ),
-                            #020617;
+                border-radius: 16px;
+                border: 1px solid var(--accent-color);
 
-                        box-shadow:
-                            0 10px 30px rgba(0,0,0,0.5);
+                box-shadow:
+                    0 10px 30px rgba(0,0,0,0.5);
 
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
+                object-fit: cover;
 
-                        text-align: center;
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            "
 
-                        padding: 40px;
+            onmouseover="
+                this.style.transform='translateY(-5px)';
+                this.style.boxShadow='0 15px 35px var(--accent-color)';
+            "
 
-                        overflow: hidden;
+            onmouseout="
+                this.style.transform='translateY(0)';
+                this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)';
+            "
+        >
 
-                        transition: 0.3s;
-                    "
+    </a>
 
-                    onmouseover="
-                        this.style.transform='translateY(-5px)';
-                        this.style.boxShadow='0 15px 35px var(--accent-color)';
-                    "
-
-                    onmouseout="
-                        this.style.transform='translateY(0)';
-                        this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)';
-                    ">
-
-
-                    <!-- ÍCONE -->
-
-                    <div style="
-                        width: 80px;
-                        height: 80px;
-
-                        border-radius: 20px;
-
-                        background: rgba(2,6,23,0.9);
-
-                        border: 2px solid var(--accent-color);
-
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        margin-bottom: 22px;
-
-                        box-shadow:
-                            0 0 25px var(--accent-color);
-                    ">
-
-                        <i class="fas fa-wand-magic-sparkles"
-                           style="
-                               font-size: 2.3rem;
-                               color: var(--accent-color);
-                           ">
-                        </i>
-
-                    </div>
-
-
-                    <!-- TÍTULO -->
-
-                    <div style="
-                        color: white;
-                        font-size: 2.1rem;
-                        line-height: 1.1;
-                        font-weight: 800;
-                    ">
-                        SkillVerse
-                    </div>
-
-
-                    <div style="
-                        color: var(--accent-color);
-                        font-weight: 800;
-                        font-size: 1.05rem;
-                        margin-top: 8px;
-                    ">
-                        by Fabio
-                    </div>
-
-
-                    <!-- DESCRIÇÃO -->
-
-                    <div style="
-                        color: #cbd5e1;
-                        font-size: 0.95rem;
-                        line-height: 1.6;
-                        margin-top: 25px;
-                    ">
-
-                        Sua profissão. Sua personalidade.<br>
-
-                        Quatro universos.
-                        Quatro versões de você.
-
-                    </div>
-
-
-                    <!-- ÍCONES -->
-
-                    <div style="
-                        margin-top: 28px;
-
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        gap: 12px;
-
-                        color: var(--accent-color);
-
-                        font-size: 1.25rem;
-                    ">
-
-                        <i class="fas fa-user"></i>
-
-                        <i class="fas fa-arrow-right"></i>
-
-                        <i class="fas fa-wand-magic-sparkles"></i>
-
-                        <i class="fas fa-arrow-right"></i>
-
-                        <i class="fas fa-image"></i>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </div>
+</div>
 
 
 
