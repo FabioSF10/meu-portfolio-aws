@@ -1024,30 +1024,45 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
 
 <!-- PROJETO 08 — SKILLVERSE BY FABIO -->
 <!-- PROJETO 08 — SKILLVERSE BY FABIO -->
+<!-- PROJETO 08 — SKILLVERSE BY FABIO -->
 <section>
 
-    <div class="project-grid skillverse-grid"
-         style="
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-            gap: 55px;
-            align-items: center;
-         ">
+    <div style="
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+    " class="skillverse-project">
 
-        <!-- LADO ESQUERDO — CARD VISUAL -->
-        <div class="media">
+
+        <!-- =========================================
+             LADO ESQUERDO — CARD SKILLVERSE
+        ========================================== -->
+
+        <div style="
+            flex: 0 1 520px;
+            width: 100%;
+            min-width: 0;
+        ">
 
             <a href="SkillVersebyFabio.html"
-               style="display: block; text-decoration: none;">
+               style="
+                   display: block;
+                   width: 100%;
+                   text-decoration: none;
+               ">
 
                 <div
                     style="
                         width: 100%;
-                        min-height: 330px;
-                        border-radius: 12px;
+                        min-height: 390px;
+                        box-sizing: border-box;
+
+                        border-radius: 16px;
                         border: 1px solid var(--accent-color);
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                        transition: 0.3s;
+
                         background:
                             radial-gradient(
                                 circle at 20% 20%,
@@ -1060,13 +1075,22 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
                                 transparent 30%
                             ),
                             #020617;
+
+                        box-shadow:
+                            0 10px 30px rgba(0,0,0,0.5);
+
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
+
                         text-align: center;
-                        padding: 35px;
+
+                        padding: 40px;
+
                         overflow: hidden;
+
+                        transition: 0.3s;
                     "
 
                     onmouseover="
@@ -1081,23 +1105,30 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
 
 
                     <!-- ÍCONE -->
-                    <div
-                        style="
-                            width: 75px;
-                            height: 75px;
-                            border-radius: 18px;
-                            background: rgba(2,6,23,0.85);
-                            border: 2px solid var(--accent-color);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin-bottom: 20px;
-                            box-shadow: 0 0 25px var(--accent-color);
-                        ">
+
+                    <div style="
+                        width: 80px;
+                        height: 80px;
+
+                        border-radius: 20px;
+
+                        background: rgba(2,6,23,0.9);
+
+                        border: 2px solid var(--accent-color);
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        margin-bottom: 22px;
+
+                        box-shadow:
+                            0 0 25px var(--accent-color);
+                    ">
 
                         <i class="fas fa-wand-magic-sparkles"
                            style="
-                               font-size: 2.2rem;
+                               font-size: 2.3rem;
                                color: var(--accent-color);
                            ">
                         </i>
@@ -1105,51 +1136,60 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
                     </div>
 
 
-                    <!-- NOME DO PROJETO -->
-                    <h3
-                        style="
-                            color: white;
-                            font-size: 2rem;
-                            margin: 0;
-                        ">
+                    <!-- TÍTULO -->
+
+                    <div style="
+                        color: white;
+                        font-size: 2.1rem;
+                        line-height: 1.1;
+                        font-weight: 800;
+                    ">
                         SkillVerse
-                    </h3>
+                    </div>
 
 
-                    <p
-                        style="
-                            color: var(--accent-color);
-                            font-weight: 800;
-                            margin: 5px 0 18px;
-                            letter-spacing: 1px;
-                        ">
+                    <div style="
+                        color: var(--accent-color);
+                        font-weight: 800;
+                        font-size: 1.05rem;
+                        margin-top: 8px;
+                    ">
                         by Fabio
-                    </p>
+                    </div>
 
 
-                    <!-- FRASE -->
-                    <p
-                        style="
-                            color: #cbd5e1;
-                            margin: 0;
-                            font-size: 0.9rem;
-                        ">
+                    <!-- DESCRIÇÃO -->
+
+                    <div style="
+                        color: #cbd5e1;
+                        font-size: 0.95rem;
+                        line-height: 1.6;
+                        margin-top: 25px;
+                    ">
+
                         Sua profissão. Sua personalidade.<br>
-                        Quatro universos. Quatro versões de você.
-                    </p>
+
+                        Quatro universos.
+                        Quatro versões de você.
+
+                    </div>
 
 
-                    <!-- FLUXO VISUAL -->
-                    <div
-                        style="
-                            margin-top: 22px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 10px;
-                            color: var(--accent-color);
-                            font-size: 1.2rem;
-                        ">
+                    <!-- ÍCONES -->
+
+                    <div style="
+                        margin-top: 28px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        gap: 12px;
+
+                        color: var(--accent-color);
+
+                        font-size: 1.25rem;
+                    ">
 
                         <i class="fas fa-user"></i>
 
@@ -1170,78 +1210,132 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
         </div>
 
 
-        <!-- LADO DIREITO — DESCRIÇÃO DO PROJETO -->
-        <div class="content">
 
-            <h2>
-                <i class="fas fa-wand-magic-sparkles"></i>
+        <!-- =========================================
+             LADO DIREITO — TEXTO
+        ========================================== -->
+
+        <div style="
+            flex: 1 1 600px;
+            min-width: 0;
+            max-width: 680px;
+        ">
+
+
+            <h2 style="
+                margin-top: 0;
+                margin-bottom: 25px;
+                font-size: 2em;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            ">
+
+                <i class="fas fa-wand-magic-sparkles"
+                   style="color: var(--accent-color);">
+                </i>
+
                 08. SkillVerse by Fabio
+
             </h2>
 
 
-            <h3>
+            <h3 style="
+                color: var(--accent-color);
+                margin-top: 0;
+            ">
+
                 Experiência Criativa com Inteligência Artificial
+
             </h3>
 
 
             <p>
-                Projeto interativo que utiliza IA generativa para transformar
-                competências profissionais, personalidade e experiências reais
-                em versões fictícias do usuário dentro de diferentes universos.
+                Projeto interativo que utiliza IA generativa para
+                transformar competências profissionais, personalidade
+                e experiências reais em versões fictícias do usuário
+                dentro de diferentes universos.
             </p>
 
 
-            <ul>
+            <ul style="
+                padding-left: 20px;
+                margin-top: 25px;
+            ">
 
-                <li>
+
+                <li style="margin-bottom: 12px;">
+
                     <strong>Prompt Engineering:</strong>
+
                     prompt estruturado para interpretar profissão,
                     competências, personalidade e contexto do usuário.
+
                 </li>
 
 
-                <li>
+                <li style="margin-bottom: 12px;">
+
                     <strong>IA Generativa:</strong>
+
                     combinação de texto e imagem para criar quatro
                     interpretações visuais personalizadas.
+
                 </li>
 
 
-                <li>
+                <li style="margin-bottom: 12px;">
+
                     <strong>Experiência interativa:</strong>
+
                     página dedicada com instruções simples e botão
                     para copiar o prompt completo.
+
                 </li>
 
 
-                <li>
+                <li style="margin-bottom: 12px;">
+
                     <strong>Identidade Multi-Cloud:</strong>
+
                     interface adaptada automaticamente ao ambiente
                     AWS S3 ou Azure Blob Storage.
+
                 </li>
 
 
-                <li>
+                <li style="margin-bottom: 12px;">
+
                     <strong>Conceito:</strong>
+
                     tecnologia, criatividade e apresentação profissional
                     em uma experiência compartilhável.
+
                 </li>
 
             </ul>
 
 
             <!-- BOTÃO -->
+
             <a href="SkillVersebyFabio.html"
 
                style="
                    display: inline-block;
-                   margin-top: 15px;
+
+                   margin-top: 18px;
+
                    background: var(--accent-color);
                    color: var(--primary-color);
+
                    padding: 13px 24px;
+
                    border-radius: 8px;
+
                    font-weight: 800;
+
                    text-decoration: none;
+
                    transition: 0.3s;
                "
 
@@ -1261,9 +1355,43 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
 
             </a>
 
+
         </div>
 
     </div>
+
+
+    <!-- =========================================
+         RESPONSIVIDADE DO PROJETO 08
+    ========================================== -->
+
+    <style>
+
+        @media (max-width: 900px) {
+
+            .skillverse-project {
+
+                flex-direction: column !important;
+
+                gap: 40px !important;
+
+            }
+
+
+            .skillverse-project > div {
+
+                width: 100% !important;
+
+                max-width: 100% !important;
+
+                flex-basis: auto !important;
+
+            }
+
+        }
+
+    </style>
+
 
 </section>
 
