@@ -207,17 +207,18 @@ body {
 .visit-counter {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
 
     color: #64748b;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
 
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    opacity: 0.75;
 }
 
 .visit-counter i {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     color: #64748b;
 }
       
@@ -1768,6 +1769,37 @@ async function copiarPrompt() {
 }
 
 
+</script>
+
+      <script>
+document.addEventListener("DOMContentLoaded", async () => {
+
+    const counter = document.querySelector(".visit-counter");
+    const count = document.getElementById("visit-count");
+
+    try {
+
+        const response = await fetch(
+            "https://pc3frul4vl.execute-api.us-east-1.amazonaws.com/visit"
+        );
+
+        if (!response.ok) {
+            throw new Error("Erro ao consultar contador");
+        }
+
+        const data = await response.json();
+
+        count.textContent = data.visits.toLocaleString("pt-BR");
+
+    } catch (error) {
+
+        console.error("Não foi possível carregar o contador:", error);
+
+        // Se a API falhar, simplesmente esconde o contador.
+        counter.style.display = "none";
+    }
+
+});
 </script>
 
 
