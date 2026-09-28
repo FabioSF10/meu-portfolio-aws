@@ -1023,18 +1023,166 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
 </section>
 
 <!-- PROJETO 08 — SKILLVERSE BY FABIO -->
+<!-- PROJETO 08 — SKILLVERSE BY FABIO -->
 <section>
 
-    <div class="project-grid" style="direction: rtl;">
+    <div class="project-grid skillverse-grid"
+         style="
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            gap: 55px;
+            align-items: center;
+         ">
 
-        <div class="content" style="direction: ltr;">
+        <!-- LADO ESQUERDO — CARD VISUAL -->
+        <div class="media">
+
+            <a href="SkillVersebyFabio.html"
+               style="display: block; text-decoration: none;">
+
+                <div
+                    style="
+                        width: 100%;
+                        min-height: 330px;
+                        border-radius: 12px;
+                        border: 1px solid var(--accent-color);
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                        transition: 0.3s;
+                        background:
+                            radial-gradient(
+                                circle at 20% 20%,
+                                var(--accent-color),
+                                transparent 30%
+                            ),
+                            radial-gradient(
+                                circle at 80% 80%,
+                                var(--accent-color),
+                                transparent 30%
+                            ),
+                            #020617;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        padding: 35px;
+                        overflow: hidden;
+                    "
+
+                    onmouseover="
+                        this.style.transform='translateY(-5px)';
+                        this.style.boxShadow='0 15px 35px var(--accent-color)';
+                    "
+
+                    onmouseout="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)';
+                    ">
+
+
+                    <!-- ÍCONE -->
+                    <div
+                        style="
+                            width: 75px;
+                            height: 75px;
+                            border-radius: 18px;
+                            background: rgba(2,6,23,0.85);
+                            border: 2px solid var(--accent-color);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 20px;
+                            box-shadow: 0 0 25px var(--accent-color);
+                        ">
+
+                        <i class="fas fa-wand-magic-sparkles"
+                           style="
+                               font-size: 2.2rem;
+                               color: var(--accent-color);
+                           ">
+                        </i>
+
+                    </div>
+
+
+                    <!-- NOME DO PROJETO -->
+                    <h3
+                        style="
+                            color: white;
+                            font-size: 2rem;
+                            margin: 0;
+                        ">
+                        SkillVerse
+                    </h3>
+
+
+                    <p
+                        style="
+                            color: var(--accent-color);
+                            font-weight: 800;
+                            margin: 5px 0 18px;
+                            letter-spacing: 1px;
+                        ">
+                        by Fabio
+                    </p>
+
+
+                    <!-- FRASE -->
+                    <p
+                        style="
+                            color: #cbd5e1;
+                            margin: 0;
+                            font-size: 0.9rem;
+                        ">
+                        Sua profissão. Sua personalidade.<br>
+                        Quatro universos. Quatro versões de você.
+                    </p>
+
+
+                    <!-- FLUXO VISUAL -->
+                    <div
+                        style="
+                            margin-top: 22px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            color: var(--accent-color);
+                            font-size: 1.2rem;
+                        ">
+
+                        <i class="fas fa-user"></i>
+
+                        <i class="fas fa-arrow-right"></i>
+
+                        <i class="fas fa-wand-magic-sparkles"></i>
+
+                        <i class="fas fa-arrow-right"></i>
+
+                        <i class="fas fa-image"></i>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- LADO DIREITO — DESCRIÇÃO DO PROJETO -->
+        <div class="content">
 
             <h2>
                 <i class="fas fa-wand-magic-sparkles"></i>
                 08. SkillVerse by Fabio
             </h2>
 
-            <h3>Experiência Criativa com Inteligência Artificial</h3>
+
+            <h3>
+                Experiência Criativa com Inteligência Artificial
+            </h3>
+
 
             <p>
                 Projeto interativo que utiliza IA generativa para transformar
@@ -1042,42 +1190,49 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
                 em versões fictícias do usuário dentro de diferentes universos.
             </p>
 
+
             <ul>
 
                 <li>
                     <strong>Prompt Engineering:</strong>
-                    criação e refinamento de um prompt estruturado para interpretar
-                    profissão, competências, personalidade e contexto do usuário.
+                    prompt estruturado para interpretar profissão,
+                    competências, personalidade e contexto do usuário.
                 </li>
+
 
                 <li>
                     <strong>IA Generativa:</strong>
-                    combinação de texto e imagem para criar quatro interpretações
-                    visuais personalizadas em uma única composição.
+                    combinação de texto e imagem para criar quatro
+                    interpretações visuais personalizadas.
                 </li>
+
 
                 <li>
                     <strong>Experiência interativa:</strong>
-                    página dedicada com instruções simples e botão para copiar
-                    o prompt completo.
+                    página dedicada com instruções simples e botão
+                    para copiar o prompt completo.
                 </li>
+
 
                 <li>
                     <strong>Identidade Multi-Cloud:</strong>
-                    interface adapta automaticamente sua identidade visual conforme
-                    o ambiente de hospedagem AWS S3 ou Azure Blob Storage.
+                    interface adaptada automaticamente ao ambiente
+                    AWS S3 ou Azure Blob Storage.
                 </li>
+
 
                 <li>
                     <strong>Conceito:</strong>
-                    unir tecnologia, criatividade e apresentação profissional
+                    tecnologia, criatividade e apresentação profissional
                     em uma experiência compartilhável.
                 </li>
 
             </ul>
 
 
+            <!-- BOTÃO -->
             <a href="SkillVersebyFabio.html"
+
                style="
                    display: inline-block;
                    margin-top: 15px;
@@ -1089,128 +1244,20 @@ Este projeto demonstra, na prática, a construção de uma arquitetura híbrida 
                    text-decoration: none;
                    transition: 0.3s;
                "
+
                onmouseover="
                    this.style.transform='translateY(-3px)';
                    this.style.boxShadow='0 8px 20px rgba(0,0,0,0.35)';
                "
+
                onmouseout="
                    this.style.transform='translateY(0)';
                    this.style.boxShadow='none';
                ">
 
                 <i class="fas fa-arrow-right"></i>
+
                 Conhecer o SkillVerse
-
-            </a>
-
-        </div>
-
-
-        <div class="media" style="direction: ltr;">
-
-            <a href="SkillVersebyFabio.html"
-               style="display: block; text-decoration: none;">
-
-                <div
-                    style="
-                        width: 100%;
-                        min-height: 360px;
-                        border-radius: 12px;
-                        border: 1px solid var(--accent-color);
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                        transition: 0.3s;
-                        background:
-                            radial-gradient(circle at 20% 20%, var(--accent-color), transparent 30%),
-                            radial-gradient(circle at 80% 80%, var(--accent-color), transparent 30%),
-                            #020617;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        text-align: center;
-                        padding: 35px;
-                        overflow: hidden;
-                    "
-                    onmouseover="
-                        this.style.transform='translateY(-5px)';
-                        this.style.boxShadow='0 15px 35px var(--accent-color)';
-                    "
-                    onmouseout="
-                        this.style.transform='translateY(0)';
-                        this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)';
-                    ">
-
-                    <div
-                        style="
-                            width: 85px;
-                            height: 85px;
-                            border-radius: 20px;
-                            background: rgba(2,6,23,0.85);
-                            border: 2px solid var(--accent-color);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin-bottom: 25px;
-                            box-shadow: 0 0 30px var(--accent-color);
-                        ">
-
-                        <i class="fas fa-wand-magic-sparkles"
-                           style="
-                               font-size: 2.5rem;
-                               color: var(--accent-color);
-                           ">
-                        </i>
-
-                    </div>
-
-                    <h3
-                        style="
-                            color: white;
-                            font-size: 2rem;
-                            margin: 0;
-                        ">
-                        SkillVerse
-                    </h3>
-
-                    <p
-                        style="
-                            color: var(--accent-color);
-                            font-weight: 800;
-                            margin: 5px 0 20px 0;
-                            letter-spacing: 1px;
-                        ">
-                        by Fabio
-                    </p>
-
-                    <p
-                        style="
-                            color: #cbd5e1;
-                            max-width: 330px;
-                            margin: 0;
-                            font-size: 0.9rem;
-                        ">
-                        Sua profissão. Sua personalidade.<br>
-                        Quatro universos. Quatro versões de você.
-                    </p>
-
-                    <div
-                        style="
-                            margin-top: 25px;
-                            display: flex;
-                            gap: 10px;
-                            color: var(--accent-color);
-                            font-size: 1.2rem;
-                        ">
-
-                        <i class="fas fa-user"></i>
-                        <i class="fas fa-arrow-right"></i>
-                        <i class="fas fa-wand-magic-sparkles"></i>
-                        <i class="fas fa-arrow-right"></i>
-                        <i class="fas fa-image"></i>
-
-                    </div>
-
-                </div>
 
             </a>
 
